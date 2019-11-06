@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homework from './HW1Counter'
+import Homework from './HW3CounterSum'
 
 function App() {
   return (
