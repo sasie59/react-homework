@@ -10,13 +10,12 @@ export default class HW3CounterSum extends React.Component {
   }
 
   handleClick = () => {
-    let list = [1];
     const sum = this.state.sum;
     const counter = this.state.counter;
     this.setState({
       counter : counter + 1,
-      // list : list.push(counter),
       sum : sum + counter
+      // 本打算用梯型工式來算總和 但好像不用那麼麻煩 
       
     })
   }
