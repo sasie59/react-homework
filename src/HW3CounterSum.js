@@ -16,7 +16,7 @@ export default class HW3CounterSum extends React.Component {
     this.setState({
       counter : counter + 1,
       // list : list.push(counter),
-      sum : this.state.sum + counter
+      sum : sum + counter
       
     })
   }
