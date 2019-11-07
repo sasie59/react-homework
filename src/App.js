@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homework from './HW3CounterSum'
+import Homework from './BMI'
 
 function App() {
   return (
