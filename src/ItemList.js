@@ -8,8 +8,14 @@ export default class ItemList extends React.Component {
       value : ''
     });
   }
+
   handleChange = (event)=> {
     const { value, list }  = this.state
+
+    /**
+     * onChange 只是改變value而已吧
+     * 不應該更新 list
+     */
     this.setState ({
       value : event.target.value,
       list : [value,...list]
@@ -17,6 +23,7 @@ export default class ItemList extends React.Component {
   }
   handleSubmit = (event) => {
     event.preventDefault();
+    /** 更新 list 的動作應該要在這裡做 */
   }
   render() {
     return (
