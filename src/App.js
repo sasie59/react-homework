@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homework from './BMI'
+import Homework from './ItemList'
 
 function App() {
   return (
