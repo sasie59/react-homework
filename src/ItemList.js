@@ -10,8 +10,6 @@ export default class ItemList extends React.Component {
   }
 
   handleChange = (event)=> {
-    const value = this.state
-
     /**
      * onChange 只是改變value而已吧
      * 不應該更新 list
@@ -27,10 +25,14 @@ export default class ItemList extends React.Component {
     this.setState({
       list : [value, ...list],
       value : ''
-    })
+    });
     /** 更新 list 的動作應該要在這裡做 */
   }
   render() {
+    // 先將map出來的東西放在return之前，之後再return標籤
+    const itemList = this.state.list.map((n,index) =>
+      <li key={index}>{n}</li>
+    );
     return (
       <div>
         <h1>清單</h1>
@@ -43,8 +45,7 @@ export default class ItemList extends React.Component {
           onChange={this.handleChange} />
         </form>
         <ul>
-          {this.state.list.map(n =>
-          <li key={n}>{n}</li>)}
+          {itemList}
         </ul>
       </div>
     )
