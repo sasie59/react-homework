@@ -10,7 +10,7 @@ export default class ItemList extends React.Component {
   }
 
   handleChange = (event)=> {
-    const { value, list }  = this.state
+    const value = this.state
 
     /**
      * onChange 只是改變value而已吧
@@ -18,11 +18,16 @@ export default class ItemList extends React.Component {
      */
     this.setState ({
       value : event.target.value,
-      list : [value,...list]
     })
   }
   handleSubmit = (event) => {
+    const {list,value} = this.state
     event.preventDefault();
+    if(value !== '' && value.trim() !== '')
+    this.setState({
+      list : [value, ...list],
+      value : ''
+    })
     /** 更新 list 的動作應該要在這裡做 */
   }
   render() {
