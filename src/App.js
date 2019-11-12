@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homework from './PersonTable'
+import Homework from './ SumForButton'
 
 function App() {
   return (
