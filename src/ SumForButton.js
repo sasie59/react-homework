@@ -5,13 +5,12 @@ export default class  SumForButton extends React.Component {
     super()
     this.state =({
       sum : 0,
-      arr : [1,2,3,4,5,6,7,8,9]
     });
   }
   handleClick = ({target}) => {
-    const {sum,arr} = this.state
+    const sum = this.state.sum
     this.setState({
-      sum : sum + arr[[target.name] - 1]
+      sum : sum + parseInt(target.name)
     });
   }
 
