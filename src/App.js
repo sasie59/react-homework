@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Homework from './HappyNewYear';
+import Homework from './ColorPad';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Homework />
     </div>
   );
