@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homework from './ColorPad';
+import Homework from './Tab';
 
 function App() {
   return (
