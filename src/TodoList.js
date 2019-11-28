@@ -25,26 +25,36 @@ export default class TodoList extends Component {
         value : ''
       });
   }
-  handleDelete = () => {
-    const {value,toDoList} = this.state;
-    const isDelete = toDoList.done ? false : true
-    console.warn(isDelete);
+  /**
+  [
+    {content: 'aaa', done: false },
+    {content: 'bbb', done: false },
+    {content: 'ccc', done: false },
+  ],
+  [
+    {content: 'aaa', done: false },
+    {content: 'bbb', done: true },
+    {content: 'ccc', done: false },
+  ]
+   */
+  handleDelete = (index) => {
+    const { toDoList } = this.state;
+    toDoList[index].done = !toDoList[index].done;
+
     this.setState({
-      toDoList : {content: value, done :isDelete}
-      // done : isDelete
+      toDoList
     });
-    console.warn(isDelete);
   }
   render() {
     const { value,toDoList } = this.state;
     const ToDoList = toDoList.map((item,index) =>
-    <tr key={index}>
-            <td className={item.done ? "done" : ""}>
-              <label onClick={this.handleDelete}>
-                {item.content}
-              </label>
-            </td>
-        </tr>
+      <tr key={index}>
+        <td className={item.done ? "done" : ""}>
+          <label onClick={this.handleDelete.bind(this, index)}>
+            {item.content}
+          </label>
+        </td>
+      </tr>
     );
     return (
       <div>
