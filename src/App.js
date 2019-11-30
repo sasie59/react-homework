@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homework from './TodoList';
+import Homework from './NumberGame';
 
 function App() {
   return (
