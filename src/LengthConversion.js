@@ -9,21 +9,6 @@ const turnLength = (value, lengthType, returntype, id) => {
    */
   let base;
 
-  /**
-   * 提示：你想一個情況，如果你現在在 mm 輸入 1
-   * 即代表你在 render 那邊會執行：
-   * let mm = turnLength(1, "mm"","mm", 1);
-   * let cm = turnLength(1, "mm","cm", 2);
-   * let m  = turnLength(1, "mm","m", 3);
-   * let km = turnLength(1, "mm","km", 4);
-   * 
-   * 而 let mm = turnLength(1, "mm"","mm", 1); 會得到 1
-   * 但 let cm = turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 0.1
-   * 但 let m =  turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 000.1
-   * 但 let km = turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 000000.1
-   * 
-   * 但很接近答案了，再加加油。
-   */
   if(id === 1) {
     base = {
       mm : 1,
@@ -31,6 +16,12 @@ const turnLength = (value, lengthType, returntype, id) => {
       m : 1 / 1000,
       km :1 / 1000000
     }
+    // console.warn(base['mm']);
+    // console.warn(base['cm']);
+    // console.warn(base['m']);
+    // console.warn(base['km']);
+    // 在這邊驗証 結果是正確的
+    
   } else if(id === 2) {
     base = {
       mm : 10,
@@ -53,7 +44,27 @@ const turnLength = (value, lengthType, returntype, id) => {
       km : 1
     }
   }
-  return lengthType === returntype ? value : value * base[returntype] 
+  /**
+   * 提示：你想一個情況，如果你現在在 mm 輸入 1
+   * 即代表你在 render 那邊會執行：
+   * let mm = turnLength(1, "mm"","mm", 1);
+   * let cm = turnLength(1, "mm","cm", 2);
+   * let m  = turnLength(1, "mm","m", 3);
+   * let km = turnLength(1, "mm","km", 4);
+   * 
+   * 而 let mm = turnLength(1, "mm"","mm", 1); 會得到 1
+   * 但 let cm = turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 0.1
+   * 但 let m =  turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 000.1
+   * 但 let km = turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 000000.1
+   * 
+   * 但很接近答案了，再加加油。
+   */
+  // console.warn(lengthType === returntype);
+  // test完 true跟false出現的結果是正確的
+  // console.warn(value * base[returntype]);
+  // 但在這邊印出  但經過id判別後 value相對應的結果不如預期 結果永遠等於1 代表上面的寫法有誤?
+  
+  return  lengthType === returntype ? value : value * base[returntype] 
 }
 
 export default class LengthConversion extends Component {
