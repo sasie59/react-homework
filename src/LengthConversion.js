@@ -44,25 +44,34 @@ const turnLength = (value, lengthType, returntype, id) => {
       km : 1
     }
   }
-  /**
-   * 提示：你想一個情況，如果你現在在 mm 輸入 1
-   * 即代表你在 render 那邊會執行：
-   * let mm = turnLength(1, "mm"","mm", 1);
-   * let cm = turnLength(1, "mm","cm", 2);
-   * let m  = turnLength(1, "mm","m", 3);
-   * let km = turnLength(1, "mm","km", 4);
-   * 
-   * 而 let mm = turnLength(1, "mm"","mm", 1); 會得到 1
-   * 但 let cm = turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 0.1
-   * 但 let m =  turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 000.1
-   * 但 let km = turnLength(1, "mm","cm", 2); 也得到 1，但不對，應該得到 000000.1
-   * 
-   * 但很接近答案了，再加加油。
-   */
   // console.warn(lengthType === returntype);
   // test完 true跟false出現的結果是正確的
   // console.warn(value * base[returntype]);
   // 但在這邊印出  但經過id判別後 value相對應的結果不如預期 結果永遠等於1 代表上面的寫法有誤?
+
+  /**
+   * 12/05 提示：
+   * 情境1： value = 1，lengthType = 'mm'
+   * 
+   * 你的寫法：
+   * turnLength(1, "mm"","mm", 1)  -> 乘以 1
+   * turnLength(1, "mm"","cm"", 2) -> 乘以 1
+   * turnLength(1, "mm"","m"", 3) ->  乘以 1
+   * turnLength(1, "mm"","km"", 4) -> 乘以 1
+   * 
+   * 換個寫法
+   * turnLength(1, "mm"","mm", 1)  -> 乘以 1
+   * turnLength(1, "mm"","cm"", 1) -> 乘以 1 / 10
+   * turnLength(1, "mm"","m"", 1) ->  乘以 1 / 1000
+   * turnLength(1, "mm"","km"", 1) -> 乘以 1 / 1000000
+   * 
+   * 有注意到嗎？ 當你的 lengthType 是 mm 時， id 應該都給 1 才對
+   * 換個單位輸入試試：
+   * turnLength(1, "km"","mm", 4)  -> 乘以 1000000
+   * turnLength(1, "km"","cm"", 4) -> 乘以 100000
+   * turnLength(1, "km"","m"", 4) ->  乘以 1000
+   * turnLength(1, "km"","km"", 4) -> 乘以 1
+   */
   
   return  lengthType === returntype ? value : value * base[returntype] 
 }
