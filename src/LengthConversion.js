@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import LengthInput from './LengthInput';
 
 const turnLength = (value, lengthType, returntype, id) => {
+  // console.warn(returntype);
+
   /**
    * 因為你的 base 原本是定義在 if () {....} 裡面，所以只在 if 裡面有效
    * 而你在 return 那邊也有使用 base（不在if裡) 所以會有錯誤。
    * 因此，我稍微改寫了一下，把base在最上面用 let 定義，然後在 if 裡再賦予內容。 :)
    */
   let base;
-
   if(id === 1) {
     base = {
       mm : 1,
@@ -16,12 +17,6 @@ const turnLength = (value, lengthType, returntype, id) => {
       m : 1 / 1000,
       km :1 / 1000000
     }
-    // console.warn(base['mm']);
-    // console.warn(base['cm']);
-    // console.warn(base['m']);
-    // console.warn(base['km']);
-    // 在這邊驗証 結果是正確的
-    
   } else if(id === 2) {
     base = {
       mm : 10,
@@ -44,11 +39,6 @@ const turnLength = (value, lengthType, returntype, id) => {
       km : 1
     }
   }
-  // console.warn(lengthType === returntype);
-  // test完 true跟false出現的結果是正確的
-  // console.warn(value * base[returntype]);
-  // 但在這邊印出  但經過id判別後 value相對應的結果不如預期 結果永遠等於1 代表上面的寫法有誤?
-
   /**
    * 12/05 提示：
    * 情境1： value = 1，lengthType = 'mm'
@@ -72,8 +62,11 @@ const turnLength = (value, lengthType, returntype, id) => {
    * turnLength(1, "km"","m"", 4) ->  乘以 1000
    * turnLength(1, "km"","km"", 4) -> 乘以 1
    */
+  // id要都一樣 不能寫死 於是我設了state變數 但returntype是唯一不會變的東西
+  // 在下面的function 我也給了參數 印出來也會列出每一筆 但只要一敲鍵盤 依舊報錯
+
   
-  return  lengthType === returntype ? value : value * base[returntype] 
+  return lengthType === returntype ? value : value * base[returntype] 
 }
 
 export default class LengthConversion extends Component {
@@ -81,27 +74,31 @@ export default class LengthConversion extends Component {
     super()
     this.state = {
       value : 0,
-      lengthType : ''
+      lengthType : '',
+      id : 1
+      // 我這邊先給1 反正0*任何數都是0 介面上不影響
     }
   }
   handleChange = ({target}) => {
     this.setState({
       value : target.value,
-      lengthType :target.name
+      lengthType :target.name,
+      id : target.id
     })
+    console.warn(target.id);
   }
   render() {
-    const {value,lengthType} = this.state;
-    let mm = turnLength(value, lengthType,"mm", 1);
-    let cm = turnLength(value, lengthType,"cm", 2);
-    let m = turnLength(value, lengthType,"m", 3);
-    let km = turnLength(value, lengthType,"km", 4);
-    return (
+    const {value,lengthType,id} = this.state;
+    let mm = turnLength(value, lengthType,"mm",id );
+    let cm = turnLength(value, lengthType,"cm",id );
+    let m = turnLength(value, lengthType,"m",id );
+    let km = turnLength(value, lengthType,"km",id );
+    return ( 
       <div>
         <h1>長度轉換</h1>
         <form>
           <LengthInput
-            id={1}
+            id={1} 
             value={mm}
             lengthType="mm"
             onChange={this.handleChange}/>

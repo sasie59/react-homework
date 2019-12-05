@@ -5,6 +5,7 @@ export default function LengthInput(props) {
     <div>
       <input       
         type="number"
+        id={props.id}
         value={props.value}
         name={props.lengthType}
         onChange={props.onChange}
