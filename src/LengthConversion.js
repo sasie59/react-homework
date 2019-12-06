@@ -86,7 +86,7 @@ export default class LengthConversion extends Component {
     this.setState({
       value : target.value,
       lengthType :target.name,
-      id : target.id  // ← target.id 是字串
+      id : +target.id  // ← target.id 是字串
     })
     console.warn(target.id);
   }
