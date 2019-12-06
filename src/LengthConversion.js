@@ -10,6 +10,8 @@ const turnLength = (value, lengthType, returntype, id) => {
    * 因此，我稍微改寫了一下，把base在最上面用 let 定義，然後在 if 裡再賦予內容。 :)
    */
   let base;
+
+  // 你的 id 是字串，所以這邊全部的 if 都不會成立
   if(id === 1) {
     base = {
       mm : 1,
@@ -65,6 +67,7 @@ const turnLength = (value, lengthType, returntype, id) => {
   // id要都一樣 不能寫死 於是我設了state變數 但returntype是唯一不會變的東西
   // 在下面的function 我也給了參數 印出來也會列出每一筆 但只要一敲鍵盤 依舊報錯
 
+  console.warn(id, base);
   
   return lengthType === returntype ? value : value * base[returntype] 
 }
@@ -83,7 +86,7 @@ export default class LengthConversion extends Component {
     this.setState({
       value : target.value,
       lengthType :target.name,
-      id : target.id
+      id : target.id  // ← target.id 是字串
     })
     console.warn(target.id);
   }
