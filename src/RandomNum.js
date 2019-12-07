@@ -14,7 +14,7 @@ export default class RandomNum extends Component {
     })
   }
   componentDidMount() {
-    setInterval(this.numChange, Math.floor(Math.random()*499+500))
+    setInterval(this.numChange, Math.floor(Math.random()*501+500))
   }
   
 
