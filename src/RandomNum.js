@@ -4,17 +4,17 @@ export default class RandomNum extends Component {
   constructor(){
     super()
     this.state = {
-      num : 1
+      num : ''
     }
   }
   numChange = () => {
     this.setState({
-      num : Math.floor(Math.random()*9+1)
-      // time : Math.floor(Math.random()*499+500)
+      num : Math.floor(Math.random()*9+1),
+      // time : Math.floor(Math.random() * 501) + 500
     })
   }
   componentDidMount() {
-    setInterval(this.numChange, Math.floor(Math.random()*501+500))
+    setInterval(this.numChange, Math.floor(Math.random() * 501) + 500)
   }
   
 
