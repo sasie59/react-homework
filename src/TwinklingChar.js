@@ -10,6 +10,7 @@ export default class TwinklingChar extends Component {
     }
   }
   componentDidMount() {
+    // 建議這邊設 1000 ~ 5000 這樣亂數感會更重!
     setInterval(this.changeNum, Math.floor(Math.random() * 1001)+ 500 )
   }
   
@@ -31,6 +32,8 @@ export default class TwinklingChar extends Component {
     })
   }
   
+  // 其實你的 input value 可以寫成…
+  // <input value='' /> 反正你的 value 一直是空的
   render() {
     const {value,count,hideAndSeeNum} = this.state;
     return (
