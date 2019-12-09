@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import LengthInput from './LengthInput';
 
+/**
+ * 你本來的寫法
+ */
 const turnLength = (value, lengthType, returntype, id) => {
   // console.warn(returntype);
 
@@ -72,6 +75,29 @@ const turnLength = (value, lengthType, returntype, id) => {
   return lengthType === returntype ? value : value * base[returntype] 
 }
 
+
+/**
+ * 我提供另一種作法 你看看
+ */
+const proportion = {
+  'mm':       1,
+  'cm':      10,
+  'm':     1000,
+  'km': 1000000,
+}
+
+const unitConverter = (number, oriUnit, toUnit) => {
+  if(!oriUnit) return 0;
+/**
+ * 1000000 km -> 6
+ * 100000 m -> 5
+ * 1000 cm -> 3
+ * 1 -> 0
+ */
+  const mm = number * proportion[oriUnit];
+  return mm / proportion[toUnit];
+}
+
 export default class LengthConversion extends Component {
   constructor(){
     super()
@@ -92,10 +118,19 @@ export default class LengthConversion extends Component {
   }
   render() {
     const {value,lengthType,id} = this.state;
-    let mm = turnLength(value, lengthType,"mm",id );
-    let cm = turnLength(value, lengthType,"cm",id );
-    let m = turnLength(value, lengthType,"m",id );
-    let km = turnLength(value, lengthType,"km",id );
+    
+    const mm = unitConverter(value, lengthType, 'mm');
+    const cm = unitConverter(value, lengthType, 'cm');
+    const m = unitConverter(value, lengthType, 'm');
+    const km = unitConverter(value, lengthType, 'km');
+
+    /**
+     * 你本來的寫法
+     */
+    // let mm = turnLength(value, lengthType,"mm",id );
+    // let cm = turnLength(value, lengthType,"cm",id );
+    // let m = turnLength(value, lengthType,"m",id );
+    // let km = turnLength(value, lengthType,"km",id );
     return ( 
       <div>
         <h1>長度轉換</h1>
