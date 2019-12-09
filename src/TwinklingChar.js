@@ -9,15 +9,28 @@ export default class TwinklingChar extends Component {
       hideAndSeeNum : 'Q'
     }
   }
+  componentDidMount() {
+    setInterval(this.changeNum, Math.floor(Math.random() * 1001)+ 500 )
+  }
+  
   handleChange = ({target}) => {
     const {hideAndSeeNum,count} = this.state;
     // console.warn(hideAndSeeNum, target.value);
     const result = target.value.toUpperCase() === hideAndSeeNum ? 1 : -1;
     // console.warn(result);
     this.setState({
-      count : count + result
+      count : count + result,
+      hideAndSeeNum : '-'
     })
   }
+  changeNum = () => {
+    const {hideAndSeeNum} = this.state;
+    const num = hideAndSeeNum === 'Q' ? '-' : 'Q';
+    this.setState({
+      hideAndSeeNum : num
+    })
+  }
+  
   render() {
     const {value,count,hideAndSeeNum} = this.state;
     return (
