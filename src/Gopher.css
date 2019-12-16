@@ -1,7 +1,9 @@
-button {
-  font-size: 50px;
-  background-color: pink;
+.GopherButton {
+  width: 33%;
+  font-size: 30px;
+  border-radius: 0px;
+  background-color: transparent;
 }
-button:hover {
+.GopherButton:hover {
   background-color: lightyellow;
 }

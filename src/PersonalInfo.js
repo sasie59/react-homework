@@ -3,7 +3,6 @@ import React from 'react'
 export default function PersonalInfo(props) {
   return (
     <tr>
-    
       <td><img src={props.picture} alt=""/></td>
       <td>{props.name}</td>
       <td>{props.gender}</td>
