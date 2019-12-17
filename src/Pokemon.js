@@ -22,6 +22,17 @@ export default class Pokemon extends Component {
       return res.json()
     })
     .then(function(json) {
+      /**
+       * 你仔細悔亞下你的 json.results 有什麼資料
+       * 它應該有很多像是：
+       * {name: "bulbasaur", url: "https://pokeapi.co/api/v2/pokemon/1/"}
+       * {name: "ivysaur", url: "https://pokeapi.co/api/v2/pokemon/2/"}
+       * 這樣的資料，它會回傳名字 跟該 pokemon 的資訊url
+       * 然後這個url最後的數字代表它的 id
+       * 而你可以用  https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/[id].png
+       * 來取得該寶可夢的圖片
+       * 如果你不知道怎麼取圖片，那你可以退一步先做篩選名字就好。
+       */
       console.warn(json);
     })
     return (
