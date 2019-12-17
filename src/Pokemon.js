@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PokemonInfo from './PokemonInfo'
+import PokemonInfo from './PokemonInfo';
+
 
 export default class Pokemon extends Component {
   constructor(){
@@ -10,6 +11,35 @@ export default class Pokemon extends Component {
     }
   }
 
+  // componentDidMount() {
+  //   const data =
+  //   fetch('https://pokeapi.co/api/v2/pokemon/?limit=100')
+  //   .then(function(res) {
+  //     return res.json()
+  //   })
+  //   .then(function(json) {
+  //     this.setState({
+  //       pokemonList : data
+  //     })
+  //   })
+  // }
+  componentDidMount() {
+    fetch('https://pokeapi.co/api/v2/pokemon/?limit=100')                         
+      .then((res) => res.json())        
+      .then((pokemonList) => this.setState({ pokemonList })); 
+  }
+//   要sst存在只執行一次的地方 我想到的是cdm 但上面的寫法 我是參考網路上的寫的 但跟第七題的寫法有點不一樣
+//   fetch('https://randomuser.me/api/?results=25')
+//  .then(function(res) {
+//    return res.json()
+//  })
+//  .then((json) => {
+//    this.setState({
+//      personList: json.results
+//    });
+//  });
+  
+
   handleChange = ({target}) => {
     this.setState({
       value : target.value
@@ -17,11 +47,11 @@ export default class Pokemon extends Component {
   }
   
   render() {
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=100')
-    .then(function(res) {
-      return res.json()
-    })
-    .then(function(json) {
+    const {pokemonList} = this.state;
+    console.warn(pokemonList);
+    // 這樣算有抓成功了吧?
+    // const filterList = pokemonList.filter()
+    
       /**
        * 你仔細悔亞下你的 json.results 有什麼資料
        * 它應該有很多像是：
@@ -33,20 +63,18 @@ export default class Pokemon extends Component {
        * 來取得該寶可夢的圖片
        * 如果你不知道怎麼取圖片，那你可以退一步先做篩選名字就好。
        */
-      console.warn(json);
-    })
     return (
       <div>
         <h2>順利抓取 100 隻寶可夢的名字與圖片</h2>
         <h2>可以依名字篩選出寶可夢</h2>
         <span>keyword</span>
         <input type="text" value={this.state.value} onChange={this.handleChange}/>
-        {this.state.pokemonList.map(poke =>{
+        {/* {this.state.pokemonList.map(poke =>{
           return <PokemonInfo 
             name={poke.name}
             id={poke.index + 1}
           />
-        })}
+        })} */}
         
       </div>
     )
