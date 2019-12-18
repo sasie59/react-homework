@@ -26,7 +26,8 @@ export default class Pokemon extends Component {
   componentDidMount() {
     fetch('https://pokeapi.co/api/v2/pokemon/?limit=100')                         
       .then((res) => res.json())        
-      .then((pokemonList) => this.setState({ pokemonList })); 
+      .then((json) => 
+      this.setState({ pokemonList :json.results })); 
   }
 //   要sst存在只執行一次的地方 我想到的是cdm 但上面的寫法 我是參考網路上的寫的 但跟第七題的寫法有點不一樣
 //   fetch('https://randomuser.me/api/?results=25')
@@ -47,10 +48,13 @@ export default class Pokemon extends Component {
   }
   
   render() {
-    const {pokemonList} = this.state;
+    const {pokemonList, value} = this.state;
     console.warn(pokemonList);
     // 這樣算有抓成功了吧?
-    // const filterList = pokemonList.filter()
+    let filterList = pokemonList.filter(list =>
+      list.name.toLowerCase().indexOf(value.toLowerCase()) > 1
+    );
+    
     
       /**
        * 你仔細悔亞下你的 json.results 有什麼資料
@@ -69,6 +73,7 @@ export default class Pokemon extends Component {
         <h2>可以依名字篩選出寶可夢</h2>
         <span>keyword</span>
         <input type="text" value={this.state.value} onChange={this.handleChange}/>
+        <PokemonInfo list={filterList} />
         {/* {this.state.pokemonList.map(poke =>{
           return <PokemonInfo 
             name={poke.name}
