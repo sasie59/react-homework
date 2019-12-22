@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PokemonInfo from './PokemonInfo';
 
-const imgURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-
 export default class Pokemon extends Component {
   constructor(){
     super();
@@ -43,21 +41,13 @@ export default class Pokemon extends Component {
         keyword={value}
         onChange={this.handleChange}
       />
-      {filterList.map(poke =>{
-        return (
-          <React.Fragment key={poke.name}>
-            <PokemonInfo 
-              name={poke.name}
-              key={poke.url}
-              id={poke.index}
-            />
-            {/* 我要強調一下， slice(-2, -1) 這個方法不太好，你看一下你的圖片就知道了 */}
-            <img
-              src={`${imgURL}${poke.url.slice(-2, -1)}.png`}
-              key={value.index}
-              />
-          </React.Fragment>
-        )})}
+      {filterList.map((poke) =>
+          <PokemonInfo 
+            key={poke.name}
+            name={poke.name}
+            url={poke.url}
+          />
+      )}
       </div>
     )
   }

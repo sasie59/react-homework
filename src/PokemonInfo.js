@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+const imgURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
 export default function PokemonInfo(props) {
+  const ID = props.url.slice(34,-1);
   return (
     <div>
       <span>{props.name}</span>
-      <span>{props.id}</span>
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/[id].png" alt=""/>
-      {/* 先test圖片能否掛上去 先寫死的 */}
+      <img src={`${imgURL}${ID}.png`} alt=""/>
     </div>
   )
 }
