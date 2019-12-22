@@ -5,7 +5,7 @@ export default function PokemonInfo(props) {
     <div>
       <span>{props.name}</span>
       <span>{props.id}</span>
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt=""/>
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/[id].png" alt=""/>
       {/* 先test圖片能否掛上去 先寫死的 */}
     </div>
   )

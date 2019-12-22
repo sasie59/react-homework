@@ -66,7 +66,7 @@ export default class Pokemon extends Component {
     filterList = pokemonList.filter(list =>
       list.name.toLowerCase().indexOf(value.toLowerCase()) > -1
       );
-      // console.warn(pokemonList[0]);
+      console.warn(pokemonList[0]);
       return (
       <div>
         <h2>順利抓取 100 隻寶可夢的名字與圖片</h2>
@@ -78,11 +78,19 @@ export default class Pokemon extends Component {
               onChange={this.handleChange}
         />
         {filterList.map(poke =>{
+          <React.Fragment>
           return <PokemonInfo 
             name={poke.name}
             key={poke.url}
             id={poke.index}
           />
+          {+filterList[url].slice(-2, -1).map(value =>
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{value}.png"
+              alt=""
+              key={value.index}
+              />
+          </React.Fragment>)}
         })}
       </div>
     )
