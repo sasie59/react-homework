@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homework from './Pokemon';
+import Homework from './GuessNum';
 
 function App() {
   return (
