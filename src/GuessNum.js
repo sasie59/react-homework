@@ -1,38 +1,44 @@
 import React, { Component } from "react";
 
+// const bingo = () => {
+//   Math.floor(Math.random() * 1001 + 1);
+// };
 export default class GuessNum extends Component {
   constructor() {
     super();
     this.state = {
-      value : '',
+      bingoNum: Math.floor(Math.random() * 1001 + 1),
+      value: "",
       minValue: 1,
       maxValue: 1000,
-      bingoNum : Math.floor(Math.random() * 1001) + 1
     };
   }
-  handleChange = ({target}) => {
+  handleChange = ({ target }) => {
     this.setState({
-      value : target.value
-    })
-    console.warn(target.value);
-  }
+      value: target.value
+    });
+  };
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    const{minValue,maxValue,value} = this.state;
-    const newMin = Math.abs(value - minValue);
-    const newMax = Math.abs(value - maxValue);
-    const min = newMin < newMax ? value : minValue;
-    const max = newMax < newMin ? value : maxValue;
-    this.setState({
-      minValue : min,
-      maxValue : max,
-      value : ''
-    })
-    console.warn(value);
-    console.warn(newMin);
+  handleSubmit = event => {
     
-  }
+    event.preventDefault();
+    console.warn(this.state.bingoNum);
+    const { value, bingoNum, minValue, maxValue } = this.state;
+    if (bingoNum > value) {
+      this.setState({
+        minValue: value,
+        value: ''
+      });
+    } else if (value > bingoNum) {
+      this.setState({
+        maxValue: value,
+        value: ''
+      });
+    } else if(bingoNum === +value) {
+      alert('答對了')
+    }
+    console.warn(minValue, maxValue);
+  };
 
   render() {
     return (
@@ -41,7 +47,11 @@ export default class GuessNum extends Component {
           現在範圍 :{this.state.minValue} ~ {this.state.maxValue}
         </h1>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
           <button>submit</button>
         </form>
       </div>
