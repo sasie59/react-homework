@@ -1,16 +1,15 @@
 import React, { Component } from "react";
+import './GuessNum.css'
 
-// const bingo = () => {
-//   Math.floor(Math.random() * 1001 + 1);
-// };
 export default class GuessNum extends Component {
   constructor() {
     super();
     this.state = {
-      bingoNum: Math.floor(Math.random() * 1001 + 1),
+      bingoNum: Math.floor(Math.random() * 1001) + 1,
       value: "",
       minValue: 1,
       maxValue: 1000,
+      hideAndSee : !1
     };
   }
   handleChange = ({ target }) => {
@@ -20,25 +19,32 @@ export default class GuessNum extends Component {
   };
 
   handleSubmit = event => {
-    
     event.preventDefault();
     console.warn(this.state.bingoNum);
-    const { value, bingoNum, minValue, maxValue } = this.state;
+    const { value, bingoNum} = this.state;
     if (bingoNum > value) {
       this.setState({
-        minValue: value,
+        minValue: +value,
         value: ''
       });
     } else if (value > bingoNum) {
       this.setState({
-        maxValue: value,
+        maxValue: +value,
         value: ''
       });
     } else if(bingoNum === +value) {
-      alert('答對了')
+      this.setState({
+        hideAndSee : !0
+      })
     }
-    console.warn(minValue, maxValue);
   };
+
+  reBingoNum = () => {
+    this.setState({
+      bingoNum : Math.floor(Math.random() * 1001 )+ 1,
+      hideAndSee : !1
+    })
+  }
 
   render() {
     return (
@@ -53,6 +59,12 @@ export default class GuessNum extends Component {
             onChange={this.handleChange}
           />
           <button>submit</button>
+          <div className={this.state.hideAndSee ? 'see' : 'hide'}>
+            答對了!答案就是{this.state.bingoNum}
+            <button onClick={this.reBingoNum}>
+              重新一局
+            </button>
+          </div>
         </form>
       </div>
     );
