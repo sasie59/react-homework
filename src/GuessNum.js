@@ -42,9 +42,12 @@ export default class GuessNum extends Component {
   reBingoNum = () => {
     this.setState({
       bingoNum : Math.floor(Math.random() * 1001 )+ 1,
-      hideAndSee : !1
+      hideAndSee : !1,
+      minValue : 1,
+      maxValue : 1000
     })
   }
+  // 按下重新一局時 minValue跟maxValue不會變成1跟1000?
 
   render() {
     return (
