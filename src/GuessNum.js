@@ -8,52 +8,50 @@ export const makeRand = (min = MIN, max = MAX) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const resetData = () => {
+  return {
+    value: "",
+    minValue: MIN,
+    maxValue: MAX,
+    hideAndSee : false,
+    bingoNum: makeRand(MIN, MAX),
+  };
+}
+
 export default class GuessNum extends Component {
   constructor() {
     super();
-    this.state = {
-      bingoNum: makeRand(MIN, MAX),
-      value: "",
-      minValue: MIN,
-      maxValue: MAX,
-      hideAndSee : false
-    };
+    this.state = resetData();
   }
-  handleChange = ({ target }) => {
-    this.setState({
-      value: target.value
-    });
+
+  handleChange = ({ target: { value } }) => {
+    this.setState({ value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    console.warn(this.state.bingoNum);
-    const { value, bingoNum } = this.state;
-    if (bingoNum > value) {
-      this.setState({
-        minValue: +value,
-        value: ''
-      });
-    } else if (value > bingoNum) {
-      this.setState({
-        maxValue: +value,
-        value: ''
-      });
-    } else if(bingoNum === +value) {
-      this.setState({
-        hideAndSee : true,
-        value: ''
-      })
+    const { bingoNum } = this.state;
+    const value = +this.state.value;
+
+    let updateState = {
+      value: ''
     }
+
+    if(bingoNum > value) {
+      updateState.minValue = value;
+    } else if (bingoNum < value) {
+      updateState.maxValue = value;
+    } else {
+      updateState.hideAndSee = true;
+    }
+
+    // 看一下 updateState是什麼
+    console.warn(updateState);
+    this.setState(updateState);
   };
 
   reBingoNum = () => {
-    this.setState({
-      bingoNum : makeRand(MIN, MAX),
-      hideAndSee : false,
-      minValue : MIN,
-      maxValue : MAX
-    })
+    this.setState(resetData());
   }
   // 按下重新一局時 minValue跟maxValue不會變成1跟1000?
 
