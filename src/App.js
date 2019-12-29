@@ -1,11 +1,13 @@
 import React from 'react';
+import add from './add';
 import './App.css';
-import Homework from './GuessNum';
+// import Homework from './GuessNum';
 
 function App() {
   return (
     <div>
-      <Homework />
+      <h1>{add(1, 2)}</h1>
+      {/* <Homework /> */}
     </div>
   );
 }
