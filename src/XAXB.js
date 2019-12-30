@@ -1,4 +1,15 @@
 import React, { Component } from "react";
+let num = "";
+for (let i = 0; i < 4; i++) {
+  num+=Math.floor(Math.random()*10)
+}
+console.warn(num);
+
+
+
+const checkAB =(userInput, answer) => {
+  
+}
 
 export default class XAXB extends Component {
   constructor() {
