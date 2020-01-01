@@ -1,5 +1,5 @@
 import React from 'react';
-import add from './add';
+// import add from './add';
 import './App.css';
 import Homework from './XAXB';
 

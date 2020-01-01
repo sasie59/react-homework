@@ -1,35 +1,45 @@
 import React, { Component } from "react";
-let num = "";
-for (let i = 0; i < 4; i++) {
-  num+=Math.floor(Math.random()*10)
-}
-console.warn(num);
 
-
-
-const checkAB =(userInput, answer) => {
-  
-}
+const arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+arr.sort(() => Math.random() - 0.5);
+const randomFour = arr.slice(0, 4);
+let bCount = 0;
+let aCount = 0;
+const checkB = (userInput, answer) => {
+  let allB = userInput.sort().forEach() === answer.sort().forEach()
+      ? bCount + 1
+      : bCount;
+  return allB + "B";
+};
 
 export default class XAXB extends Component {
   constructor() {
     super();
     this.state = {
+      bingoNum: randomFour,
       value: "",
       xaxbList: []
     };
   }
+
   handleChange = ({ target }) => {
     this.setState({
       value: target.value
     });
   };
-  handleSubmit = (event) => {
+
+  handleSubmit = event => {
     event.preventDefault();
+    const { value } = this.state;
+    console.warn(value.length);
+    // 印不出長度
+    if (value.length !== 4) return alert("格式不正確");
   };
+
   render() {
-    const { value, xaxbList } = this.state;
-    
+    const { value, xaxbList, bingoNum } = this.state;
+    console.warn(bingoNum);
+    console.warn(value.length);
     return (
       <div>
         <h1>猜數字</h1>
