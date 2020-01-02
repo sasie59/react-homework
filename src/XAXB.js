@@ -5,13 +5,21 @@ arr.sort(() => Math.random() - 0.5);
 const randomFour = arr.slice(0, 4);
 let bCount = 0;
 let aCount = 0;
-const checkB = (userInput, answer) => {
-  let allB = userInput.sort().forEach() === answer.sort().forEach()
-      ? bCount + 1
-      : bCount;
-  return allB + "B";
+const checkAB = (userInput, answer) => {
+  for (let i = 0; i < 4; i++) {
+    if(userInput[i] === answer[i]) aCount+=1
+    
+  }
+  return aCount + "A" + bCount + "B";
 };
 
+const valueCheck =(value) => {
+  for (let i = 0; i < 4; i++) {
+    if(value[i] === value[i + 1]) {
+      return true
+    }
+  }
+} 
 export default class XAXB extends Component {
   constructor() {
     super();
@@ -27,19 +35,21 @@ export default class XAXB extends Component {
       value: target.value
     });
   };
-
   handleSubmit = event => {
     event.preventDefault();
-    const { value } = this.state;
-    console.warn(value.length);
-    // 印不出長度
-    if (value.length !== 4) return alert("格式不正確");
+    const { value, xaxbList } = this.state;
+    if (value.length !== 4 || valueCheck(value)) return alert("格式不正確");
+    this.setState({
+      xaxbList : [value, ...xaxbList],
+      value : ''
+    })
   };
 
   render() {
     const { value, xaxbList, bingoNum } = this.state;
     console.warn(bingoNum);
-    console.warn(value.length);
+    const itemList = xaxbList.map((item,index) =>
+      <li key={index}>{item}:{}</li>)
     return (
       <div>
         <h1>猜數字</h1>
@@ -50,10 +60,13 @@ export default class XAXB extends Component {
           <li>會累積過去猜過的答案與結果</li>
           <li>如果猜到 4A 則遊戲結束，並可以另開新局。</li>
         </ol>
-        <form onSubmit={this.handSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input type="text" value={value} onChange={this.handleChange} />
           <button>猜!</button>
         </form>
+        <ol>
+          {itemList}
+        </ol>
       </div>
     );
   }
