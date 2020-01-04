@@ -3,23 +3,27 @@ import React, { Component } from "react";
 const arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 arr.sort(() => Math.random() - 0.5);
 const randomFour = arr.slice(0, 4);
-let bCount = 0;
-let aCount = 0;
+
 const checkAB = (userInput, answer) => {
-  for (let i = 0; i < 4; i++) {
-    if(userInput[i] === answer[i]) aCount+=1
-    
+  let aCount = 0;
+  let bCount = 0;
+  for (let i = 0,j = i; i < 4; i++) {
+    if (userInput[i] === answer[i]) aCount += 1;
+    else if(userInput[i] === answer[j] || userInput[i] === answer[j+1] || userInput[i] === answer[j+2] || userInput[i] === answer[j+3]) bCount +=1
   }
+  console.warn(aCount);
+  console.warn(bCount);
+
   return aCount + "A" + bCount + "B";
 };
 
-const valueCheck =(value) => {
+const valueCheck = value => {
   for (let i = 0; i < 4; i++) {
-    if(value[i] === value[i + 1]) {
-      return true
+    if (value[i] === value[i + 1]) {
+      return true;
     }
   }
-} 
+};
 export default class XAXB extends Component {
   constructor() {
     super();
@@ -37,19 +41,30 @@ export default class XAXB extends Component {
   };
   handleSubmit = event => {
     event.preventDefault();
-    const { value, xaxbList } = this.state;
-    if (value.length !== 4 || valueCheck(value)) return alert("格式不正確");
+    const { value, xaxbList, bingoNum } = this.state;
+    // console.warn(bingoNum);
+    // console.warn(bingoNum.sort());
+    // console.warn(value);
+    // console.warn(value.split('').sort());
+    if (value.length !== 4 || valueCheck(value.split("").sort()))
+      return alert("格式不正確");
     this.setState({
-      xaxbList : [value, ...xaxbList],
-      value : ''
-    })
+      xaxbList: [`${value}: ${checkAB(value, bingoNum)}`, ...xaxbList],
+      value: ""
+    });
   };
+
+  replay = () => {
+    this.setState({
+      bingoNum : arr.sort(() => Math.random() - 0.5).slice(0, 4),
+      xaxbList : []
+    })
+  }
 
   render() {
     const { value, xaxbList, bingoNum } = this.state;
     console.warn(bingoNum);
-    const itemList = xaxbList.map((item,index) =>
-      <li key={index}>{item}:{}</li>)
+    const itemList = xaxbList.map((item, index) => <li key={index}>{item}</li>);
     return (
       <div>
         <h1>猜數字</h1>
@@ -64,9 +79,10 @@ export default class XAXB extends Component {
           <input type="text" value={value} onChange={this.handleChange} />
           <button>猜!</button>
         </form>
-        <ol>
-          {itemList}
-        </ol>
+        <div>bingo ! game over ， replay?
+          <button onClick={this.replay}>好</button>
+        </div>
+        <ol>{itemList}</ol>
       </div>
     );
   }
