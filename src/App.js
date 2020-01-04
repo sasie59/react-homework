@@ -1,7 +1,7 @@
 import React from 'react';
 // import add from './add';
 import './App.css';
-import Homework from './XAXB';
+import Homework from './XAXB2';
 
 function App() {
   return (
