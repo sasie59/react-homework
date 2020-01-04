@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./GuessNum.css";
 
 const arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 arr.sort(() => Math.random() - 0.5);
@@ -7,9 +8,15 @@ const randomFour = arr.slice(0, 4);
 const checkAB = (userInput, answer) => {
   let aCount = 0;
   let bCount = 0;
-  for (let i = 0,j = i; i < 4; i++) {
+  for (let i = 0, j = i; i < 4; i++) {
     if (userInput[i] === answer[i]) aCount += 1;
-    else if(userInput[i] === answer[j] || userInput[i] === answer[j+1] || userInput[i] === answer[j+2] || userInput[i] === answer[j+3]) bCount +=1
+    else if (
+      userInput[i] === answer[j] ||
+      userInput[i] === answer[j + 1] ||
+      userInput[i] === answer[j + 2] ||
+      userInput[i] === answer[j + 3]
+    )
+      bCount += 1;
   }
   console.warn(aCount);
   console.warn(bCount);
@@ -30,7 +37,8 @@ export default class XAXB extends Component {
     this.state = {
       bingoNum: randomFour,
       value: "",
-      xaxbList: []
+      xaxbList: [],
+      hideAndSee: false
     };
   }
 
@@ -52,17 +60,22 @@ export default class XAXB extends Component {
       xaxbList: [`${value}: ${checkAB(value, bingoNum)}`, ...xaxbList],
       value: ""
     });
+    if (checkAB(value, bingoNum) === "4A0B")
+      this.setState({
+        hideAndSee: true
+      });
   };
 
   replay = () => {
     this.setState({
-      bingoNum : arr.sort(() => Math.random() - 0.5).slice(0, 4),
-      xaxbList : []
-    })
-  }
+      bingoNum: arr.sort(() => Math.random() - 0.5).slice(0, 4),
+      xaxbList: [],
+      hideAndSee: false
+    });
+  };
 
   render() {
-    const { value, xaxbList, bingoNum } = this.state;
+    const { value, xaxbList, bingoNum, hideAndSee } = this.state;
     console.warn(bingoNum);
     const itemList = xaxbList.map((item, index) => <li key={index}>{item}</li>);
     return (
@@ -75,12 +88,17 @@ export default class XAXB extends Component {
           <li>會累積過去猜過的答案與結果</li>
           <li>如果猜到 4A 則遊戲結束，並可以另開新局。</li>
         </ol>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={value} onChange={this.handleChange} />
-          <button>猜!</button>
+        <form onSubmit={this.handleSubmit} >
+          <input
+            type="text"
+            value={value}
+            disabled={hideAndSee}
+            onChange={this.handleChange} />
+          <button disabled={hideAndSee}>猜!</button>
         </form>
-        <div>bingo ! game over ， replay?
-          <button onClick={this.replay}>好</button>
+        <div className={hideAndSee ? "see" : "hide"}>
+          bingo ! game over ， replay?
+          <button onClick={this.replay}>Yes</button>
         </div>
         <ol>{itemList}</ol>
       </div>
