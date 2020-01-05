@@ -8,19 +8,16 @@ const randomFour = arr.slice(0, 4);
 const checkAB = (userInput, answer) => {
   let aCount = 0;
   let bCount = 0;
-  for (let i = 0, j = i; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     if (userInput[i] === answer[i]) aCount += 1;
     else if (
-      userInput[i] === answer[j] ||
-      userInput[i] === answer[j + 1] ||
-      userInput[i] === answer[j + 2] ||
-      userInput[i] === answer[j + 3]
+      userInput[i] === answer[0] ||
+      userInput[i] === answer[1] ||
+      userInput[i] === answer[2] ||
+      userInput[i] === answer[3]
     )
       bCount += 1;
   }
-  console.warn(aCount);
-  console.warn(bCount);
-
   return aCount + "A" + bCount + "B";
 };
 
@@ -50,10 +47,6 @@ export default class XAXB extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { value, xaxbList, bingoNum } = this.state;
-    // console.warn(bingoNum);
-    // console.warn(bingoNum.sort());
-    // console.warn(value);
-    // console.warn(value.split('').sort());
     if (value.length !== 4 || valueCheck(value.split("").sort()))
       return alert("格式不正確");
     this.setState({
