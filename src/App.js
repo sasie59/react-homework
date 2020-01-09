@@ -1,7 +1,7 @@
 import React from 'react';
 // import add from './add';
 import './App.css';
-import Homework from './XAXB2';
+import Homework from './SunMoon';
 
 function App() {
   return (
