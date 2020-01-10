@@ -1,5 +1,24 @@
 .center {
-  position: absolute;
-  left: 45%;
-  top: 25%;
+  position: relative;
+  left: 450px;
+  top: 200px;
 }
+.moveDown {
+  transform: translateY(450px);
+  transition: 0.5s;
+}
+.moveUp {
+  transform: translateY(-450px);
+  transition: 0.5s;
+}
+.morn {
+  background-color: #fff;
+}
+
+.night {
+  background-color: #000;
+}
+
+/* body {
+  background-color: #000;
+} */
