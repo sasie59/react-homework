@@ -1,22 +1,35 @@
-.center {
-  position: relative;
-  left: 450px;
-  top: 200px;
+.img {
+  position: absolute;
+  left: 50%;
+  transition: top .5s, transform .5s;
 }
-.moveDown {
-  transform: translateY(450px);
-  transition: 0.5s;
+
+.middle {
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-.moveUp {
-  transform: translateY(-450px);
-  transition: 0.5s;
+
+.top {
+  top: 0%;
+  transform: translate(-50%, -100%);
 }
+
+.bottom {
+  top : 100%;
+  transform: translate(-50%, 0);
+}
+
 .morn {
-  background-color: #fff;
+  background-color: #62c2ee;
 }
 
 .night {
   background-color: #000;
+}
+
+.sky {
+  height: 100vh;
+  transition: background-color .5s;
 }
 
 /* body {
