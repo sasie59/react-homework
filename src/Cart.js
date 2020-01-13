@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './Cart.css';
+import CartFruit from './CartFruit.js'
 
 const fruitList = [
-  {product : '橘子', price: 20},
-  {product : '蓮霧', price: 30},
-  {product : '哈蜜瓜', price: 40},
-  {product : '蘋果', price: 50},
-  {product : '葡萄柚', price: 15},
+  {name: '橘子', price: 20},
+  {name: '蓮霧', price: 30},
+  {name: '哈蜜瓜', price: 40},
+  {name: '蘋果', price: 50},
+  {name: '葡萄柚', price: 15},
 ]
 
 export default class Cart extends Component {
@@ -18,12 +19,12 @@ export default class Cart extends Component {
   }
   render() {
     console.warn(fruitList[0]);
+
     return (
       <div>
-        <form className='box'>
-          <input type="number" placeholder='數量'/>
-          <button>加入購物車</button>
-        </form>  
+        {fruitList.map(fruit => (
+        <CartFruit  key={fruit.name} name={fruit.name} price={fruit.price}/>
+        ))}
       </div>
     )
   }
