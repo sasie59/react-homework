@@ -17,32 +17,37 @@ export default class Cart extends Component {
       value : '',
       isJoin : false,
       sum : 0,
+      count : 0
     }
   }
 
   handleSubmit = (event) => {
-    const money = fruitList.price * this.state.count
     event.preventdefault()
+    const money = fruitList.price * this.state.count
     this.setState ({
       value : '',
       isJoin : true,
-      [event.target.count] : +event.target.value + this.state.count,
-      sum : this.state.sum + money
+      sum : this.state.sum + money,
+      [event.target.count] : event.target.value + this.state.count,
+      // count : this.state.count + event.target.value
+      // 我覺得我count的寫法怪怪的
     })
+    console.warn(this.state.count);
+    // 畫面一閃而過 出現錯誤 但也印不count
   }
 
   handleChange = ({target}) => {
     this.setState ({
-      [target.name] : +target.value,
+      [target.name] : target.value,
     })
+    console.warn([target.name], target.value);
+    // [target.name]印不出東西來
   }
   
   render() {
     const {count} = this.state;
-    const money = fruitList.price * this.state.count
     const itemList = fruitList.map(fruit =>(
-      <li key={fruit.name}> {fruit.name} * {count} = {money}</li>
-      // 我這邊的count有問題 so出現nan
+      <li key={fruit.name}> {fruit.name} * {count} = {fruit.price * count}</li>
     ))
     return (
       <div>
