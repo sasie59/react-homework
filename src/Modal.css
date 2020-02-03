@@ -4,3 +4,14 @@
   color: white;
   border-radius: 10%;
 }
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #777;
+  width: 50%;
+}
+body {
+  background-color: #777;
+}
