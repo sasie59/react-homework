@@ -1,6 +1,59 @@
+body {
+  text-align: center;
+}
 .btn {
   background-color: blue;
+  width: 100px;
   color: white;
   padding: 15px;
   font-size: 20px;
+}
+
+.tooltip {
+  position: relative;
+}
+.tooltip .right {
+  visibility: hidden;
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  left: 105%;
+}
+.tooltip .left {
+  visibility: hidden;
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  right: 105%;
+}
+.tooltip .top {
+  visibility: hidden;
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  bottom: 105%;
+}
+.tooltip .bottom {
+  visibility: hidden;
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  top: 105%;
+}
+
+.tooltip:hover .right {
+  visibility: visible;
+}
+.tooltip:hover .left {
+  visibility: visible;
+}
+.tooltip:hover .top {
+  visibility: visible;
+}
+.tooltip:hover .bottom {
+  visibility: visible;
 }

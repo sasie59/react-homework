@@ -4,7 +4,7 @@ import './Tooltip.css'
 export default function Tooltipcpm(props) {
   return (
     <div>
-      <button className='btn'>{props.children}</button>
+      <button className='btn tooltip'>{props.children}</button>
     </div>
   )
 }
