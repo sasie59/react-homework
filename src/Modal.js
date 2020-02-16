@@ -11,7 +11,6 @@ export default class Modal extends Component {
   }
 
   handleClick = () => {
-    // modal跟alert的差別?
     this.setState({
       isShow: !this.state.isShow
     })
@@ -22,9 +21,9 @@ export default class Modal extends Component {
       return <button onClick={this.handleClick} className='button' key={index}>{item}</button>
     })
     return (
-      <div>
+      <div className={this.state.isShow ?'gray':'white'}>
         {buttonArr}
-        {this.state.isShow && <div className='modal-content'>
+        {this.state.isShow && <div className='modal-animation'>
           <ModalCpm>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!</ModalCpm>
         </div>}
       </div>

@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './Carousel.css';
 
 export default function CarouselCpm(props) {
   return (
-    <div>
-      
+    <div className='carousel'>
+      {props.children}
     </div>
   )
 }
