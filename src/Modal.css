@@ -42,6 +42,12 @@ body {
   left: 37%;
 }
 
+/* 如果你想要加漸變動畫，應先定義動畫內容 */
+@keyframes opacityAni {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .modal-animation {
   position: absolute;
   background-color: #fff;
@@ -52,4 +58,9 @@ body {
   width: 300px;
   transition: .5s;
   transform: translate(115%, 10%);
+
+  /* 然後在這邊去套用 */
+  animation-name: opacityAni; /* 套用動畫名 */
+  animation-duration: .5s;    /* 動畫維持秒數 */
+  animation-fill-mode: forwards; /* 動畫結束後動作 */
 }
