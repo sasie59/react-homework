@@ -1,11 +1,11 @@
 import React from 'react';
 import  './Modal.css';
 
-export default function Modal1(props) {
+export default function ModalCpm(props) {
   return (
     <div>
       {props.children}<br/>
-      <button>關閉</button>
+      <button onClick={props.onClick}>關閉</button>
     </div>
   )
 }
