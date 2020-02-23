@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import ModalCpm from './ModalCpm'
 import  './Modal.css';
 
+const modalProps = [
+  {},
+  {isTop: true},
+  {header: "My Header"},
+  {isTop: true, isAnimation: true},
+  {isAnimation: true},
+];
+
 export default class Modal extends Component {
   constructor(){
     super();
@@ -10,30 +18,26 @@ export default class Modal extends Component {
     }
   }
 
-  handleClick = () => {
+  handleClick = index => {
     this.setState({
-      isShow: !this.state.isShow
-    })
+      isShow: !this.state.isShow,
+      nowProps: modalProps[index],
+    });
   }
 
   render() {
-    const buttonArr = ['modal', 'top', 'header', 'top + animation'].map((item, index) => {
-      return <button onClick={this.handleClick} className='button' key={index}>{item}</button>
+    
+    const buttonArr = ['modal', 'top', 'header', 'top + animation', 'animation'].map((item, index) => {
+      return <button onClick={this.handleClick.bind(this, index)} className='button' key={index}>{item}</button>
     })
     return (
-      <div className={this.state.isShow ?'gray':'white'}>
+      <div>
         {buttonArr}
         {this.state.isShow && <div>
           <ModalCpm
-            isModal={true}
-            isTop={true}
-            isAnimation={true}
-            header={'header'}
+            {...this.state.nowProps}
             onClick={this.handleClick}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!</ModalCpm>
         </div>}
-        {/* <ModalCpm header="我是標頭" />
-        <ModalCpm isTop={true} />
-        <ModalCpm isTop={true} isAnimation={true} /> */}
       </div>
     )
   }

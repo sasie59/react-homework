@@ -2,13 +2,22 @@ body {
   text-align: center;
 }
 
-.white {
+/* .white {
   background-color: #fff;
 }
 
 .gray {
   height: 100vh;
   background-color: #777;
+} */
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, .7);
 }
 
 .button {
@@ -19,15 +28,52 @@ body {
 }
 
 .modal-content {
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  padding: 15px;
+  border-radius: 3%;
   position: absolute;
   background-color: #fff;
-  margin: auto;
-  padding: 15px;
   border: 1px solid #777;
-  border-radius: 3%;
-  width: 300px;
-  top: 45%;
-  left: 37%;
+  transform: translate(-50%, -50%);
+}
+
+.top {
+  top: 20px;
+  transform: translate(-50%, 0);
+}
+
+@keyframes fromOutSideToScreen {
+  from {
+    top: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    top: 20;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.animation {
+  animation-name: fromOutSideToScreen;
+  animation-duration: .3s;
+}
+
+@keyframes fromOutSideToScreenTop {
+  from {
+    top: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    top: 20;
+    transform: translate(-50%, 0);
+  }
+}
+
+.top.animation {
+  animation-name: fromOutSideToScreenTop;
+  animation-duration: .3s;
 }
 
 .modal-top {

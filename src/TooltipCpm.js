@@ -3,8 +3,11 @@ import './Tooltip.css'
 
 export default function Tooltipcpm(props) {
   return (
-    <div>
-      <button className='btn tooltip'>{props.children}</button>
-    </div>
+    <span className='tooltip-wrapper'>
+      {props.children}
+      <div className={`tooltip ${props.at}`}>
+        {props.text}
+      </div>
+    </span>
   )
 }

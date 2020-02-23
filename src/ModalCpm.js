@@ -2,12 +2,28 @@ import React from 'react';
 import  './Modal.css';
 
 export default function ModalCpm(props) {
-  // props.isTop ?
+
+  const handleClick = (e) => {
+    if(
+      e.target === document.getElementById('modal-bg') ||
+      e.target === document.getElementById('button')
+    ) {
+      props.onClick();
+    }
+    
+  }
+  
+  let modalClass = "modal-content";
+  if(props.isTop) modalClass += " top";
+  if(props.isAnimation) modalClass += " animation";
+
   return (
-    <div className={props.isModal? 'modal-content' : ''}>
-      {props.header && <h2>{props.header}</h2>}
-      {props.children}<br/>
-      <button onClick={props.onClick}>關閉</button>
+    <div className="modal-bg" onClick={handleClick} id="modal-bg">
+      <div className={modalClass}>
+        {props.header && <h2>{props.header}</h2>}
+        {props.children}<br/>
+        <button id="button" onClick={handleClick}>關閉</button>
+      </div>
     </div>
   )
 }

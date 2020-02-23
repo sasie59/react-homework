@@ -1,7 +1,7 @@
 import React from 'react';
 // import add from './add';
 import './App.css';
-import Homework from './Modal';
+import Homework from './Tooltip';
 
 function App() {
   return (
