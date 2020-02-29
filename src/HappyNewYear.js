@@ -1,6 +1,6 @@
 import React from 'react';
 
-const date20200101 = +new Date('2020/01/01 00:00:00');
+const date20210101 = +new Date('2021/01/01 00:00:00');
 
 export default class HappyNewYear extends React.Component {
   constructor() {
@@ -19,7 +19,7 @@ export default class HappyNewYear extends React.Component {
     const { date } = this.state
     this.setState({
       date : +new Date(),
-      countDown : Math.floor((date20200101 - date) / 1000),
+      countDown : Math.floor((date20210101 - date) / 1000),
     });
   }
   componentDidMount() {
@@ -45,7 +45,7 @@ export default class HappyNewYear extends React.Component {
      */
     return (
       <div>
-        <h2>離2020跨年還有{day}天{hour}時{min}分{sec}秒: </h2>
+        <h2>離2021跨年還有{day}天{hour}時{min}分{sec}秒: </h2>
       </div>
     ) 
   }
