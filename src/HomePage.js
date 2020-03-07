@@ -5,8 +5,9 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <h1>HomePage</h1>
-        <Link to='/about'> go about </Link>
+        <h2>use react router</h2>
+        <Link to="/ReduxPage">ReduxPage</Link><br/>
+        <Link to="/HW1Counter">HW1Counter</Link><br/>
       </div>
     )
   }
