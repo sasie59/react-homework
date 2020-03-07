@@ -23,13 +23,16 @@ export default class Carousel extends Component {
       <div>
         <CarouselCpm time={1500}>
           <div style={{
-            'backgroundColor': 'red'
+            'backgroundColor': 'red',
+            'height': '100%',
           }}>1</div>
           <div style={{
-            'backgroundColor': 'green'
+            'backgroundColor': 'green',
+            'height': '100%',
           }}>2</div>
           <div style={{
-            'backgroundColor': 'blue'
+            'backgroundColor': 'blue',
+            'height': '100%',
           }}>3</div>
         </CarouselCpm>
       </div>

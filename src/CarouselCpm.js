@@ -24,7 +24,6 @@
 //       // console.warn(itemList);
 //     }, 1500);
 //   }
-  
 
 //   render() {
 //     return (
@@ -42,41 +41,38 @@
 //     );
 //   }
 // }
-import React, { Component } from 'react'
-import './Carousel.css'
+import React, { Component } from "react";
+import "./Carousel.css";
 export default class CarouselCpm extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       itemList: props.children
-    }
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     setInterval(() => {
       setTimeout(() => {
         const { itemList } = this.state;
         this.setState({
-          itemList: itemList.slice(1).concat(itemList[0])
+          itemList: itemList.slice(1).concat(itemList[0]),
+          isMoving: false
         });
-      },500);
+      }, 500);
+      this.setState({
+        isMoving: true
+      });
     }, 1500);
   }
-  
+
   render() {
-    const {itemList} = this.state;
+    const { itemList, isMoving } = this.state;
     return (
-      <div className='carousel'>
-        <div className='item'>
-          <div className='hide'>
-            {itemList[0]}
-          </div>
-          <div className='show'>
-            {itemList[1]}
-          </div>
-        </div>
+      <div className="carousel">
+        <div className={`item ${isMoving ? "hide " : ""}`}>{itemList[0]}</div>
+        <div className={`item ${isMoving ? "show " : ""}`}>{itemList[1]}</div>
       </div>
-    )
+    );
   }
 }
-
