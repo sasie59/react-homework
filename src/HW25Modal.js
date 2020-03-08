@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ModalCpm from './HW25ModalCpm'
-import  './Modal.css';
+import HW25ModalCpm from './HW25ModalCpm'
+import  './HW25Modal.css';
 
 const modalProps = [
   {},
@@ -36,7 +36,7 @@ export default class HW25Modal extends Component {
         {this.state.isShow && <div>
           <HW25ModalCpm
             {...this.state.nowProps}
-            onClick={this.handleClick}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!</ModalCpm>
+            onClick={this.handleClick}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!</HW25ModalCpm>
         </div>}
       </div>
     )

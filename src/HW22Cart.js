@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Cart.css';
-import CartFruit from './HW22CartFruit.js/index.js'
+import './HW22Cart.css';
+import HW22CartFruit from './HW22CartFruit'
 
 const fruitObj = {
   orange:     {name: '橘子',   price: 20},
@@ -76,7 +76,7 @@ export default class HW22Cart extends Component {
       <div>
 
         {Object.keys(fruitObj).map((fruitName) => (
-        <CartFruit
+        <HW22CartFruit
           count={this.state.fruitCount}
           onSubmit={this.handleSubmit}
           key={fruitObj[fruitName].name}

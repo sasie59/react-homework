@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TooltipCpm from './HW26TooltipCpm'
-import './Tooltip.css'
+import './HW26Tooltip.css'
 
 export default class HW26Tooltip extends Component {
   constructor(){

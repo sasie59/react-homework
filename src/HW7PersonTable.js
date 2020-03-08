@@ -1,5 +1,5 @@
 import React from 'react'
-import PersonalInfo from './PersonalInfo'
+import HW7PersonalInfo from './HW7PersonalInfo'
 
 export default class HW7PersonTable extends React.Component {
   constructor(){
@@ -45,7 +45,7 @@ export default class HW7PersonTable extends React.Component {
           </thead>
           <tbody>
             {this.state.personList.map(person =>{
-              return <PersonalInfo
+              return <HW7PersonalInfo
                 key={person.login.uuid}
                 picture={person.picture.thumbnail}
                 name={person.name.last}

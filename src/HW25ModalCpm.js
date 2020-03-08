@@ -29,14 +29,14 @@ export default function HW25ModalCpm(props) {
 }
 
 
-function AComp() {
-  let value = 8;
-  return (
-    <div>
-      <CComp value={value} />
-    </div>
-  );
-}
+// function AComp() {
+//   let value = 8;
+//   return (
+//     <div>
+//       <CComp value={value} />
+//     </div>
+//   );
+// }
 
 // function BComp(props) {
 //   return (
@@ -44,8 +44,8 @@ function AComp() {
 //   );
 // }
 
-function CComp(props) {
-  return (
-    <div>{props.value + 3}</div>
-  );
-}
+// function CComp(props) {
+//   return (
+//     <div>{props.value + 3}</div>
+//   );
+// }

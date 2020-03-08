@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Gopher.css';
+import './HW19Gopher.css';
 
-export default class GopherButton extends Component {
+export default class HW19GopherButton extends Component {
   constructor(){
     super();
     this.state = {

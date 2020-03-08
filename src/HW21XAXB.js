@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./GuessNum.css";
+import './HW20GuessNum.css';
 
 const arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 arr.sort(() => Math.random() - 0.5);
@@ -28,7 +28,7 @@ const valueCheck = value => {
     }
   }
 };
-export default class HW21XAXB extends Component {
+export default class HW21XaXb extends Component {
   constructor() {
     super();
     this.state = {

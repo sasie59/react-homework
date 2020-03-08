@@ -1,5 +1,5 @@
 import React from 'react'
-import './Tooltip.css'
+import './HW26Tooltip.css'
 
 export default function HW26Tooltipcpm(props) {
   return (
