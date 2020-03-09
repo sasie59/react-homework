@@ -31,6 +31,7 @@ import HW24Lottery from './HW24Lottery';
 import HW25Modal from './HW25Modal';
 import HW26Tooltip from './HW26Tooltip';
 import HW27Carousel from './HW27Carousel';
+import Redux from './Redux';
 
 function App() {
   return (
@@ -63,7 +64,8 @@ function App() {
         <Route path='/HW25Modal'><HW25Modal /></Route>
         <Route path='/HW26Tooltip'><HW26Tooltip /></Route>
         <Route path='/HW27Carousel'><HW27Carousel /></Route>
-        <Route path='/ReduxPage'><ReduxPage /></Route>
+        {/* <Route path='/ReduxPage'><ReduxPage /></Route> */}
+        <Route path='/Redux'><Redux /></Route>
         <Route path='/'><HomePage /></Route>
       </Switch>
     </BrowserRouter>
