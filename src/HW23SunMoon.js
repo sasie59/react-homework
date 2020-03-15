@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import './HW23SunMoon.css'
+import './HW23SunMoon.css';
 
 export default class HW23SunMoon extends Component {
   constructor (){
     super ();
     this.state = {
       isMorning : true,
-    }
+    };
   }
 
   handleClick = () => {
     this.setState({
       isMorning : !this.state.isMorning
-    })
+    });
   }
 
   render() {
@@ -25,6 +25,6 @@ export default class HW23SunMoon extends Component {
         <img className={'img ' + (isMorning ? 'middle' : 'top')} src="https://img.icons8.com/cotton/256/000000/sun--v1.png" alt="sum"/>
         <img className={'img ' + (isMorning ? 'bottom' : 'middle')} src="https://img.icons8.com/cotton/256/000000/moon-satellite.png" alt="moon"/>
       </div>
-    )
+    );
   }
 }

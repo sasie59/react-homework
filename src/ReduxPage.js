@@ -29,9 +29,10 @@ let store = createStore(counter);
 store.subscribe(() => {
   console.warn("目前的狀態", store.getState());
 });
-
+/*
 console.warn(store.getState());
 
 store.dispatch({ type: 'INCREMENT' });
 store.dispatch({ type: 'DECREMENT' });
 store.dispatch({ type: 'INCREMENT' });
+*/

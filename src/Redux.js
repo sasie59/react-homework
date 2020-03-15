@@ -7,7 +7,7 @@ export default class Redux extends Component {
       <div>
         Redux
       </div>
-    )
+    ); 
   }
 }
 
@@ -30,6 +30,7 @@ store.subscribe(() => {
   console.warn('目前的總和', store.getState());
 });
 
+/*
 console.warn(store.getState());
 
 store.dispatch({ type: 'add' });
@@ -39,4 +40,4 @@ store.dispatch({ type: 'pow' });
 store.dispatch({ type: 'add' });
 store.dispatch({ type: 'pow' });
 
-
+*/

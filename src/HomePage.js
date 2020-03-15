@@ -34,8 +34,9 @@ export default class HomePage extends Component {
         <Link to='/HW26Tooltip'>HW26Tooltip</Link><br/>
         <Link to='/HW27Carousel'>HW27Carousel</Link><br/>
         {/* <Link to='/ReduxPag'>ReduxPage</Link><br/> */}
-        <Link to='/Redux'>Redux</Link>
+        <Link to='/Redux'>Redux</Link><br/>
+        <Link to='/TodoList1'>TodoList1</Link><br/>
       </div>
-    )
+    );
   }
 }

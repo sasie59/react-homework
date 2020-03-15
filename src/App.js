@@ -32,6 +32,8 @@ import HW25Modal from './HW25Modal';
 import HW26Tooltip from './HW26Tooltip';
 import HW27Carousel from './HW27Carousel';
 import Redux from './Redux';
+// import TodoList from './TodoList';
+import TodoList1 from './TodoList1';
 
 function App() {
   return (
@@ -49,7 +51,7 @@ function App() {
         <Route path='/HW10Currency'><HW10Currency /></Route>
         <Route path='/HW11ColorPad'><HW11ColorPad /></Route>
         <Route path='/HW12Tab'><HW12Tab /></Route>
-        <Route path='/HW13TodoList'><HW13TodoList /></Route>
+        <Route path='/HW13Todo List'><HW13TodoList /></Route>
         <Route path='/HW14Pokemon'><HW14Pokemon /></Route>
         <Route path='/HW15LengthConversion'><HW15LengthConversion /></Route>
         <Route path='/HW16NumberGame'><HW16NumberGame /></Route>
@@ -60,12 +62,14 @@ function App() {
         <Route path='/HW21XaXb'><HW21XaXb /></Route>
         <Route path='/HW22Cart'><HW22Cart /></Route>
         <Route path='/HW23SunMoon'><HW23SunMoon /></Route>
-        <Route path='/HW24Lottery'><HW24Lottery /></Route>
+        {/*<Route path='/HW24Lottery'><HW24Lottery /></Route>*/}
         <Route path='/HW25Modal'><HW25Modal /></Route>
         <Route path='/HW26Tooltip'><HW26Tooltip /></Route>
         <Route path='/HW27Carousel'><HW27Carousel /></Route>
-        {/* <Route path='/ReduxPage'><ReduxPage /></Route> */}
+        <Route path='/ReduxPage'><ReduxPage /></Route>
         <Route path='/Redux'><Redux /></Route>
+        {/* <Route path='/TodoList'><TodoList /></Route> */}
+        <Route path='/TodoList1'><TodoList1 /></Route>
         <Route path='/'><HomePage /></Route>
       </Switch>
     </BrowserRouter>
