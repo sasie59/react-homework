@@ -18,7 +18,7 @@ import HW11ColorPad from './HW11ColorPad';
 import HW12Tab from './HW12Tab';
 import HW13TodoList from './HW13TodoList';
 import HW14Pokemon from './HW14Pokemon';
-import HW15LengthConversion from './HW15LengthConversion';
+// import HW15LengthConversion from './HW15LengthConversion';
 import HW16NumberGame from './HW16NumberGame';
 import HW17RandomNum from './HW17RandomNum';
 import HW18TwinkingChar from './HW18TwinklingChar';
@@ -27,13 +27,14 @@ import HW20GuessNum from './HW20GuessNum';
 import HW21XaXb from './HW21XaXb';
 import HW22Cart from './HW22Cart';
 import HW23SunMoon from './HW23SunMoon';
-import HW24Lottery from './HW24Lottery';
+// import HW24Lottery from './HW24Lottery';
 import HW25Modal from './HW25Modal';
 import HW26Tooltip from './HW26Tooltip';
 import HW27Carousel from './HW27Carousel';
 import Redux from './Redux';
 // import TodoList from './TodoList';
 import TodoList1 from './TodoList1';
+// import TodoList2 from './TodoList2';
 
 function App() {
   return (
@@ -53,7 +54,7 @@ function App() {
         <Route path='/HW12Tab'><HW12Tab /></Route>
         <Route path='/HW13Todo List'><HW13TodoList /></Route>
         <Route path='/HW14Pokemon'><HW14Pokemon /></Route>
-        <Route path='/HW15LengthConversion'><HW15LengthConversion /></Route>
+        {/*<Route path='/HW15LengthConversion'><HW15LengthConversion /></Route>*/}
         <Route path='/HW16NumberGame'><HW16NumberGame /></Route>
         <Route path='/HW17RandomNum'><HW17RandomNum /></Route>
         <Route path='/HW18TwinkingChar'><HW18TwinkingChar /></Route>
@@ -70,7 +71,8 @@ function App() {
         <Route path='/Redux'><Redux /></Route>
         {/* <Route path='/TodoList'><TodoList /></Route> */}
         <Route path='/TodoList1'><TodoList1 /></Route>
-        <Route path='/'><HomePage /></Route>
+        {/* <Route path='/TodoList2'><TodoList2 /></Route> */}
+        {/* <Route path='/'><HomePage /></Route> */}
       </Switch>
     </BrowserRouter>
   );

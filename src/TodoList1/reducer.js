@@ -1,4 +1,9 @@
-import { VisibilityFilters, SET_VISIBILITY_FILTER,ADD_TODO } from "./actions";
+import {
+    VisibilityFilters,
+    SET_VISIBILITY_FILTER,ADD_TODO,
+    TOGGLE_TODO,
+    REMOVE_TODO,
+  } from "./actions";
 import { combineReducers } from "redux";
 
 const initialState = {
@@ -25,6 +30,12 @@ function todos(state = [], action) {
           completed: false,
         }
       ];
+      case TOGGLE_TODO:
+        const newState = [...state];
+        newState[action.index].completed = !state[action.index].completed;
+        return state;
+      case REMOVE_TODO:
+        return state.filter((todo, index) => index != action.index);
       default:
         return state;
   }
