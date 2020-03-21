@@ -33,8 +33,9 @@ import HW26Tooltip from './HW26Tooltip';
 import HW27Carousel from './HW27Carousel';
 import Redux from './Redux';
 // import TodoList from './TodoList';
-import TodoList1 from './TodoList1';
+// import TodoList1 from './TodoList1';
 // import TodoList2 from './TodoList2';
+import TodoList3 from './TodoList3';
 
 function App() {
   return (
@@ -70,9 +71,10 @@ function App() {
         <Route path='/ReduxPage'><ReduxPage /></Route>
         <Route path='/Redux'><Redux /></Route>
         {/* <Route path='/TodoList'><TodoList /></Route> */}
-        <Route path='/TodoList1'><TodoList1 /></Route>
+        {/* <Route path='/TodoList1'><TodoList1 /></Route> */}
+        <Route path='/TodoList3'><TodoList3 /></Route>
         {/* <Route path='/TodoList2'><TodoList2 /></Route> */}
-        {/* <Route path='/'><HomePage /></Route> */}
+        <Route path='/'><HomePage /></Route>
       </Switch>
     </BrowserRouter>
   );

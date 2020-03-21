@@ -37,6 +37,7 @@ export default class HomePage extends Component {
         <Link to='/Redux'>Redux</Link><br/>
         <Link to='/TodoList1'>TodoList1</Link><br/>
         <Link to='/TodoList2'>TodoList2</Link><br/>
+        <Link to='/TodoList3'>TodoList3</Link><br/>
       </div>
     );
   }

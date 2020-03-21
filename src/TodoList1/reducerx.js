@@ -33,7 +33,7 @@ function todos(state = [], action) {
       case TOGGLE_TODO:
         const newState = [...state];
         newState[action.index].completed = !state[action.index].completed;
-        return state;
+        return newState;
       case REMOVE_TODO:
         return state.filter((todo, index) => index != action.index);
       default:

@@ -5,18 +5,18 @@ import {
   toggleTodo,
   removeTodo,
   setVisibilityFilter,
-  VisibilityFilters,
+  VisibilityFilters as VF,
 } from './actions'; 
 
+/*
 const {
   SHOW_COMPLETED,
   SHOW_ALL,
   SHOW_ACTIVE
 } = VisibilityFilters;
-
+*/
 class App extends Component {
-  constructor(props){
-    console.warn();
+  constructor(){
     super();
     this.state = {
       value: ''
@@ -42,30 +42,34 @@ class App extends Component {
   handleRemove = (index) => {
     this.props.remove(index);
   }
-  handleFilter = ({target}) => {
-    this.props.setFilter(target.value);
+  handleFilter = ({target: { value }}) => {
+    this.props.setFilter({ value });
   }
   
   render() {
     console.warn(this.props);
     return (
+      
       <div>
-        <select value={this.props.fFilter} onChange={this.handleFilter}>
-          <option value={SHOW_ALL}>all</option>
-          <option value={SHOW_COMPLETED}>completed</option>
-          <option value={SHOW_ACTIVE}>active</option>
+        <select value={this.props.filter} onChange={this.handleFilter}>
+          <option value={VF.SHOW_ALL}>all</option>
+          <option value={VF.SHOW_COMPLETED}>completed</option>
+          <option value={VF.SHOW_ACTIVE}>active</option>
         </select>
         <form onSubmit={this.handleSubmit}>
-          <input value={this.state.value} type="text" onChange={this.handleChange}/>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}/>
           <button>add</button>
         </form>
         <ul>
-          {this.props.todos
-            .map((todo, index) =>
+          {this.props.todos.map((todo, index) =>
             <li key={index}>
               {todo.text}
               <button onClick={this.handleToggle.bind(this, index)}>toggle</button>
               <button onClick={this.handleRemove.bind(this, index)}>remove</button>
+              {console.warn(todo)}
               {todo.completed ? 'V' : ''}
             </li>
           )}
