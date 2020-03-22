@@ -74,7 +74,14 @@ class App extends Component {
   }
 }
 // 我有bind(index) 但在按的時候還是會全部影響(toggle)
+// Ans: 應由每個待辦事項的「completed」來決定是否套用「through」
+// 不應該由單一變數「isDone」來決定是否套用「through」
+// 既然你三個待辦事項的「throught」依賴於單一變數「isDone」
+// 那當然你 isDone 會套到所有待辦事項
+// 應該要依賴 completed ，但在這頁也沒看到你有寫 completed
+
 // remove沒有移除? 但也bind (index)
+// Ans: 你的 REMOVE_TODO 在 reducer/todos 寫錯了 
 
 const mapStateProps = state => {
   return {

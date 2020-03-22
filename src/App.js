@@ -24,7 +24,7 @@ import HW17RandomNum from './HW17RandomNum';
 import HW18TwinkingChar from './HW18TwinklingChar';
 import HW19Gopher from './HW19Gopher';
 import HW20GuessNum from './HW20GuessNum';
-import HW21XaXb from './HW21XaXb';
+import HW21XaXb from './HW21XAXB';
 import HW22Cart from './HW22Cart';
 import HW23SunMoon from './HW23SunMoon';
 // import HW24Lottery from './HW24Lottery';
