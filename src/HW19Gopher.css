@@ -1,9 +1,0 @@
-.GopherButton {
-  width: 33%;
-  font-size: 30px;
-  border-radius: 0px;
-  background-color: transparent;
-}
-.GopherButton:hover {
-  background-color: lightyellow;
-}

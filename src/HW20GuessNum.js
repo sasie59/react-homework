@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import './HW20GuessNum.css'
+import './HW20GuessNum.scss';
 
 const MIN = 1;
 const MAX = 1000;
 
 export const makeRand = (min = MIN, max = MAX) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 const resetData = () => {
   return {
@@ -16,7 +16,7 @@ const resetData = () => {
     hideAndSee : false,
     bingoNum: makeRand(MIN, MAX),
   };
-}
+};
 
 export default class HW20GuessNum extends Component {
   constructor() {
@@ -35,7 +35,7 @@ export default class HW20GuessNum extends Component {
 
     let updateState = {
       value: ''
-    }
+    };
 
     if(bingoNum > value) {
       updateState.minValue = value;

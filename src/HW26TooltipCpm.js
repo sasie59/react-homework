@@ -1,5 +1,5 @@
-import React from 'react'
-import './HW26Tooltip.css'
+import React from 'react';
+import './HW26Tooltip.scss';
 
 export default function HW26Tooltipcpm(props) {
   return (
@@ -9,5 +9,5 @@ export default function HW26Tooltipcpm(props) {
         {props.text}
       </div>
     </span>
-  )
+  );
 }

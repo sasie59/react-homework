@@ -1,0 +1,18 @@
+// .hide {
+//   display: none;
+// }
+// .see {
+//   display: block;
+// }
+
+$disappear : none;
+$dispaly : block;
+
+.hide {
+  display: $disappear;
+}
+
+.see {
+  display: $dispaly
+}
+

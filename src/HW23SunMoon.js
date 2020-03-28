@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './HW23SunMoon.css';
+import './HW23SunMoon.scss';
 
 export default class HW23SunMoon extends Component {
   constructor (){

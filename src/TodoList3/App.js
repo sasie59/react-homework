@@ -62,7 +62,7 @@ class App extends Component {
         <ul>
           {this.props.todos.map((todo, index) =>
             <li key={index} >
-            <div className={this.state.isDone ? 'through' : ''} onClick={this.handleToggle.bind(this, index)}>
+            <div className={todo.completed ? 'through' : ''} onClick={this.handleToggle.bind(this, index)}>
               {todo.text}
             </div>
               <button onClick={this.handleRemove.bind(this, index)}>移除</button>

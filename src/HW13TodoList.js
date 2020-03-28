@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './HW13TodoList.css';
+import './HW13TodoList.scss';
 
 export default class HW13TodoList extends Component {
   constructor(){
-    super()
+    super();
     this.state = {
       toDoList :[],
       value : ''
-    }
+    };
   }
   handleChange = ({target}) => {
     this.setState({
@@ -72,6 +72,6 @@ export default class HW13TodoList extends Component {
           </tbody>
         </table>  
       </div>
-    )
+    );
   }
 }

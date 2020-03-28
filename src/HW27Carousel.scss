@@ -1,0 +1,48 @@
+@import "./var";
+
+.carousel {
+  width: 600px;
+  height: 300px;
+  border: 1px solid $black;
+  background-color: #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin item() {
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+}
+
+.carousel {
+  .item {
+    @include item();
+    left: 0%; 
+    &+.item {
+      left: 100%;
+    }
+  }
+}
+
+@keyframes hide {
+  from {left: 0; }
+  to {left: -100%;}
+}
+@keyframes show {
+  from {left: 100%;}
+  to { left: 0}
+}
+.hide {
+  left: 0;
+  position: absolute;
+  animation-name: hide;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+.show {
+  left: 100%;
+  animation-name: show;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}

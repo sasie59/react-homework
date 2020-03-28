@@ -24,7 +24,7 @@ import HW17RandomNum from './HW17RandomNum';
 import HW18TwinkingChar from './HW18TwinklingChar';
 import HW19Gopher from './HW19Gopher';
 import HW20GuessNum from './HW20GuessNum';
-import HW21XaXb from './HW21XAXB';
+import HW21XaXb from './HW21XaXb';
 import HW22Cart from './HW22Cart';
 import HW23SunMoon from './HW23SunMoon';
 // import HW24Lottery from './HW24Lottery';
@@ -53,7 +53,7 @@ function App() {
         <Route path='/HW10Currency'><HW10Currency /></Route>
         <Route path='/HW11ColorPad'><HW11ColorPad /></Route>
         <Route path='/HW12Tab'><HW12Tab /></Route>
-        <Route path='/HW13Todo List'><HW13TodoList /></Route>
+        <Route path='/HW13TodoList'><HW13TodoList /></Route>
         <Route path='/HW14Pokemon'><HW14Pokemon /></Route>
         {/*<Route path='/HW15LengthConversion'><HW15LengthConversion /></Route>*/}
         <Route path='/HW16NumberGame'><HW16NumberGame /></Route>

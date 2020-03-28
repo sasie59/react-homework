@@ -15,7 +15,7 @@ export default function todos(state=[], action) {
       ];
       case TOGGLE_TODO:
         const newState = [...state];
-        newState[action.index].completed = state[action.index].completed;
+        newState[action.index].completed = !state[action.index].completed;
         return newState;
       case REMOVE_TODO:
         /**
@@ -27,7 +27,7 @@ export default function todos(state=[], action) {
          * 而不是你預期的 0,1,2
          * 所以絕大部分機率都是不符合（回傳true，保留）
          */
-        return state.filter(index => index !=action.index);
+        return state.filter((todo, index) => index !== action.index);
       default:
         return state;
   }

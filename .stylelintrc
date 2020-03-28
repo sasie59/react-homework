@@ -1,0 +1,13 @@
+ {
+  "rules": {
+    "color-no-invalid-hex": true,
+    "no-extra-semicolons": true,
+    "comment-no-empty": true,
+    "indentation": [
+      2,
+      {
+        "baseIndentLevel": "auto"
+      }
+    ]
+  }
+}

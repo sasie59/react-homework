@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './HW22Cart.css';
-import HW22CartFruit from './HW22CartFruit'
+import './HW22Cart.scss';
+import HW22CartFruit from './HW22CartFruit';
 
 const fruitObj = {
   orange:     {name: '橘子',   price: 20},
@@ -8,11 +8,11 @@ const fruitObj = {
   cantaloupe: {name: '哈蜜瓜', price: 40},
   apple:      {name: '蘋果',   price: 50},
   grapeFruit: {name: '葡萄柚', price: 15},
-}
+};
 
 export default class HW22Cart extends Component {
   constructor(){
-    super()
+    super();
     this.state = {
       value : '',
       sum : 0,
@@ -23,7 +23,7 @@ export default class HW22Cart extends Component {
         apple: 0,
         grapeFruit: 0
       }
-    }
+    };
   }
 
   handleSubmit = (fruitName, value) => {
@@ -43,18 +43,18 @@ export default class HW22Cart extends Component {
     this.setState({
       fruitCount :  fruitCount,
       sum : sum - fruitObj[fruitName].price * 1
-    })
+    });
   }
 
   handleClear = (fruitName) => {
     const {fruitCount, sum} = this.state;
     this.setState({
       sum : sum - fruitObj[fruitName].price * fruitCount[fruitName]
-    })
-    fruitCount[fruitName] = 0
+    });
+    fruitCount[fruitName] = 0;
     this.setState({
       fruitCount : fruitCount
-    })
+    });
   }
   
   render() {
@@ -76,14 +76,14 @@ export default class HW22Cart extends Component {
       <div>
 
         {Object.keys(fruitObj).map((fruitName) => (
-        <HW22CartFruit
-          count={this.state.fruitCount}
-          onSubmit={this.handleSubmit}
-          key={fruitObj[fruitName].name}
-          name={fruitObj[fruitName].name}
-          price={fruitObj[fruitName].price}
-          fruitName={fruitName}
-        />
+          <HW22CartFruit
+            count={this.state.fruitCount}
+            onSubmit={this.handleSubmit}
+            key={fruitObj[fruitName].name}
+            name={fruitObj[fruitName].name}
+            price={fruitObj[fruitName].price}
+            fruitName={fruitName}
+          />
         ))}
         {/* {true && <MyComp />}
         {false && <MyComp />}
@@ -98,6 +98,6 @@ export default class HW22Cart extends Component {
           }
         </ul>
       </div>
-    )
+    );
   }
 }

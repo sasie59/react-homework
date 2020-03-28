@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import TooltipCpm from './HW26TooltipCpm'
-import './HW26Tooltip.css'
+import React, { Component } from 'react';
+import TooltipCpm from './HW26TooltipCpm';
 
 export default class HW26Tooltip extends Component {
   constructor(){
     super();
     this.state = {
       
-    }
+    };
   }
   render() {
     return (
@@ -44,6 +43,6 @@ export default class HW26Tooltip extends Component {
         </TooltipCpm>
         
       </div>
-    )
+    );
   }
 }

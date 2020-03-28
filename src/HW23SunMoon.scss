@@ -1,3 +1,5 @@
+@import "./var";
+
 .img {
   position: absolute;
   left: 50%;
@@ -24,14 +26,10 @@
 }
 
 .night {
-  background-color: #000;
+  background-color: $black;
 }
 
 .sky {
   height: 100vh;
   transition: background-color .5s;
 }
-
-/* body {
-  background-color: #000;
-} */

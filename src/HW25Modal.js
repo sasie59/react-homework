@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import HW25ModalCpm from './HW25ModalCpm'
-import  './HW25Modal.css';
+import HW25ModalCpm from './HW25ModalCpm';
 
 const modalProps = [
   {},
@@ -15,7 +14,7 @@ export default class HW25Modal extends Component {
     super();
     this.state = {
       isShow: false
-    }
+    };
   }
 
   handleClick = index => {
@@ -28,8 +27,8 @@ export default class HW25Modal extends Component {
   render() {
     
     const buttonArr = ['modal', 'top', 'header', 'top + animation', 'animation'].map((item, index) => {
-      return <button onClick={this.handleClick.bind(this, index)} className='button' key={index}>{item}</button>
-    })
+      return <button onClick={this.handleClick.bind(this, index)} className='button' key={index}>{item}</button>;
+    });
     return (
       <div>
         {buttonArr}
@@ -39,6 +38,6 @@ export default class HW25Modal extends Component {
             onClick={this.handleClick}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!</HW25ModalCpm>
         </div>}
       </div>
-    )
+    );
   }
 }

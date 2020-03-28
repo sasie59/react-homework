@@ -1,0 +1,88 @@
+body {
+  text-align: center;
+}
+.btn {
+  background-color: blue;
+  width: 70px;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+}
+.tooltip-wrapper {
+  position: relative;
+  &:hover .tooltip {
+    display: block;
+  }
+}
+
+.text {
+  color: red;
+}
+
+@mixin direction($top, $distance, $x, $y, $isRight: false) {
+  @if $isRight {
+    right: $distance;
+  } @else {
+    left: $distance;
+  }
+
+  top: $top;
+  transform: translate($x, $y);
+}
+
+.tooltip {
+  position: absolute;
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  display: none;
+
+  &.top {
+    @include direction(-10px, 50%, -50%, -100%);
+    &:before {
+      border-width: 5px 5px 0 5px;
+      border-color: #000 transparent transparent transparent;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+  }
+  &.bottom {
+    @include direction(10px, 50%, -50%, 100%);
+    &:before {
+      border-width: 0 5px 5px 5px;
+      border-color: transparent transparent #000 transparent;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+  }
+  &.right {
+    @include direction(50%, 110%, 0, -50%);
+    &:before {
+      border-width: 5px 10px 5px 0;
+      border-color: transparent #000 transparent transparent;
+      bottom: 50%;
+      left: 0;
+      transform: translate(-50%, 50%);
+    }
+  }
+  &.left {
+    @include direction(50%, 110%, 0, -50%, true);
+    &:before {
+      border-width: 5px 0 5px 10px;
+      border-color: transparent transparent transparent #000;
+      right: 0;
+      bottom: 50%;
+      transform: translate(50%, 50%);
+    }
+  }
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+  }
+}

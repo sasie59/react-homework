@@ -42,7 +42,7 @@
 //   }
 // }
 import React, { Component } from "react";
-import "./HW27Carousel.css";
+import "./HW27Carousel.scss";
 export default class HW27CarouselCpm extends Component {
   constructor(props) {
     super(props);

@@ -1,5 +1,5 @@
 import React from 'react';
-import  './HW25Modal.css';
+import  './HW25Modal.scss';
 
 export default function HW25ModalCpm(props) {
 
@@ -11,7 +11,7 @@ export default function HW25ModalCpm(props) {
       props.onClick();
     }
     
-  }
+  };
   
   let modalClass = "modal-content";
   if(props.isTop) modalClass += " top";
@@ -25,7 +25,7 @@ export default function HW25ModalCpm(props) {
         <button id="button" onClick={handleClick}>關閉</button>
       </div>
     </div>
-  )
+  );
 }
 
 
