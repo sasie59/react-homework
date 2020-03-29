@@ -5,7 +5,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <h2>use react router</h2>
+        <h2>use react router!!!</h2>
         <Link to='/HW1Counter'>HW1Counter</Link><br/>
         <Link to='/HW2CounterList'>HW2CounterList</Link><br/>
         <Link to='/HW3CounterSum'>HW3CounterSum</Link><br/>
