@@ -38,6 +38,7 @@ export default class HomePage extends Component {
         <Link to='/TodoList1'>TodoList1</Link><br/>
         <Link to='/TodoList2'>TodoList2</Link><br/>
         <Link to='/TodoList3'>TodoList3</Link><br/>
+        <Link to='/TodoList4'>TodoList4</Link><br/>
       </div>
     );
   }

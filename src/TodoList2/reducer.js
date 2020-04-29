@@ -21,39 +21,39 @@ const initialVisibilityFilters = VisibilityFilters.SHOW_ALL;
 
 function visibilityFilters(state = initialVisibilityFilters, action) {
   switch (action.type) {
-    case SET_VISIBILITY_FILTER:
-      return action.filter;
-    default:
-      return state;
+  case SET_VISIBILITY_FILTER:
+    return action.filter;
+  default:
+    return state;
   }
 }
 
 function todos(state = [], action) {
   switch (action.type) {
-    case ADD_TODO:
-      return [
-        ...state,
-        { text: action.text, completed: false }
-      ];
-    case TOGGLE_TODO:
-      const newState = state.slice();
-      newState[action.index].completed = !newState[action.index].completed;
-      return newState;
-      // [a,b,c,d,e,f]
-      // [a, b][c][d,e,f]
-      return [
-        state.slice(0, action.index),
-        {
-          text: state[action.index].text,
-          completed: !state[action.index].completed,
-        },
-        state.slice(action.index + 1),
-      ];
-    case REMOVE_TODO:
-      return state.filter((todo, index) => index !== action.index);
+  case ADD_TODO:
+    return [
+      ...state,
+      { text: action.text, completed: false }
+    ];
+  case TOGGLE_TODO:
+    const newState = state.slice();
+    newState[action.index].completed = !newState[action.index].completed;
+    return newState;
+    // [a,b,c,d,e,f]
+    // [a, b][c][d,e,f]
+    return [
+      state.slice(0, action.index),
+      {
+        text: state[action.index].text,
+        completed: !state[action.index].completed,
+      },
+      state.slice(action.index + 1),
+    ];
+  case REMOVE_TODO:
+    return state.filter((todo, index) => index !== action.index);
   
-    default:
-      return state;
+  default:
+    return state;
   }
 }
 
