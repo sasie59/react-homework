@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { createStore} from 'redux';
+import {Provider} from 'react-redux';
+
 import reducers from './reducers';
 import {visibilityFilter, ALL, FINISH, UNFINISH} from './actions/visibilityFilter';
 import { addTodo, toggleTodo,removeTodo } from './actions/todos';
+import App from './App';
 
 
 const store = createStore(reducers);
@@ -11,9 +14,9 @@ store.subscribe(() => console.warn(store.getState()));
 // store.dispatch(visibilityFilter(ALL));
 // store.dispatch(visibilityFilter(FINISH));
 // store.dispatch(visibilityFilter(UNFINISH));
-store.dispatch(addTodo('aaa'));
-store.dispatch(addTodo('bbb'));
-store.dispatch(addTodo('ccc'));
+// store.dispatch(addTodo('aaa'));
+// store.dispatch(addTodo('bbb'));
+// store.dispatch(addTodo('ccc'));
 
 // store.dispatch(toggleTodo(0));
 // 會報錯
@@ -27,9 +30,9 @@ store.dispatch(addTodo('ccc'));
 export default class TodoList4 extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
+      <Provider store={store}>
+        <App />
+      </Provider>
     );
   }
 }

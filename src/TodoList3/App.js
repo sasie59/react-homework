@@ -24,8 +24,8 @@ class App extends Component {
     });
   }
 
-  handleSubmit =(e) => {
-    e.preventDefault();
+  handleSubmit =(event) => {
+    event.preventDefault();
     this.props.add(this.state.value);
     this.setState({
       value: ''
