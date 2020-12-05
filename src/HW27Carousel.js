@@ -15,8 +15,8 @@
 //     )
 //   }
 // }
-import React, { Component } from 'react'
-import HW27CarouselCpm from './HW27CarouselCpm'
+import React, { Component } from 'react';
+import HW27CarouselCpm from './HW27CarouselCpm';
 export default class HW27Carousel extends Component {
   render() {
     return (
@@ -36,7 +36,7 @@ export default class HW27Carousel extends Component {
           }}>3</div>
         </HW27CarouselCpm>
       </div>
-    )
+    );
   }
 }
 

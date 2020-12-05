@@ -34,11 +34,12 @@ export default class HomePage extends Component {
         <Link to='/HW26Tooltip'>HW26Tooltip</Link><br/>
         <Link to='/HW27Carousel'>HW27Carousel</Link><br/>
         {/* <Link to='/ReduxPag'>ReduxPage</Link><br/> */}
-        <Link to='/Redux'>Redux</Link><br/>
+        <Link to='./TodoList'>TodoList</Link><br/>
         <Link to='/TodoList1'>TodoList1</Link><br/>
         <Link to='/TodoList2'>TodoList2</Link><br/>
         <Link to='/TodoList3'>TodoList3</Link><br/>
         <Link to='/TodoList4'>TodoList4</Link><br/>
+        <Link to='/TodoList5'>TodoList5</Link><br/>
       </div>
     );
   }

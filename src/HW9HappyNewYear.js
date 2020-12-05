@@ -4,7 +4,7 @@ const date20210101 = +new Date('2021/01/01 00:00:00');
 
 export default class HW9HappyNewYear extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = ({
       date : +new Date(),
       countDown : 0,
@@ -12,11 +12,11 @@ export default class HW9HappyNewYear extends React.Component {
       hour :'',
       min :'',
       sec : ''
-    })
+    });
   }
 
   tick = () => { 
-    const { date } = this.state
+    const { date } = this.state;
     this.setState({
       date : +new Date(),
       countDown : Math.floor((date20210101 - date) / 1000),
@@ -47,6 +47,6 @@ export default class HW9HappyNewYear extends React.Component {
       <div>
         <h2>離2021跨年還有{day}天{hour}時{min}分{sec}秒: </h2>
       </div>
-    ) 
+    ); 
   }
 }
