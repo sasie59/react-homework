@@ -6,7 +6,6 @@ import {
   toggleTodo,
   removeTodo,
   setVisibilityFilter,
-  VisibilityFilter
 } from './actions';
 
 class App extends Component {
