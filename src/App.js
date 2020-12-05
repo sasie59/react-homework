@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 // import add from './add';
 import './App.css';
 import ReduxPage from './ReduxPage';
@@ -31,16 +31,17 @@ import HW23SunMoon from './HW23SunMoon';
 import HW25Modal from './HW25Modal';
 import HW26Tooltip from './HW26Tooltip';
 import HW27Carousel from './HW27Carousel';
-import Redux from './Redux';
+// import Redux from './Redux';
 import TodoList from './TodoList';
-import TodoList1 from './TodoList1';
-import TodoList2 from './TodoList2';
-import TodoList3 from './TodoList3';
-import TodoList4 from './TodoList4';
+// import TodoList1 from './TodoList1';
+// import TodoList2 from './TodoList2';
+// import TodoList3 from './TodoList3';
+// import TodoList4 from './TodoList4';
+import TodoList6 from './TodoList6';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path='/HW1Counter'><HW1Counter /></Route>
         <Route path='/HW2CounterList'><HW2CounterList /></Route>
@@ -70,15 +71,16 @@ function App() {
         <Route path='/HW26Tooltip'><HW26Tooltip /></Route>
         <Route path='/HW27Carousel'><HW27Carousel /></Route>
         <Route path='/ReduxPage'><ReduxPage /></Route>
-        <Route path='/Redux'><Redux /></Route>
-        {/* {/* <Route path='/TodoList'><TodoList /></Route> */}
-        <Route path='/TodoList1'><TodoList1 /></Route>
-        <Route path='/TodoList2'><TodoList2 /></Route>
-        <Route path='/TodoList3'><TodoList3 /></Route> */}
-        <Route path='/TodoList4'><TodoList4 /></Route>
+        {/* <Route path='/Redux'><Redux /></Route> */}
+        <Route path='/TodoList'><TodoList /></Route>
+        {/* <Route path='/TodoList1'><TodoList1 /></Route> */}
+        {/* <Route path='/TodoList2'><TodoList2 /></Route> */}
+        {/* <Route path='/TodoList3'><TodoList3 /></Route> */} */}
+        {/* <Route path='/TodoList4'><TodoList4 /></Route> */}
+        <Route path='/TodoList6'><TodoList6 /></Route>
         <Route path='/'><HomePage /></Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
