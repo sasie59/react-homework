@@ -56,6 +56,7 @@ render() {
           if(this.props.visibilityFilter === ALL ) return true;
           if(this.props.visibilityFilter === FINISH) return todo.completed;
           if(this.props.visibilityFilter === UNFINISH ) return !todo.completed;
+          return true;
         }).map(todo =>
           <li key={todo.id}>
             <div className={todo.completed ? 'line' : ''}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect, Provider } from 'react-redux';
+import { connect } from 'react-redux';
 
 import { visibilityFilter, ALL, FINISH, UNFINISH } from './actions/visibilityFilter';
 import { addTodo, toggleTodo, removeTodo } from './actions/todos';
