@@ -4,7 +4,7 @@ import LengthInput from './HW15LengthInput';
 /**
  * 你本來的寫法
  */
-const turnLength = (value, lengthType, returntype, id) => {
+// const turnLength = (value, lengthType, returntype, id) => {
   // console.warn(returntype);
 
   /**
@@ -21,28 +21,28 @@ const turnLength = (value, lengthType, returntype, id) => {
       cm : 1 / 10,
       m : 1 / 1000,
       km :1 / 1000000
-    }
+    };
   } else if(id === 2) {
     base = {
       mm : 10,
       cm : 1,
       m : 1 / 100,
       km : 1 / 100000
-    }
+    };
   }else if(id === 3) {
     base = {
       mm : 1000,
       cm : 100,
       m : 1,
       km : 1 / 1000
-    }
+    };
   }else if(id === 4) {
     base = {
       mm : 1000000,
       cm : 100000,
       m : 1000,
       km : 1
-    }
+    };
   }
   /**
    * 12/05 提示：
@@ -72,8 +72,8 @@ const turnLength = (value, lengthType, returntype, id) => {
 
   console.warn(id, base);
   
-  return lengthType === returntype ? value : value * base[returntype] 
-}
+  return lengthType === returntype ? value : value * base[returntype]; 
+};
 
 
 /**
@@ -84,11 +84,11 @@ const proportion = {
   'cm':      10,
   'm':     1000,
   'km': 1000000,
-}
+};
 
 const unitConverter = (number, oriUnit, toUnit) => {
   if(!oriUnit) return 0;
-/**
+  /**
  * 1000000 km -> 6
  * 100000 m -> 5
  * 1000 cm -> 3
@@ -96,28 +96,28 @@ const unitConverter = (number, oriUnit, toUnit) => {
  */
   const mm = number * proportion[oriUnit];
   return mm / proportion[toUnit];
-}
+};
 
 export default class HW15LengthConversion extends Component {
   constructor(){
-    super()
+    super();
     this.state = {
       value : 0,
       lengthType : '',
       id : 1
       // 我這邊先給1 反正0*任何數都是0 介面上不影響
-    }
+    };
   }
   handleChange = ({target}) => {
     this.setState({
       value : target.value,
       lengthType :target.name,
       id : +target.id  // ← target.id 是字串
-    })
+    });
     console.warn(target.id);
   }
   render() {
-    const {value,lengthType,id} = this.state;
+    const {value,lengthType} = this.state;
     
     const mm = unitConverter(value, lengthType, 'mm');
     const cm = unitConverter(value, lengthType, 'cm');
@@ -157,6 +157,6 @@ export default class HW15LengthConversion extends Component {
             onChange={this.handleChange}/>
         </form>
       </div>
-    )
+    );
   }
 }
