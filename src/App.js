@@ -18,7 +18,7 @@ import HW11ColorPad from './HW11ColorPad';
 import HW12Tab from './HW12Tab';
 import HW13TodoList from './HW13TodoList';
 import HW14Pokemon from './HW14Pokemon';
-// import HW15LengthConversion from './HW15LengthConversion';
+import HW15LengthConversion from './HW15LengthConversion';
 import HW16NumberGame from './HW16NumberGame';
 import HW17RandomNum from './HW17RandomNum';
 import HW18TwinkingChar from './HW18TwinklingChar';
@@ -33,10 +33,10 @@ import HW26Tooltip from './HW26Tooltip';
 import HW27Carousel from './HW27Carousel';
 // import Redux from './Redux';
 import TodoList from './TodoList';
-// import TodoList1 from './TodoList1';
-// import TodoList2 from './TodoList2';
-// import TodoList3 from './TodoList3';
-// import TodoList4 from './TodoList4';
+import TodoList1 from './TodoList1';
+import TodoList2 from './TodoList2';
+import TodoList3 from './TodoList3';
+import TodoList4 from './TodoList4';
 import TodoList6 from './TodoList6';
 
 function App() {
@@ -73,10 +73,10 @@ function App() {
         <Route path='/ReduxPage'><ReduxPage /></Route>
         {/* <Route path='/Redux'><Redux /></Route> */}
         <Route path='/TodoList'><TodoList /></Route>
-        {/* <Route path='/TodoList1'><TodoList1 /></Route> */}
-        {/* <Route path='/TodoList2'><TodoList2 /></Route> */}
-        {/* <Route path='/TodoList3'><TodoList3 /></Route> */} */}
-        {/* <Route path='/TodoList4'><TodoList4 /></Route> */}
+        <Route path='/TodoList1'><TodoList1 /></Route>
+        <Route path='/TodoList2'><TodoList2 /></Route>
+        <Route path='/TodoList3'><TodoList3 /></Route> */}
+        <Route path='/TodoList4'><TodoList4 /></Route>
         <Route path='/TodoList6'><TodoList6 /></Route>
         <Route path='/'><HomePage /></Route>
       </Switch>
