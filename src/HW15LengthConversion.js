@@ -5,46 +5,46 @@ import LengthInput from './HW15LengthInput';
  * 你本來的寫法
  */
 // const turnLength = (value, lengthType, returntype, id) => {
-  // console.warn(returntype);
+// console.warn(returntype);
 
-  /**
+/**
    * 因為你的 base 原本是定義在 if () {....} 裡面，所以只在 if 裡面有效
    * 而你在 return 那邊也有使用 base（不在if裡) 所以會有錯誤。
    * 因此，我稍微改寫了一下，把base在最上面用 let 定義，然後在 if 裡再賦予內容。 :)
    */
-  let base;
+let base;
 
-  // 你的 id 是字串，所以這邊全部的 if 都不會成立
-  if(id === 1) {
-    base = {
-      mm : 1,
-      cm : 1 / 10,
-      m : 1 / 1000,
-      km :1 / 1000000
-    };
-  } else if(id === 2) {
-    base = {
-      mm : 10,
-      cm : 1,
-      m : 1 / 100,
-      km : 1 / 100000
-    };
-  }else if(id === 3) {
-    base = {
-      mm : 1000,
-      cm : 100,
-      m : 1,
-      km : 1 / 1000
-    };
-  }else if(id === 4) {
-    base = {
-      mm : 1000000,
-      cm : 100000,
-      m : 1000,
-      km : 1
-    };
-  }
-  /**
+// 你的 id 是字串，所以這邊全部的 if 都不會成立
+if(id === 1) {
+  base = {
+    mm : 1,
+    cm : 1 / 10,
+    m : 1 / 1000,
+    km :1 / 1000000
+  };
+} else if(id === 2) {
+  base = {
+    mm : 10,
+    cm : 1,
+    m : 1 / 100,
+    km : 1 / 100000
+  };
+}else if(id === 3) {
+  base = {
+    mm : 1000,
+    cm : 100,
+    m : 1,
+    km : 1 / 1000
+  };
+}else if(id === 4) {
+  base = {
+    mm : 1000000,
+    cm : 100000,
+    m : 1000,
+    km : 1
+  };
+}
+/**
    * 12/05 提示：
    * 情境1： value = 1，lengthType = 'mm'
    * 
@@ -67,13 +67,13 @@ import LengthInput from './HW15LengthInput';
    * turnLength(1, "km"","m"", 4) ->  乘以 1000
    * turnLength(1, "km"","km"", 4) -> 乘以 1
    */
-  // id要都一樣 不能寫死 於是我設了state變數 但returntype是唯一不會變的東西
-  // 在下面的function 我也給了參數 印出來也會列出每一筆 但只要一敲鍵盤 依舊報錯
+// id要都一樣 不能寫死 於是我設了state變數 但returntype是唯一不會變的東西
+// 在下面的function 我也給了參數 印出來也會列出每一筆 但只要一敲鍵盤 依舊報錯
 
-  console.warn(id, base);
+console.warn(id, base);
   
-  return lengthType === returntype ? value : value * base[returntype]; 
-};
+return lengthType === returntype ? value : value * base[returntype]; 
+// };
 
 
 /**
