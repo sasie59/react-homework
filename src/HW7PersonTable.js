@@ -8,6 +8,7 @@ export default function HW7PersonTable() {
     fetch("https://randomuser.me/api/?results=25")
       .then((res) => res.json())
       .then(({ results: list }) => {
+        // console.warn(list);
         setList(list);
       });
   };
@@ -40,7 +41,7 @@ export default function HW7PersonTable() {
           {list.map((item) => (
             <HW7PersonalInfo
               key={item.login.uuid}
-              picture={item.picture.thumbnail}
+              picture={item.picture.medium}
               name={item.name.last}
               gender={item.gender}
               email={item.email}

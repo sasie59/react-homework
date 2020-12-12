@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function PersonalInfo(props) {
   return (
@@ -11,5 +11,5 @@ export default function PersonalInfo(props) {
       <td>{props.phone}</td>
       <td>{props.country}</td>
     </tr>
-  )
+  );
 }
