@@ -5,17 +5,17 @@ const turnCurrency = (value, currencyType, returnType) => {
   const base = {
     twd: 30,
     usd: 1 / 30,
-  }
+  };
   return currencyType === returnType ? value: value * base[returnType];
-}
+};
 
 export default class HW10Currency2 extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       value : 0,
       currencyType : ''
-    }
+    };
   }
 
   handleChange = ({target}) => {
@@ -47,6 +47,6 @@ export default class HW10Currency2 extends Component {
           onChange={this.handleChange} 
         />
       </div>
-    )
+    );
   }
 }

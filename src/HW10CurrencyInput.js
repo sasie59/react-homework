@@ -8,7 +8,7 @@ export default function HW10CurrencyInput(props) {
         type="number"
         name={props.currencyType}
         onChange={props.onChange}  
-        />{props.currencyType}
+      />{props.currencyType}
     </div>
-  )
+  );
 }

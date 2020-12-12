@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 
+const date20210101 = +new Date("2021/01/01 00:00:00");
+const ONE_HOUR = 60 * 60;
+const ONE_DAY = ONE_HOUR * 24;
+
 export default function HW9HappyNewYear() {
 
   const [time, setTime] = useState({
     date: +new Date(),
-    countDown: 0,
+    countDown: Math.floor((date20210101 - (+new Date())) / 1000),
   });
   
-  const date20210101 = +new Date("2021/01/01 00:00:00");
-  const ONE_HOUR = 60 * 60;
-  const ONE_DAY = ONE_HOUR * 24;
   const day = Math.floor(time.countDown / ONE_DAY);
   const hour = Math.floor((time.countDown % ONE_DAY) / ONE_HOUR);
   const min = Math.floor((time.countDown % ONE_HOUR) / 60);
