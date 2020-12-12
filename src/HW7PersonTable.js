@@ -86,8 +86,8 @@ export default function HW7PersonTable() {
 //       <div>
 //         <h1>HW7PersonTable</h1>
 //         <button onClick={this.handleFetch}>抓取資料</button>
-{
-  /* <table>
+
+/* <table>
   <thead>
     <tr>
       <th>picture</th>
@@ -114,7 +114,7 @@ export default function HW7PersonTable() {
     })}
   </tbody>
 </table>; */
-}
+
 //       </div>
 //     );
 //   }
