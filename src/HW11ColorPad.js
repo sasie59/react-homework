@@ -13,6 +13,7 @@ export default function HW11ColorPad() {
       [color]: target.value
     });
   };
+  // 展開後 再去改變他們各自的值
 
   return (
     <div>
