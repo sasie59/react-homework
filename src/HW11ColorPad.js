@@ -7,8 +7,11 @@ export default function HW11ColorPad() {
     b: 150,
   });
 
-  const handleChange = ({target}) => {
-    setPad(target.value);
+  const handleChange = (color, {target}) => {
+    setPad({
+      ...pad,
+      [color]: target.value
+    });
   };
 
   return (
@@ -26,31 +29,25 @@ export default function HW11ColorPad() {
       R
       <input
         type="range"
-        name="pad.r"
-        value={pad.r}
         min="0"
         max="255"
-        onChange={handleChange}
+        onChange={handleChange.bind(this, 'r')}
       />{pad.r}
       <br />
       G
       <input
         type="range"
-        name="pad.g"
-        value={pad.g}
         min="0"
         max="255"
-        onChange={handleChange}
+        onChange={handleChange.bind(this, 'g')}
       />{pad.g}
       <br />
       B
       <input
         type="range"
-        name="pad.b"
-        value={pad.b}
         min="0"
         max="255"
-        onChange={handleChange}
+        onChange={handleChange.bind(this, 'b')}
       />{pad.b}
       <br />
     </div>
