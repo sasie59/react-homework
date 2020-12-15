@@ -5,12 +5,33 @@ export default function HW13TodoList() {
   const [list, setList ] = useState([]);
   const [value, setValue ] = useState('');
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setList([{ content: value, done: false}, ...list]);
+    setValue('');
+  };
+
   return (
     <div>
       <h1>HW13TodoList</h1>
       <h1>代辦事項</h1>
-      <form action="">
-        <input type="text"/>
+      {list.map((item,index) => 
+        <div key={index}>
+          <span>
+            <label>
+              {item.content}
+            </label>
+          </span>
+        </div>
+      )}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={value}
+          placeholder='add something ?'
+          onChange={({target})=> setValue(target.value)}
+        />
+        <button>save</button>
       </form>
     </div>
   );
