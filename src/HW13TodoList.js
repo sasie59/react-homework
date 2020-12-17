@@ -1,42 +1,49 @@
-import React ,{ useState }from 'react';
+import React, { useState } from "react";
+import './HW13TodoList.scss';
 
 export default function HW13TodoList() {
-
-  const [list, setList ] = useState([]);
-  const [value, setValue ] = useState('');
+  const [list, setList] = useState([]);
+  const [value, setValue] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setList([{ content: value, done: false}, ...list]);
-    setValue('');
+    setList([{ content: value, done: false }, ...list]);
+    setValue("");
   };
+
+  const handleDone = (index) => {
+    const newList = [...list];
+    list[index].done = !list[index].done;
+    // console.warn(list[index].done);
+    setList(newList);
+  };
+  
 
   return (
     <div>
       <h1>HW13TodoList</h1>
       <h1>代辦事項</h1>
-      {list.map((item,index) => 
-        <div key={index}>
-          <span>
-            <label>
-              {item.content}
-            </label>
-          </span>
-        </div>
-      )}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={value}
           placeholder='add something ?'
-          onChange={({target})=> setValue(target.value)}
+          onChange={({ target }) => setValue(target.value)}
         />
         <button>save</button>
       </form>
+      {list.map((item, index) => (
+        <div key={index}>
+          <label className={item.done ? 'clear' : ''}
+            onClick={handleDone.bind(this, index)}
+          >
+            {item.content}
+          </label>
+        </div>
+      ))}
     </div>
   );
 }
-
 
 // import React, { Component } from 'react';
 // import './HW13TodoList.scss';
@@ -99,7 +106,7 @@ export default function HW13TodoList() {
 //           <tbody>
 //             {ToDoList}
 //           </tbody>
-//         </table>  
+//         </table>
 //       </div>
 //     );
 //   }
