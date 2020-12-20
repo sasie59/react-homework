@@ -11,6 +11,6 @@ test('should simulate onClick event', () => {
   const { container } = render(<HW />);
   const button = container.querySelector('button');
   userEvent.click(button);
-  expect(button.textContent).toBe('counter : 1');
+  expect(button.textContent).toBe('click me : 1');
   expect(container).toMatchSnapshot();
 });

@@ -7,7 +7,7 @@ exports[`should HW1 1`] = `
       HW1Counter
     </h1>
     <button>
-      counter : 
+      click me : 
       0
     </button>
   </div>
@@ -21,7 +21,7 @@ exports[`should simulate onClick event 1`] = `
       HW1Counter
     </h1>
     <button>
-      counter : 
+      click me : 
       1
     </button>
   </div>

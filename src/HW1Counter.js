@@ -12,8 +12,6 @@ export default function Counter() {
   return (
     <div>
       <h1>HW1Counter</h1>
-      {/* 兩種寫法 */}
-      <button onClick={() => setCount(count + 1)}>按我 : {count}</button><br/>
       <button onClick={handleClick}>click me : {count2}</button>
     </div>
   );
