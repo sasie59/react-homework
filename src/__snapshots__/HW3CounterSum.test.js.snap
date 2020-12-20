@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`從1開始累加至按的次數  1`] = `
+<div>
+  <div>
+    <h1>
+      HW3CounterSum
+    </h1>
+    <button>
+      add
+    </button>
+    <br />
+    0
+  </div>
+</div>
+`;
+
+exports[`從1開始累加至按的次數  2`] = `
+<div>
+  <div>
+    <h1>
+      HW3CounterSum
+    </h1>
+    <button>
+      add
+    </button>
+    <br />
+    3
+  </div>
+</div>
+`;
+
+exports[`從1開始累加至按的次數  3`] = `
+<div>
+  <div>
+    <h1>
+      HW3CounterSum
+    </h1>
+    <button>
+      add
+    </button>
+    <br />
+    10
+  </div>
+</div>
+`;
