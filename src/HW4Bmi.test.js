@@ -9,6 +9,12 @@ test('should HW4Bmi', () => {
 
 test('should 體重/身高平方(公尺)', () => {
   const {container } =render(<HW />);
-  const input = container.querySelector('input');
-  const button = container.querySelector('button');
+  expect(60/Math.pow(1.7)).toBe(Math.round(20.76));
+  expect(container).toMatchSnapshot();
+});
+test('should 體重/身高平方(公尺)', () => {
+  const {container } =render(<HW />);
+  expect(80/Math.pow(1.9)).toBe(Math.round(20.76));
+  expect(container).toMatchSnapshot(Math.round(20.16));
+  expect(container).toMatchSnapshot();
 });
