@@ -33,7 +33,7 @@ jobs:
       run: npm i
 
     - name: Run the tests and generate coverage report
-      run: npm test -- --coverage
+      run: npm run coverage
 
     - name: Build
       run: npm run build
