@@ -1,33 +1,33 @@
-import React ,{ useState }from 'react';
+import React ,{ useRef }from 'react';
 
 export default function HW4Bmi() {
-  const [ cm, setCm ] = useState('');
-  const [ kg, setKg ] = useState('');
-  const [ bmi, setBmi ] = useState('');
+  const cmDOM = useRef();
+  const kgDOM = useRef();
+  const bmiDOM = useRef();
+
+  const handleClick = () => {
+    const cm = cmDOM.current.value;
+    const kg = kgDOM.current.value;
+    bmiDOM.current.innerText = Math.floor(kg / Math.pow(cm / 100, 2));
+  };
 
   return (
     <div>
       <h1>HW4Bmi</h1>
       <span>身高</span>
-      <input 
+      <input
+        ref={cmDOM}
         name='cm'
-        value={cm}
         type="text"
-        onChange={({target}) =>
-          setCm(target.value)
-        }
       /><br/>
       <span>體重</span>
       <input
+        ref={kgDOM}
         name='kg'
-        value={kg}
         type="text"
-        onChange={({target})=>
-          setKg(target.value)
-        }
       /><br/>
-      <button onClick={()=> setBmi(Math.floor(kg / Math.pow(cm / 100, 2)))}>計算</button>
-      BMI : {bmi}
+      <button onClick={handleClick}>計算</button>
+      BMI : <span data-testid="bmi" ref={bmiDOM} />
     </div>
   );
 }

@@ -3,17 +3,40 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import HW from './HW4Bmi';
 test('should HW4Bmi', () => {
-  const {container } =render(<HW />);
-  expect(container).toMatchSnapshot;
+  const { container } = render(<HW />);
+  expect(container).toMatchSnapshot();
 });
 
-test('should 體重/身高平方(公尺)', () => {
-  const {container } =render(<HW />);
-  expect(60/Math.pow(1.7)).toBe(Math.round(20.76));
-  // expect(container).toMatchSnapshot();
+test('should 160cm/60kg get 23', () => {
+  const { container, getByTestId } = render(<HW />);
+  const cmInput = container.querySelector('input[name="cm"]');
+  const kgInput = container.querySelector('input[name="kg"]');
+  const button = container.querySelector('button');
+  const bmiSpan = getByTestId('bmi');
+  
+  userEvent.type(cmInput, '160');
+  userEvent.type(kgInput, '60');
+  userEvent.click(button);
+
+  expect(bmiSpan.innerText).toBe(23);
+  expect(container).toMatchSnapshot();
 });
-test('should 體重/身高平方(公尺)', () => {
-  const {container } =render(<HW />);
-  expect(80/Math.pow(1.9)).toBe(Math.round(22.16));
-  // expect(container).toMatchSnapshot();
+
+test('should 185cm / 90kg get 26', () => {
+  const { container , getByTestId } = render(<HW/>);
+  const cmInput = container.querySelector('input[name="cm"]');
+  const kgInput = container.querySelector('input[name="kg"]');
+  const button = container.querySelector('button');
+  const bmiSpan = getByTestId('bmi');
+  
+  userEvent.type(cmInput, '185');
+  userEvent.type(kgInput, '90');
+  userEvent.click(button);
+
+  expect(bmiSpan.innerText).toBe(26);
+  expect(container).toMatchSnapshot();
 });
+
+
+
+
