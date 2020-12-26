@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW6RemovableList 1`] = `
+<div>
+  <div>
+    <h1>
+      HW8SumForButton
+    </h1>
+    <button
+      data-testid="0"
+    >
+      1
+    </button>
+    <button
+      data-testid="1"
+    >
+      2
+    </button>
+    <button
+      data-testid="2"
+    >
+      3
+    </button>
+    <button
+      data-testid="3"
+    >
+      4
+    </button>
+    <button
+      data-testid="4"
+    >
+      5
+    </button>
+    <button
+      data-testid="5"
+    >
+      6
+    </button>
+    <button
+      data-testid="6"
+    >
+      7
+    </button>
+    <button
+      data-testid="7"
+    >
+      8
+    </button>
+    <button
+      data-testid="8"
+    >
+      9
+    </button>
+    <div
+      name="sum"
+    >
+      加總值 : 
+      0
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should sum = sum + number 1`] = `
+<div>
+  <div>
+    <h1>
+      HW8SumForButton
+    </h1>
+    <button
+      data-testid="0"
+    >
+      1
+    </button>
+    <button
+      data-testid="1"
+    >
+      2
+    </button>
+    <button
+      data-testid="2"
+    >
+      3
+    </button>
+    <button
+      data-testid="3"
+    >
+      4
+    </button>
+    <button
+      data-testid="4"
+    >
+      5
+    </button>
+    <button
+      data-testid="5"
+    >
+      6
+    </button>
+    <button
+      data-testid="6"
+    >
+      7
+    </button>
+    <button
+      data-testid="7"
+    >
+      8
+    </button>
+    <button
+      data-testid="8"
+    >
+      9
+    </button>
+    <div
+      name="sum"
+    >
+      加總值 : 
+      4
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should sum = sum + number 2`] = `
+<div>
+  <div>
+    <h1>
+      HW8SumForButton
+    </h1>
+    <button
+      data-testid="0"
+    >
+      1
+    </button>
+    <button
+      data-testid="1"
+    >
+      2
+    </button>
+    <button
+      data-testid="2"
+    >
+      3
+    </button>
+    <button
+      data-testid="3"
+    >
+      4
+    </button>
+    <button
+      data-testid="4"
+    >
+      5
+    </button>
+    <button
+      data-testid="5"
+    >
+      6
+    </button>
+    <button
+      data-testid="6"
+    >
+      7
+    </button>
+    <button
+      data-testid="7"
+    >
+      8
+    </button>
+    <button
+      data-testid="8"
+    >
+      9
+    </button>
+    <div
+      name="sum"
+    >
+      加總值 : 
+      16
+    </div>
+  </div>
+</div>
+`;
