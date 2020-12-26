@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW5ItemList 1`] = `
+<div>
+  <div>
+    <h1>
+      HW5ItemList
+    </h1>
+    <form>
+      <input
+        placeholder="do something..."
+        type="text"
+      />
+    </form>
+    <ul />
+  </div>
+</div>
+`;
+
+exports[`should add something to list 1`] = `
+<div>
+  <div>
+    <h1>
+      HW5ItemList
+    </h1>
+    <form>
+      <input
+        placeholder="do something..."
+        type="text"
+      />
+    </form>
+    <ul>
+      <li>
+        hooks
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`should add something to list 2`] = `
+<div>
+  <div>
+    <h1>
+      HW5ItemList
+    </h1>
+    <form>
+      <input
+        placeholder="do something..."
+        type="text"
+      />
+    </form>
+    <ul>
+      <li>
+        jest
+      </li>
+      <li>
+        react
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -98,36 +98,3 @@ exports[`should HW4Bmi 1`] = `
   </div>
 </div>
 `;
-
-exports[`should 體重/身高平方(公尺) 1`] = `
-<div>
-  <div>
-    <h1>
-      HW4Bmi
-    </h1>
-    <span>
-      身高
-    </span>
-    <input
-      name="cm"
-      type="text"
-    />
-    <br />
-    <span>
-      體重
-    </span>
-    <input
-      name="kg"
-      type="text"
-    />
-    <br />
-    <button>
-      計算
-    </button>
-    BMI : 
-    <span
-      data-testid="bmi"
-    />
-  </div>
-</div>
-`;
