@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 
 export default function HW6RemovableList() {
-  const [item, setItem] = useState("");
+  const [    ,setItem] = useState([]);
   const [list, setList] = useState([]);
+  const itemDom = useRef();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setList([itemDom.current.value, ...list]);
+    setItem(itemDom.current.value = '');
+  };
+
 
   return (
     <div>
       <h1>HW6RemovableList</h1>
       <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          setList([item, ...list]);
-          setItem("");
-        }}
+        onSubmit={handleSubmit}
       >
         <input
           type="text"
-          value={item}
-          onChange={({ target }) => setItem(target.value)}
+          ref={itemDom}
         />
       </form>
       <ul>
