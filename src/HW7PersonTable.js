@@ -24,7 +24,7 @@ export default function HW7PersonTable() {
   return (
     <div>
       <h1>HW7PersonTable</h1>
-      <button onClick={() => handleClick()}>抓取資料 </button>
+      <button onClick={handleClick}>抓取資料 </button>
       <table>
         <thead>
           <tr>
