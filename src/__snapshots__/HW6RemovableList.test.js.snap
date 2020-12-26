@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW6RemovableList 1`] = `
+<div>
+  <div>
+    <h1>
+      HW6RemovableList
+    </h1>
+    <form>
+      <input
+        type="text"
+      />
+    </form>
+    <ul />
+  </div>
+</div>
+`;
+
+exports[`should add || remove something to list 1`] = `
+<div>
+  <div>
+    <h1>
+      HW6RemovableList
+    </h1>
+    <form>
+      <input
+        type="text"
+      />
+    </form>
+    <ul />
+  </div>
+</div>
+`;
+
+exports[`should add || remove something to list 2`] = `
+<div>
+  <div>
+    <h1>
+      HW6RemovableList
+    </h1>
+    <form>
+      <input
+        type="text"
+      />
+    </form>
+    <ul>
+      <li>
+        test
+        <button
+          data-testid="0"
+        >
+          Clear it!
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

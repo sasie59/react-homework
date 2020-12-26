@@ -3,13 +3,12 @@ import React ,{useState, useRef }from 'react';
 export default function HW5ItemList() {
 
   const [list, setList] = useState([]);
-  const [    ,setItem] = useState([]);
   const itemDom = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setList([itemDom.current.value, ...list]);
-    setItem(itemDom.current.value = '');
+    itemDom.current.value = '';
   };
   
   return (

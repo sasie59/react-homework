@@ -1,14 +1,13 @@
 import React, { useState,useRef } from "react";
 
 export default function HW6RemovableList() {
-  const [    ,setItem] = useState([]);
   const [list, setList] = useState([]);
   const itemDom = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setList([itemDom.current.value, ...list]);
-    setItem(itemDom.current.value = '');
+    itemDom.current.value = '';
   };
 
 
@@ -27,9 +26,12 @@ export default function HW6RemovableList() {
         {list.map((item,index) => (
           <li key={index}>
             {item}
-            <button onClick={()=> setList.bind(index)(
-              [...list.slice(0, index),...list.slice(index + 1)]
-            )}>Clear it!</button>
+            <button
+              data-testid={index}
+              onClick={()=> setList.bind(index)(
+                [...list.slice(0, index),...list.slice(index + 1)]
+              )}>Clear it!
+            </button>
           </li>
         ))}
       </ul>
