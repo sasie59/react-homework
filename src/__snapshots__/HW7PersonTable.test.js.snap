@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW7PersonTable 1`] = `
+<div>
+  <div>
+    <h1>
+      HW7PersonTable
+    </h1>
+    <button>
+      抓取資料 
+    </button>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            picture
+          </th>
+          <th>
+            name
+          </th>
+          <th>
+            gender
+          </th>
+          <th>
+            email
+          </th>
+          <th>
+            age
+          </th>
+          <th>
+            phone
+          </th>
+          <th>
+            country
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;

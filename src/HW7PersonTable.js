@@ -5,10 +5,11 @@ export default function HW7PersonTable() {
   const [list, setList] = useState([]);
 
   const fetchData = () => {
+    console.warn('==== run run run ===');
     fetch("https://randomuser.me/api/?results=25")
       .then((res) => res.json())
       .then(({ results: list }) => {
-        // console.warn(list);
+        console.warn(list);
         setList(list);
       });
   };

@@ -10,7 +10,7 @@ export default function HW8SumForButton() {
       {[1,2,3,4,5,6,7,8,9].map((value,index) => 
         <button
           data-testid={index}
-          key={value}
+          key={index}
           onClick={() => setSum(sum + value)}
         >{value}</button>
       )}
