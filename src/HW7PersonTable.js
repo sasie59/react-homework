@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import HW7PersonalInfo from "./HW7PersonalInfo";
+// import HW7PersonalInfo from "./HW7PersonalInfo";
 
 export default function HW7PersonTable() {
   const [list, setList] = useState([]);
 
   const fetchData = () => {
-    console.warn('==== run run run ===');
+    // console.warn('==== run run run ===');
     fetch("https://randomuser.me/api/?results=25")
       .then((res) => res.json())
       .then(({ results: list }) => {
-        console.warn(list);
+        // console.warn(list);
         setList(list);
       });
   };
@@ -39,18 +39,19 @@ export default function HW7PersonTable() {
           </tr>
         </thead>
         <tbody>
-          {list.map((item) => (
-            <HW7PersonalInfo
-              key={item.login.uuid}
-              picture={item.picture.medium}
-              name={item.name.last}
-              gender={item.gender}
-              email={item.email}
-              age={item.dob.age}
-              phone={item.phone}
-              country={item.location.country}
-            />
-          ))}
+          {list.map(item => 
+            <tr key={item.login.uuid}>
+              <td>
+                <img src={item.picture.medium} alt=""/>
+              </td>
+              <td>{item.name.last}</td>
+              <td>{item.gender}</td>
+              <td>{item.email}</td>
+              <td>{item.dob.age}</td>
+              <td>{item.phone}</td>
+              <td>{item.location.country}</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
