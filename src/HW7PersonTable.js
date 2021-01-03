@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import HW7PersonalInfo from "./HW7PersonalInfo";
 
 export default function HW7PersonTable() {
   const [list, setList] = useState([]);
