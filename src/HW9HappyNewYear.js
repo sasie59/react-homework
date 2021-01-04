@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-const date20210101 = +new Date("2021/01/01 00:00:00");
-const ONE_HOUR = 60 * 60;
-const ONE_DAY = ONE_HOUR * 24;
-
+export const date20220101 = +new Date("2022/01/01 00:00:00");
+export const ONE_HOUR = 60 * 60;
+export const ONE_DAY = ONE_HOUR * 24;
+export const countDownTime = date20220101 - (+new Date());
 export default function HW9HappyNewYear() {
 
   const [time, setTime] = useState({
     date: +new Date(),
-    countDown: Math.floor((date20210101 - (+new Date())) / 1000),
+    countDown: Math.floor((date20220101 - (+new Date())) / 1000),
   });
   
   const day = Math.floor(time.countDown / ONE_DAY);
@@ -18,7 +18,7 @@ export default function HW9HappyNewYear() {
   
   const tick = () => {
     setTime({
-      countDown : Math.floor((date20210101 - (+new Date())) / 1000),
+      countDown : Math.floor((date20220101 - (+new Date())) / 1000),
     });
   };
   
@@ -31,8 +31,8 @@ export default function HW9HappyNewYear() {
   return (
     <div>
       <h1>HW9HappyNewYear</h1>
-      <h1>
-        距離2021跨年還有 : {day}天 {hour}時 {min}分 {sec}秒
+      <h1 data-testid='countDown'>
+        距離2022跨年還有 : {day}天 {hour}時 {min}分 {sec}秒
       </h1>
     </div>
   );
