@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should  1 usd change 30 twd 1`] = `
+<div>
+  <div>
+    <h1>
+      HW10Currency
+    </h1>
+    <h1>
+      貨幣轉換
+    </h1>
+    TWD
+    <input
+      name="twd"
+      type="text"
+      value="30"
+    />
+    <br />
+    USD
+    <input
+      name="usd"
+      type="text"
+      value="01"
+    />
+  </div>
+</div>
+`;
+
+exports[`should 30 twd change 1 usd 1`] = `
+<div>
+  <div>
+    <h1>
+      HW10Currency
+    </h1>
+    <h1>
+      貨幣轉換
+    </h1>
+    TWD
+    <input
+      name="twd"
+      type="text"
+      value="030"
+    />
+    <br />
+    USD
+    <input
+      name="usd"
+      type="text"
+      value="1"
+    />
+  </div>
+</div>
+`;
+
+exports[`should HW10Currency 1`] = `
+<div>
+  <div>
+    <h1>
+      HW10Currency
+    </h1>
+    <h1>
+      貨幣轉換
+    </h1>
+    TWD
+    <input
+      name="twd"
+      type="text"
+      value="0"
+    />
+    <br />
+    USD
+    <input
+      name="usd"
+      type="text"
+      value="0"
+    />
+  </div>
+</div>
+`;
