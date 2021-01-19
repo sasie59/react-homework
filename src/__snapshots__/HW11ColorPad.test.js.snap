@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW11ColorPad 1`] = `
+<div>
+  <div>
+    <h1>
+      HW11ColorPad
+    </h1>
+    <h1>
+      調色盤
+    </h1>
+    <div
+      style="width: 200px; height: 200px; margin: 0px auto; background-color: rgb(0, 150, 150);"
+    />
+    R
+    <input
+      data-testid="red"
+      max="255"
+      min="0"
+      type="range"
+    />
+    0
+    <br />
+    G
+    <input
+      data-testid="green"
+      max="255"
+      min="0"
+      type="range"
+    />
+    150
+    <br />
+    B
+    <input
+      data-testid="blue"
+      max="255"
+      min="0"
+      type="range"
+    />
+    150
+    <br />
+  </div>
+</div>
+`;
+
+exports[`should change rgb range 1`] = `
+<div>
+  <div>
+    <h1>
+      HW11ColorPad
+    </h1>
+    <h1>
+      調色盤
+    </h1>
+    <div
+      style="width: 200px; height: 200px; margin: 0px auto; background-color: rgb(255, 255, 255);"
+    />
+    R
+    <input
+      data-testid="red"
+      max="255"
+      min="0"
+      type="range"
+    />
+    255
+    <br />
+    G
+    <input
+      data-testid="green"
+      max="255"
+      min="0"
+      type="range"
+    />
+    255
+    <br />
+    B
+    <input
+      data-testid="blue"
+      max="255"
+      min="0"
+      type="range"
+    />
+    255
+    <br />
+  </div>
+</div>
+`;
