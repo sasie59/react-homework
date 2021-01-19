@@ -32,6 +32,7 @@ export default function HW11ColorPad() {
         type="range"
         min="0"
         max="255"
+        data-testid='red'
         onChange={handleChange.bind(this, 'r')}
       />{pad.r}
       <br />
@@ -40,6 +41,7 @@ export default function HW11ColorPad() {
         type="range"
         min="0"
         max="255"
+        data-testid='green'
         onChange={handleChange.bind(this, 'g')}
       />{pad.g}
       <br />
@@ -48,6 +50,7 @@ export default function HW11ColorPad() {
         type="range"
         min="0"
         max="255"
+        data-testid='blue'
         onChange={handleChange.bind(this, 'b')}
       />{pad.b}
       <br />
