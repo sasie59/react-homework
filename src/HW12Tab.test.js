@@ -10,7 +10,16 @@ test('should HW12Tab', () => {
 
 test('should click different div will appear different text', () => {
   const { container } = render(<HW />);
-  
+  expect(container).toMatchSnapshot();
 });
+
+test('should click tab2', () => {
+  const { container } = render(<HW />);
+  const tab2 = container.querySelector('div[key="1"]');
+  userEvent.click(tab2);
+  expect(container).toMatchSnapshot();
+
+});
+
 
 

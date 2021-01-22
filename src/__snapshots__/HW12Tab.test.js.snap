@@ -39,3 +39,83 @@ exports[`should HW12Tab 1`] = `
   </div>
 </div>
 `;
+
+exports[`should click different div will appear different text 1`] = `
+<div>
+  <div>
+    <h1>
+      HW12Tab
+    </h1>
+    <h1>
+      標籤
+    </h1>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab1
+    </div>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab2
+    </div>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab3
+    </div>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab4
+    </div>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab5
+    </div>
+    <br />
+    lorem 1
+  </div>
+</div>
+`;
+
+exports[`should click tab2 1`] = `
+<div>
+  <div>
+    <h1>
+      HW12Tab
+    </h1>
+    <h1>
+      標籤
+    </h1>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab1
+    </div>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab2
+    </div>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab3
+    </div>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab4
+    </div>
+    <div
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab5
+    </div>
+    <br />
+    lorem 1
+  </div>
+</div>
+`;
