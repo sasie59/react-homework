@@ -8,9 +8,18 @@ test('should HW12Tab', () => {
   expect(container).toMatchSnapshot();
 });
 
-test('should click different div will appear different text', () => {
-  const { container } = render(<HW />);
-  
+test('should click  div2 will appear  lorem 2', () => {
+  const { container, getByTestId } = render(<HW />);
+  const div2 = getByTestId("1");
+  userEvent.click(div2);
+  expect(container).toMatchSnapshot();
+});
+
+test('should click  div5 will appear  lorem 5', () => {
+  const { container, getByTestId } = render(<HW />);
+  const div4 = getByTestId("4");
+  userEvent.click(div4);
+  expect(container).toMatchSnapshot();
 });
 
 

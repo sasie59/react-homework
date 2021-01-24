@@ -10,32 +10,127 @@ exports[`should HW12Tab 1`] = `
       標籤
     </h1>
     <div
+      data-testid="0"
       style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
     >
       tab1
     </div>
     <div
+      data-testid="1"
       style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
     >
       tab2
     </div>
     <div
+      data-testid="2"
       style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
     >
       tab3
     </div>
     <div
+      data-testid="3"
       style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
     >
       tab4
     </div>
     <div
+      data-testid="4"
       style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
     >
       tab5
     </div>
     <br />
     lorem 1
+  </div>
+</div>
+`;
+
+exports[`should click  div2 will appear  lorem 2 1`] = `
+<div>
+  <div>
+    <h1>
+      HW12Tab
+    </h1>
+    <h1>
+      標籤
+    </h1>
+    <div
+      data-testid="0"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab1
+    </div>
+    <div
+      data-testid="1"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab2
+    </div>
+    <div
+      data-testid="2"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab3
+    </div>
+    <div
+      data-testid="3"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab4
+    </div>
+    <div
+      data-testid="4"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab5
+    </div>
+    <br />
+    lorem 2
+  </div>
+</div>
+`;
+
+exports[`should click  div5 will appear  lorem 5 1`] = `
+<div>
+  <div>
+    <h1>
+      HW12Tab
+    </h1>
+    <h1>
+      標籤
+    </h1>
+    <div
+      data-testid="0"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab1
+    </div>
+    <div
+      data-testid="1"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab2
+    </div>
+    <div
+      data-testid="2"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab3
+    </div>
+    <div
+      data-testid="3"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab4
+    </div>
+    <div
+      data-testid="4"
+      style="display: inline-block; width: 50px; height: 25px; border: 1px solid black;"
+    >
+      tab5
+    </div>
+    <br />
+    lorem 5
   </div>
 </div>
 `;

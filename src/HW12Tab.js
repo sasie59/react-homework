@@ -16,6 +16,7 @@ export default function HW12Tab() {
       {["tab1", "tab2", "tab3", "tab4", "tab5"].map((item, index) => (
         <div
           key={index}
+          data-testid={index}
           onClick={handleClick.bind(this, index)}
           style={{
             display: "inline-block",
