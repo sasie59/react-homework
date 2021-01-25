@@ -15,3 +15,13 @@ test('should add something to list', () => {
   expect(container).toMatchSnapshot();
 });
 
+test('should something has done', () => {
+  const { container, getByText } = render(<HW />);
+  const input = container.querySelector('input');
+  userEvent.type(input, "bbb{enter}");
+  userEvent.click(getByText('bbb'));
+  userEvent.click(getByText('bbb'));
+  expect(container).toMatchSnapshot();
+});
+
+

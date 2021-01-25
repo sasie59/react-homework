@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './HW13TodoList.scss';
+import style from './style.module.scss';
 
 export default function HW13TodoList() {
   const [list, setList] = useState([]);
@@ -14,7 +14,6 @@ export default function HW13TodoList() {
   const handleDone = (index) => {
     const newList = [...list];
     list[index].done = !list[index].done;
-    // console.warn(list[index].done);
     setList(newList);
   };
   
@@ -34,7 +33,7 @@ export default function HW13TodoList() {
       </form>
       {list.map((item, index) => (
         <div key={index} data-testid={index}>
-          <label className={item.done ? 'clear' : ''}
+          <label className={item.dome ? `${style.clear}`: ''}
             onClick={handleDone.bind(this, index)}
           >
             {item.content}

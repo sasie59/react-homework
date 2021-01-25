@@ -42,16 +42,45 @@ exports[`should add something to list 1`] = `
         save
       </button>
     </form>
-    <div>
-      <label
-        class=""
-      />
-    </div>
-    <div>
+    <div
+      data-testid="0"
+    >
       <label
         class=""
       >
         aaa
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should something has done 1`] = `
+<div>
+  <div>
+    <h1>
+      HW13TodoList
+    </h1>
+    <h1>
+      代辦事項
+    </h1>
+    <form>
+      <input
+        placeholder="add something ?"
+        type="text"
+        value=""
+      />
+      <button>
+        save
+      </button>
+    </form>
+    <div
+      data-testid="0"
+    >
+      <label
+        class=""
+      >
+        bbb
       </label>
     </div>
   </div>
