@@ -9,5 +9,5 @@ export default function PokemonInfo(props) {
       <span>{props.name}</span>
       <img src={`${imgURL}${ID}.png`} alt=""/>
     </div>
-  )
+  );
 }
