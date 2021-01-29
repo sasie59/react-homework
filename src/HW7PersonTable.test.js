@@ -1,7 +1,9 @@
 import React from "react";
-import { render, act } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import HW from "./HW7PersonTable";
+
+import "@babel/polyfill";
 
 // global.fetch = jest.fn(x => x * 2);
 // test('should fetch', () => {
@@ -85,19 +87,15 @@ global.fetch = jest.fn(
     })
 );
 
-test("should HW7PersonTable", () => {
-  act(() => {
-    const { container } = render(<HW />);
-    expect(container).toMatchSnapshot();
-  });
+test("should HW7PersonTable", async () => {
+  const { container } = render(<HW />);
+  await waitFor(() => expect(container).toMatchSnapshot());
 });
 
-test("should upData personList", () => {
-  act(() => {
-    const { container } = render(<HW />);
-    const button = container.querySelector("button");
+test("should upData personList", async () => {
+  const { container } = render(<HW />);
+  const button = container.querySelector("button");
 
-    userEvent.click(button);
-    expect(container).toMatchSnapshot();
-  });
+  userEvent.click(button);
+  await waitFor(() => expect(container).toMatchSnapshot());
 });
