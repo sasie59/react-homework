@@ -33,7 +33,7 @@ export default function HW13TodoList() {
       </form>
       {list.map((item, index) => (
         <div key={index} data-testid={index}>
-          <label className={item.dome ? `${style.clear}`: ''}
+          <label className={item.done ? `${style.clear}`: ''}
             onClick={handleDone.bind(this, index)}
           >
             {item.content}
