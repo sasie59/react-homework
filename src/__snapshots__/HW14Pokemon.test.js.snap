@@ -22,26 +22,3 @@ exports[`should HW14Pokemon 1`] = `
   </div>
 </div>
 `;
-
-exports[`should HW14Pokemon 2`] = `
-<div>
-  <div>
-    <h2>
-      順利抓取 100 隻寶可夢的名字與圖片
-    </h2>
-    <h2>
-      可以依名字篩選出寶可夢
-    </h2>
-    <span>
-      <b>
-        keyword
-      </b>
-    </span>
-    <input
-      keyword="ab"
-      placeholder="name..."
-      type="text"
-    />
-  </div>
-</div>
-`;
