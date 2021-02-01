@@ -2,6 +2,7 @@ import React from "react";
 import { render, waitFor } from "@testing-library/react";
 import "@babel/polyfill";
 import HW from "./HW14Pokemon";
+import userEvent from "@testing-library/user-event";
 
 global.fetch = jest.fn(
   () =>
@@ -37,6 +38,14 @@ test("should HW14Pokemon", async () => {
   const { container } = render(<HW />);
   await waitFor(() => expect(container).toMatchSnapshot());
 });
+
+test('should enter keyword to filter',async () => {
+  const { container } = render(<HW />);
+  const input = container.querySelector('input');
+  userEvent.type(input, "bul{enter}");
+  await waitFor(() => expect(container).toMatchSnapshot());
+});
+
 
 
 /** 根據我GOOGLE，我發現只要有 fetch 的測試，都要使用 await / async 去接測試，像這樣 */
