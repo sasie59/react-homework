@@ -9,26 +9,22 @@ global.fetch = jest.fn(
       resolve({
         json: () =>
           new Promise((resolve) => {
-            resolve({
-              res: [
+            resolve(                {
+              count: 1118,
+              next: "https://pokeapi.co/api/v2/pokemon/?offset=100&limit=3",
+              previous: null,
+              results: [
                 {
-                  count: 1118,
-                  next: "https://pokeapi.co/api/v2/pokemon/?offset=100&limit=3",
-                  previous: null,
-                  results: [
-                    {
-                      name: "bulbasaur",
-                      url: "https://pokeapi.co/api/v2/pokemon/1/",
-                    },
-                    {
-                      name: "ivysaur",
-                      url: "https://pokeapi.co/api/v2/pokemon/2/",
-                    },
-                    {
-                      name: "venusaur",
-                      url: "https://pokeapi.co/api/v2/pokemon/3/",
-                    },
-                  ],
+                  name: "bulbasaur",
+                  url: "https://pokeapi.co/api/v2/pokemon/1/",
+                },
+                {
+                  name: "ivysaur",
+                  url: "https://pokeapi.co/api/v2/pokemon/2/",
+                },
+                {
+                  name: "venusaur",
+                  url: "https://pokeapi.co/api/v2/pokemon/3/",
                 },
               ],
             });

@@ -15,9 +15,9 @@ exports[`should HW14Pokemon 1`] = `
       </b>
     </span>
     <input
-      keyword=""
       placeholder="name..."
       type="text"
+      value=""
     />
   </div>
 </div>

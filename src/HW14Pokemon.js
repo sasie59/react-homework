@@ -1,9 +1,9 @@
-import React, { useState, useEffect,useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 const imgURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
 export default function HW14Pokemon() {
-  const inputDom = useRef();
   const [list, setList] = useState([]);
+  const [inputValue, setInputValue] = useState('');
 
   const fetchData = () => {
     fetch("https://pokeapi.co/api/v2/pokemon/?limit=100")
@@ -17,6 +17,10 @@ export default function HW14Pokemon() {
     fetchData();
   },[]);
 
+  const handleChange = ({ target }) => {
+    setInputValue(target.value);
+  };
+
   return (
     <div>
       <h2>順利抓取 100 隻寶可夢的名字與圖片</h2>
@@ -26,10 +30,11 @@ export default function HW14Pokemon() {
       </span>
       <input
         type="text"
-        ref={inputDom}
+        onChange={handleChange}
+        value={inputValue}
         placeholder="name..."
       />
-      {list.filter(item => item.name.toLowerCase().indexOf(inputDom.current.value.toLowerCase()) > -1)
+      {list.filter(item => item.name.toLowerCase().indexOf(inputValue.toLowerCase()) > -1)
         .map(item =>
           <div key={item.name}>
             <img src={`${imgURL}${item.url.slice(34, -1)}.png`} alt=""/>
