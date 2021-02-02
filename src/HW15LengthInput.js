@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function LengthInput(props) {
   return (
@@ -9,7 +9,7 @@ export default function LengthInput(props) {
         value={props.value}
         name={props.lengthType}
         onChange={props.onChange}
-        />{props.lengthType}
+      />{props.lengthType}
     </div>
-  )
+  );
 }

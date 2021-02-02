@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import LengthInput from './HW15LengthInput';
+
 
 /**
  * 你本來的寫法
@@ -12,38 +11,38 @@ import LengthInput from './HW15LengthInput';
    * 而你在 return 那邊也有使用 base（不在if裡) 所以會有錯誤。
    * 因此，我稍微改寫了一下，把base在最上面用 let 定義，然後在 if 裡再賦予內容。 :)
    */
-let base;
+// let base;
 
 // 你的 id 是字串，所以這邊全部的 if 都不會成立
-if(id === 1) {
-  base = {
-    mm : 1,
-    cm : 1 / 10,
-    m : 1 / 1000,
-    km :1 / 1000000
-  };
-} else if(id === 2) {
-  base = {
-    mm : 10,
-    cm : 1,
-    m : 1 / 100,
-    km : 1 / 100000
-  };
-}else if(id === 3) {
-  base = {
-    mm : 1000,
-    cm : 100,
-    m : 1,
-    km : 1 / 1000
-  };
-}else if(id === 4) {
-  base = {
-    mm : 1000000,
-    cm : 100000,
-    m : 1000,
-    km : 1
-  };
-}
+// if(id == 1) {
+//   base = {
+//     mm : 1,
+//     cm : 1 / 10,
+//     m : 1 / 1000,
+//     km :1 / 1000000
+//   };
+// } else if(id == 2) {
+//   base = {
+//     mm : 10,
+//     cm : 1,
+//     m : 1 / 100,
+//     km : 1 / 100000
+//   };
+// }else if(id == 3) {
+//   base = {
+//     mm : 1000,
+//     cm : 100,
+//     m : 1,
+//     km : 1 / 1000
+//   };
+// }else if(id == 4) {
+//   base = {
+//     mm : 1000000,
+//     cm : 100000,
+//     m : 1000,
+//     km : 1
+//   };
+// }
 /**
    * 12/05 提示：
    * 情境1： value = 1，lengthType = 'mm'
@@ -70,12 +69,19 @@ if(id === 1) {
 // id要都一樣 不能寫死 於是我設了state變數 但returntype是唯一不會變的東西
 // 在下面的function 我也給了參數 印出來也會列出每一筆 但只要一敲鍵盤 依舊報錯
 
-console.warn(id, base);
+// console.warn(id, base);
   
-return lengthType === returntype ? value : value * base[returntype]; 
+// return lengthType === returntype ? value : value * base[returntype]; 
 // };
-
-
+/**
+ * 你本來的寫法
+ */
+// let mm = turnLength(value, lengthType,"mm",id );
+// let cm = turnLength(value, lengthType,"cm",id );
+// let m = turnLength(value, lengthType,"m",id );
+// let km = turnLength(value, lengthType,"km",id );
+import React, { Component } from 'react';
+import LengthInput from './HW15LengthInput';
 /**
  * 我提供另一種作法 你看看
  */
@@ -89,7 +95,7 @@ const proportion = {
 const unitConverter = (number, oriUnit, toUnit) => {
   if(!oriUnit) return 0;
   /**
- * 1000000 km -> 6
+   * 1000000 km -> 6
  * 100000 m -> 5
  * 1000 cm -> 3
  * 1 -> 0
@@ -124,13 +130,6 @@ export default class HW15LengthConversion extends Component {
     const m = unitConverter(value, lengthType, 'm');
     const km = unitConverter(value, lengthType, 'km');
 
-    /**
-     * 你本來的寫法
-     */
-    // let mm = turnLength(value, lengthType,"mm",id );
-    // let cm = turnLength(value, lengthType,"cm",id );
-    // let m = turnLength(value, lengthType,"m",id );
-    // let km = turnLength(value, lengthType,"km",id );
     return ( 
       <div>
         <h1>長度轉換</h1>
