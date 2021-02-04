@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import LengthInput from "./HW15LengthInput";
 
 const proportion = {
@@ -23,7 +23,7 @@ const unitConverter = (number, oriUnit, toUnit) => {
 export default function HW15LengthConversion() {
   const [value ,setValue ] = useState(0);
   const [lengthType , setLengthType ] = useState('');
-  const [id , setId ] = useState(1);
+  const [ ,setId ] = useState(1);
 
   const mm = unitConverter(value, lengthType, "mm");
   const cm = unitConverter(value, lengthType, "cm");
@@ -43,24 +43,28 @@ export default function HW15LengthConversion() {
         <LengthInput
           id={1}
           value={mm}
+          data-testid={1}
           lengthType="mm"
           onChange={handleChange}
         />
         <LengthInput
           id={2}
           value={cm}
+          data-testid={2}
           lengthType="cm"
           onChange={handleChange}
         />
         <LengthInput
           id={3}
           value={m}
+          data-testid={3}
           lengthType="m"
           onChange={handleChange}
         />
         <LengthInput
           id={4}
           value={km}
+          data-testid={4}
           lengthType="km"
           onChange={handleChange}
         />

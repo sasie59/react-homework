@@ -33,7 +33,6 @@ export default function HW14Pokemon() {
         onChange={handleChange}
         value={inputValue}
         placeholder="name..."
-        // 如果用ref你會怎麼寫
       />
       {list.filter(item => item.name.toLowerCase().indexOf(inputValue.toLowerCase()) > -1)
         .map(item =>
