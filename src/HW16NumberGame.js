@@ -1,36 +1,40 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 const randomNumber = () => {
-  return Math.floor(Math.random()*10);
+  return Math.floor(Math.random() * 10);
 };
 let random = randomNumber();
 
-
 export default function HW16NumberGame() {
-  const [bingoCount, setBingoCount]  = useState(0);
-  const [failCount, setFailCount]  = useState(0);
-  
-  const handleChange = ({target}) => {
-    const result = +target.value === random ? 'bingoCount': 'failCount';
+  const [ans, setAns] = useState({
+    bingo: 0,
+    fail: 0,
+  });
+
+  const handleChange = ({ target }) => {
+    console.warn(random);
+    console.warn(randomNumber());
+    console.warn(+target.value);
+    const result = +target.value === random ? "bingo" : "fail";
+    setAns({
+      ...ans,
+      [result]: ans[result] + 1,
+    });
+    random = randomNumber();
   };
+
   return (
     <div>
       <div>
         隨機數字
-        {randomNumber()}
+        {random}
       </div>
-      <input
-        type="text"
-        value=''
-        onChange={handleChange}
-      />
-      <div>答對: {bingoCount}</div>    
-      <div>答錯: {failCount}</div>
+      <input type="text" value="" onChange={handleChange} />
+      <div>答對: {ans.bingo}</div>
+      <div>答錯: {ans.fail}</div>
     </div>
   );
 }
-
-
 
 // import React, { Component } from 'react';
 
@@ -58,7 +62,6 @@ export default function HW16NumberGame() {
 //       // this.state.bingoCount or this.state.failCont
 //     });
 //   }
-
 
 //   render() {
 //     const {random,bingoCount,failCount,value} = this.state;
