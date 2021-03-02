@@ -12,9 +12,6 @@ export default function HW16NumberGame() {
   });
 
   const handleChange = ({ target }) => {
-    console.warn(random);
-    console.warn(randomNumber());
-    console.warn(+target.value);
     const result = +target.value === random ? "bingo" : "fail";
     setAns({
       ...ans,
@@ -25,13 +22,13 @@ export default function HW16NumberGame() {
 
   return (
     <div>
-      <div>
+      <div data-testid='random'>
         隨機數字
         {random}
       </div>
       <input type="text" value="" onChange={handleChange} />
-      <div>答對: {ans.bingo}</div>
-      <div>答錯: {ans.fail}</div>
+      <div data-testid='bingo'>答對: {ans.bingo}</div>
+      <div data-testid='fail'>答錯: {ans.fail}</div>
     </div>
   );
 }

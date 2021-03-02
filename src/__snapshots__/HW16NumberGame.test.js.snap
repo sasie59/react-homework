@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should bingo number 1`] = `
+<div>
+  <div>
+    <div
+      data-testid="random"
+    >
+      隨機數字
+      3
+    </div>
+    <input
+      type="text"
+      value=""
+    />
+    <div
+      data-testid="bingo"
+    >
+      答對: 
+      0
+    </div>
+    <div
+      data-testid="fail"
+    >
+      答錯: 
+      1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should fail number 1`] = `
+<div>
+  <div>
+    <div
+      data-testid="random"
+    >
+      隨機數字
+      6
+    </div>
+    <input
+      type="text"
+      value=""
+    />
+    <div
+      data-testid="bingo"
+    >
+      答對: 
+      0
+    </div>
+    <div
+      data-testid="fail"
+    >
+      答錯: 
+      1
+    </div>
+  </div>
+</div>
+`;
