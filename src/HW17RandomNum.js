@@ -8,9 +8,12 @@ export default function HW17RandomNum() {
   };
 
   useEffect(() => {
-    setInterval(() => {
+    const randomTime = setInterval(() => {
       numChange();
     }, Math.floor(Math.random() * 501) + 500);
+    return () => {
+      clearTimeout(randomTime);
+    };
   }, []);
   
 
@@ -18,7 +21,7 @@ export default function HW17RandomNum() {
     <div>
       <h1>請設定一個會隨機變化的數字(1~9)</h1>
       <h2>每次變的時間介於 500ms ~ 1000ms 之間</h2>
-      <h1>{num}</h1>
+      <h1 data-testid='num'>{num}</h1>
     </div>
   );
 }
