@@ -21,10 +21,11 @@ export default function HW18TwinklingChar() {
 
   return (
     <div>
-      <h1>{isQ ? "Q" : "-"}</h1>
-      <h1>分數 : {count}</h1>
+      <h1 data-testid='isQ'>{isQ ? "Q" : "-"}</h1>
+      <h1 data-testid='count'>分數 : {count}</h1>
       <h2>出現Q按Q</h2>
       <input
+        data-testid='input'
         type="text"
         value=""
         onChange={handleChange}   
