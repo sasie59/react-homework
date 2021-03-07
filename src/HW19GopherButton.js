@@ -1,13 +1,29 @@
-import React,{ useState } from 'react';
+import React, { useState, useEffect } from "react";
 import "./HW19Gopher.scss";
 
-export default function HW19GopherButton() {
+export default function HW19GopherButton(props) {
+  const [isG, setIsG] = useState(!~~(Math.random() * 2));
 
-  const [ isG, setisG ] =useState(!Math.floor(Math.random() * 2));
+  const handleClick = () => {
+    props.changeCount(isG ? 1 : -1);
+    setIsG(!isG);
+  };
+
+  useEffect(() => {
+    const tick = setInterval(() => {
+      setIsG(isG => !isG);
+    }, ~~(Math.random() * 2000) +2000);
+    return () => {
+      clearTimeout(tick);
+    };
+  },[]);
+
   return (
-    <div>
-      
-    </div>
+    <span>
+      <button className="GopherButton" onClick={handleClick}>
+        <h1>{isG ? "G" : "-"}</h1>
+      </button>
+    </span>
   );
 }
 
