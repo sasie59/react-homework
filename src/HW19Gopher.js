@@ -8,9 +8,9 @@ export default function HW19Gopher() {
   };
   return (
     <div>
-      <h1>{count}</h1>
+      <h1 data-testid='count'>{count}</h1>
       {[...Array(9).keys()].map((index) => (
-        <GopherButton key={index} changeCount={changeCount} />
+        <GopherButton data-testid='isG' key={index} changeCount={changeCount} />
       ))}
     </div>
   );
