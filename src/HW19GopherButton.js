@@ -21,7 +21,7 @@ export default function HW19GopherButton(props) {
   return (
     <span>
       <button className="GopherButton" onClick={handleClick}>
-        <h1>{isG ? "G" : "-"}</h1>
+        <h1 data-testid='isG'>{isG ? "G" : "-"}</h1>
       </button>
     </span>
   );
