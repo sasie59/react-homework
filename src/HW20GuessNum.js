@@ -5,56 +5,51 @@ const MAX = 1000;
 const makeRand = (min = MIN, max = MAX) => {
   return ~~(Math.random() * (max - min + 1)) + min;
 };
-
-export default function HW20GuessNum() {
-  const guessDom = useRef();
-  const [resetData] = useState({
+const initialData = () => {
+  return {
     min: MIN,
     max: MAX,
-    isAppear: false,
+    isAppear : false,
     bingoNum: makeRand(MIN, MAX),
-  });
-  const [ upDataMin, setUpDataMin] = useState('');
-  const [ upDataMax, setUpDataMax] = useState('');
-  const [ upDataIsAppear, setUpDataIsAppear] = useState(false);
-  const [, setValue ] = useState('');
+  };
+};
+export default function HW20GuessNum() {
+  const guessDom = useRef();
+  const [
+    {min, max, isAppear, bingoNum},
+    setState,
+  ] = useState(initialData());
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const guess = guessDom.current.value;
-    console.warn(resetData.bingoNum);
-    console.warn(guess);
-    const value = +guess;
-    // console.warn(resetData.min);
-    if (resetData.bingoNum > value) {
-      setValue('');
-    } else if (resetData.bingoNum < value) {
-      resetData.max = setUpDataMax(value);
-    } else {
-      setUpDataIsAppear(true);
-    }
+    const guess = +guessDom.current.value;
+    const filed = bingoNum > guess ? 'min' :
+      bingoNum < guess ? 'max' : isAppear;
+    setState(state => ({
+      ...state,
+      [filed]: guess
+    }));
+    guessDom.current.value = '';
   };
 
-
-  const reBingoNum = () => {};
-
+  const reBingoNum = () => {
+    setState(initialData());
+  };
   return (
     <div>
       <h1>
-        現在範圍 :{resetData.min} ~ {resetData.max}
+        現在範圍 :{min} ~ {max}
       </h1>
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
-          // value={value}
+          type="text"     
           ref={guessDom}
-          // onChange={handleChange}
-          disabled={resetData.isAppear}
+          disabled={isAppear}
         />
-        <button disabled={resetData.isAppear}>submit</button>
+        <button disabled={isAppear}>submit</button>
       </form>
-      <div className={resetData.isAppear ? "see" : "hide"}>
-        答對了!答案就是{resetData.bingoNum}
+      <div className={isAppear ? "see" : "hide"}>
+        答對了!答案就是{bingoNum}
         <button onClick={reBingoNum}>重新一局</button>
       </div>
     </div>
