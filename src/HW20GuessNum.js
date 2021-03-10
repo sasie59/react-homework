@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 
 const MIN = 1;
 const MAX = 1000;
@@ -6,59 +6,55 @@ const makeRand = (min = MIN, max = MAX) => {
   return ~~(Math.random() * (max - min + 1)) + min;
 };
 
-const resetData = () => {
-  return {
-    value: "",
+export default function HW20GuessNum() {
+  const guessDom = useRef();
+  const [resetData] = useState({
     min: MIN,
     max: MAX,
     isAppear: false,
     bingoNum: makeRand(MIN, MAX),
-  };
-};
-
-export default function HW20GuessNum() {
-  const [min, setMin] = useState(1);
-  const [max, setMax] = useState(1000);
-  const [value, setValue] = useState("");
-  const [update, setUpdate] = useState({
-    value: "",
   });
-  const [isAppear, setIsAppear] = useState(false);
-  const [bingoNum, setBingoNum] = useState(makeRand(MIN, MAX));
-  const [reBingoNum, setReBingoNum] = useState();
+  const [ upDataMin, setUpDataMin] = useState('');
+  const [ upDataMax, setUpDataMax] = useState('');
+  const [ upDataIsAppear, setUpDataIsAppear] = useState(false);
+  const [, setValue ] = useState('');
 
-  const resetData = () => {
-    return {
-      value: "",
-      min: MIN,
-      max: MAX,
-      isAppear: false,
-      bingoNum: makeRand(MIN, MAX),
-    };
-  };
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const guess = guessDom.current.value;
+    console.warn(resetData.bingoNum);
+    console.warn(guess);
+    const value = +guess;
+    // console.warn(resetData.min);
+    if (resetData.bingoNum > value) {
+      setValue('');
+    } else if (resetData.bingoNum < value) {
+      resetData.max = setUpDataMax(value);
+    } else {
+      setUpDataIsAppear(true);
+    }
   };
 
-  const handleChange = ({ target }) => {
-    setValue(target.value);
-  };
+
+  const reBingoNum = () => {};
 
   return (
     <div>
       <h1>
-        現在範圍 :{min} ~ {max}
+        現在範圍 :{resetData.min} ~ {resetData.max}
       </h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={value}
-          onChange={handleChange}
-          disabled={isAppear}
+          // value={value}
+          ref={guessDom}
+          // onChange={handleChange}
+          disabled={resetData.isAppear}
         />
-        <button disabled={isAppear}>submit</button>
+        <button disabled={resetData.isAppear}>submit</button>
       </form>
-      <div className={isAppear ? "see" : "hide"}>
-        答對了!答案就是{bingoNum}
+      <div className={resetData.isAppear ? "see" : "hide"}>
+        答對了!答案就是{resetData.bingoNum}
         <button onClick={reBingoNum}>重新一局</button>
       </div>
     </div>
