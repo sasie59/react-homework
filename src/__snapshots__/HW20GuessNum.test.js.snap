@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW20GuessNum 1`] = `
+<div>
+  <div>
+    <h1
+      data-testid="range"
+    >
+      現在範圍 :
+      25
+       ~ 
+      1000
+    </h1>
+    <form>
+      <input
+        type="text"
+      />
+      <button>
+        submit
+      </button>
+    </form>
+    <div
+      class="hide"
+      data-testid="answer"
+    >
+      答對了!答案就是
+      241
+      <button
+        data-testid="reset"
+      >
+        重新一局
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should HW20GuessNum 2`] = `
+<div>
+  <div>
+    <h1
+      data-testid="range"
+    >
+      現在範圍 :
+      25
+       ~ 
+      1000
+    </h1>
+    <form>
+      <input
+        type="text"
+      />
+      <button>
+        submit
+      </button>
+    </form>
+    <div
+      class="hide"
+      data-testid="answer"
+    >
+      答對了!答案就是
+      241
+      <button
+        data-testid="reset"
+      >
+        重新一局
+      </button>
+    </div>
+  </div>
+</div>
+`;

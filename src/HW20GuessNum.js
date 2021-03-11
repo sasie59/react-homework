@@ -37,7 +37,7 @@ export default function HW20GuessNum() {
   };
   return (
     <div>
-      <h1>
+      <h1 data-testid='range'>
         現在範圍 :{min} ~ {max}
       </h1>
       <form onSubmit={handleSubmit}>
@@ -48,9 +48,9 @@ export default function HW20GuessNum() {
         />
         <button disabled={isAppear}>submit</button>
       </form>
-      <div className={isAppear ? "see" : "hide"}>
+      <div data-testid='answer' className={isAppear ? "see" : "hide"}>
         答對了!答案就是{bingoNum}
-        <button onClick={reBingoNum}>重新一局</button>
+        <button data-testid='reset' onClick={reBingoNum}>重新一局</button>
       </div>
     </div>
   );
