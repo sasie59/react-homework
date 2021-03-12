@@ -8,7 +8,7 @@ const getRandFor = () => {
   const randomFour = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   randomFour.sort(() => Math.random() - 0.5);
   return randomFour.slice(0, 4).join('');
-}
+};
 
 // 重置資料: 第一次進來時 跟 重新一局 都會使用，所以要獨立出來
 // 可以 export 給 jest
@@ -18,8 +18,8 @@ const resetData = () => {
     xaxbList: [],
     hideAndSee: false,
     bingoNum: getRandFor(),
-  }
-}
+  };
+};
 
 // 可以 export 給 jest
 const checkAB = (userInput, answer) => {
