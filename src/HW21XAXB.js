@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import './HW20GuessNum.scss';
+import "./HW20GuessNum.scss";
 
 const arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 arr.sort(() => Math.random() - 0.5);
@@ -29,21 +29,29 @@ const valueCheck = (value) => {
   }
 };
 export default function HW21XAXB() {
-  
-  const [xaXb, setXaXb ] = useState({
+  const [xaXb, setXaXb] = useState({
     isAppear: false,
     bingoNum: randomFour,
     list: [],
   });
   const guessDom = useRef();
-  const itemList = xaXb.list.map((item, index) => 
-    <li key={index}>
-      {item}
-    </li>
-  );
-  const handleSubmit = () => {
-    // console.warn(xaXb.bingoNum);
-    // console.warn(guessDom.current.value);
+  
+    
+  const handleSubmit = (event) => {
+    console.warn(xaXb.bingoNum);
+    console.warn(guessDom.current.value);
+    const value = guessDom.current.value;
+    event.preventDefault();
+    if (value.length !== 4 || valueCheck(value.split("").sort()))
+      return alert("格式不正確");
+    setXaXb({
+      list: [`${value}: ${checkAB(value, xaXb.bingoNum)}`, ...xaXb.list],
+    });
+    guessDom.current.value = '';
+    if (checkAB(value, xaXb.bingoNum) === "4A0B")
+      setXaXb({
+        isAppear: true
+      });
   };
 
   const replay = () => {
@@ -65,18 +73,20 @@ export default function HW21XAXB() {
         <li>如果猜到 4A 則遊戲結束，並可以另開新局。</li>
       </ol>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
+        <input 
+          type="text" 
           ref={guessDom}
-          disabled={xaXb.isAppear}
-        />
+          disabled={xaXb.isAppear} />
         <button disabled={xaXb.isAppear}>猜!</button>
       </form>
       <div className={xaXb.isAppear ? "see" : "hide"}>
         bingo ! game over ， replay?
         <button onClick={replay}>Yes</button>
       </div>
-      <ol>{itemList}</ol>
+      {xaXb.list.map((item, index) =>
+        <li key={index}>
+          {item}
+        </li>)}
     </div>
   );
 }
