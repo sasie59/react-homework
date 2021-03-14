@@ -1,10 +1,14 @@
 import React, { useState, useRef } from "react";
 import "./HW20GuessNum.scss";
 
-const arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const randomFour = arr.sort(() => Math.random() - 0.5).slice(0, 4);
+const makeRandom = () => {
+  let arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  arr.sort(() => Math.random() - 0.5);
+  arr = arr.slice(0, 4);
+  return arr;
+};
 
-
+let randomFour = makeRandom();
 
 const checkAB = (userInput, answer) => {
   let aCount = 0;
@@ -22,63 +26,64 @@ const checkAB = (userInput, answer) => {
   return aCount + "A" + bCount + "B";
 };
 
-const valueCheck = (value) => {
-  for (let i = 0; i < 4; i++) {
-    if (value[i] === value[i + 1]) {
-      return true;
-    }
-  }
+const isErrorValue = (value) => {
+  return [...new Set(value)].length < 4;
 };
 
 
 export default function HW21XAXB() {
   const [xaXb, setXaXb] = useState({
-    isAppear: false,
-    bingoNum: randomFour,
     list: [],
+    isError: false,
+    isAppear: false,
   });
   const guessDom = useRef();
   
     
   const handleSubmit = (event) => {
-    console.warn(xaXb);
-    console.warn(xaXb.bingoNum);
-    console.warn(guessDom.current.value);
+    // console.warn(randomFour);
+    // console.warn(guessDom.current.value);
     const value = guessDom.current.value;
     event.preventDefault();
-    if (value.length !== 4 || valueCheck(value.split("").sort()))
-      return alert("格式不正確");
+    if (value.length !== 4 || isErrorValue(value.split("").sort())) {
+      return setXaXb({
+        ...xaXb,
+        isError: true,
+      });
+    }
+    
+    const nAnB = checkAB(value, randomFour);
     setXaXb({
-      list: [`${value}: ${checkAB(value, xaXb.bingoNum)}`, ...xaXb.list],
-      isAppear: false,
-      bingoNum: randomFour
+      ...xaXb,
+      isError: false,
+      list: [`${value}: ${nAnB}`, ...xaXb.list],
     });
     guessDom.current.value = '';
-    if (checkAB(value, xaXb.bingoNum) === "4A0B")
+    if (nAnB === "4A0B")
       setXaXb({
         list: [],
         isAppear: true,
-        bingoNum: randomFour
       });
   };
 
   const replay = () => {
+    randomFour = makeRandom();
     setXaXb({
       list: [],
       isAppear: false,
-      bingoNum: arr.sort(() => Math.random() - 0.5).slice(0,4),
+      // bingoNum: makeRandom(),
     });
   };
   return (
     <div>
       <h1>猜數字</h1>
-      <ol>
+      <ul>
         <li>一進到遊戲電腦隨機產生4位不重複數字</li>
         <li>使用者送出答案，若不符合「不重複4位數字」則跳錯誤訊息</li>
         <li>送出的答案跟正確答案比較，位置一樣則A，位置不同則B</li>
         <li>會累積過去猜過的答案與結果</li>
         <li>如果猜到 4A 則遊戲結束，並可以另開新局。</li>
-      </ol>
+      </ul>
       <form onSubmit={handleSubmit}>
         <input 
           type="text" 
@@ -86,13 +91,14 @@ export default function HW21XAXB() {
           disabled={xaXb.isAppear} />
         <button disabled={xaXb.isAppear}>猜!</button>
       </form>
+      {xaXb.isError && <div data-testid="errMsg">格式錯誤</div>}
       <div className={xaXb.isAppear ? "see" : "hide"}>
         bingo ! game over ， replay?
         <button onClick={replay}>Yes</button>
       </div>
       <ul>
         {xaXb.list.map((item,index) => 
-          <li key={index}>
+          <li data-testid='li' key={index}>
             {item}
           </li>
         )}
