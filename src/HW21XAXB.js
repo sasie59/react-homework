@@ -92,13 +92,16 @@ export default function HW21XAXB() {
         <button disabled={xaXb.isAppear}>猜!</button>
       </form>
       {xaXb.isError && <div data-testid="errMsg">格式錯誤</div>}
-      <div className={xaXb.isAppear ? "see" : "hide"}>
+      <div data-testid='bingo' className={xaXb.isAppear ? "see" : "hide"}>
         bingo ! game over ， replay?
-        <button onClick={replay}>Yes</button>
+        <button data-testid='replay' onClick={replay}>Yes</button>
       </div>
-      <ul>
+      <ul data-testid='ul'>
         {xaXb.list.map((item,index) => 
-          <li data-testid='li' key={index}>
+          <li
+            data-testid={`result-${index}`}
+            key={index}
+          >
             {item}
           </li>
         )}
