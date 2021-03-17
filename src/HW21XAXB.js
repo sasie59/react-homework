@@ -86,6 +86,7 @@ export default function HW21XAXB() {
       </ul>
       <form onSubmit={handleSubmit}>
         <input 
+          data-testid='input'
           type="text" 
           ref={guessDom}
           disabled={xaXb.isAppear} />

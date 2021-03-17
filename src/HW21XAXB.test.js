@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import HW from './HW21XAXB';
+import HW,{checkAb,makeRandom,isErrorValue} from './HW21XAXB';
 
 test('should wrong format', () => {
   const { container, getByTestId } = render(<HW />);
@@ -20,6 +20,9 @@ test('should ringt input', () => {
 
   userEvent.type(input, '1234{enter}');
   expect(getByTestId('result-0').textContent).toBe('1234: 0A1B');
+
+  userEvent.type(input, '7406{enter}');
+  expect(getByTestId('result-0').textContent).toBe('1234: 1A0B');
 });
 
 test('should clear arr', () => {
@@ -39,9 +42,12 @@ test('should bingo Game Over & new Game ', () => {
   const input = container.querySelector('input');
   userEvent.type(input, '8521{enter}');
   expect(getByTestId('bingo').textContent).toBe('bingo ! game over ， replay?Yes');
+  // expect(getByTestId('input')).toBeDisabled();
+  // expect(input).toBeDisabled();
+  // TypeError: expect(...).toBeDisabled is not a function
   expect(input.disabled).toBe(true);
   // 上面的input.disabled是參考網路的寫法 去抓dom裡面的屬性
-  expect(getByTestId('bingo')).toBeTruthy();
+  // expect(getByTestId('bingo')).toBeTruthy();
 });
 
 test('should yes', () => {
