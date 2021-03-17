@@ -1,14 +1,14 @@
 import React, { useState, useRef } from "react";
 import "./HW20GuessNum.scss";
 
-const makeRandom = () => {
+export const makeRandom = () => {
   let arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   arr.sort(() => Math.random() - 0.5);
   arr = arr.slice(0, 4);
   return arr;
 };
 
-let randomFour = makeRandom();
+// let randomFour = makeRandom();
 
 const checkAB = (userInput, answer) => {
   let aCount = 0;
@@ -32,6 +32,7 @@ const isErrorValue = (value) => {
 
 
 export default function HW21XAXB() {
+  const [randomFour, setRandomFour] = useState(makeRandom());
   const [xaXb, setXaXb] = useState({
     list: [],
     isError: false,
@@ -67,7 +68,7 @@ export default function HW21XAXB() {
   };
 
   const replay = () => {
-    randomFour = makeRandom();
+    setRandomFour(makeRandom());
     setXaXb({
       list: [],
       isAppear: false,
