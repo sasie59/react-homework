@@ -1,13 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 export default function HW22CartFruit(props) {
   const [quantity, setQuantity] = useState(0);
-  const dom = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onSubmit(props.fruitName, +dom.current.value);
-    setQuantity('');
+    props.onSubmit(props.fruitName, +quantity);
+    setQuantity(0);
+  };
+  const handleChange = ({target}) => {
+    setQuantity(target.value);
   };
   
   return (
@@ -16,9 +18,10 @@ export default function HW22CartFruit(props) {
       <span>${props.price}</span>
       <form onSubmit={handleSubmit}>
         <input
-          ref={dom}
           type="number"
+          value={quantity}
           placeholder="數量"
+          onChange={handleChange}
         />
         <button>加入購物車</button>
       </form>
