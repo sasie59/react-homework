@@ -7,7 +7,7 @@ const fruitList = [
   {id: 3, name: '哈蜜瓜', price: 40},
   {id: 4, name: '蘋果', price: 50},
   {id: 5, name: '葡萄柚', price: 15},
-]
+];
 
 export default function HW22Cart2() {
 
@@ -18,21 +18,21 @@ export default function HW22Cart2() {
       ...order,
       [id]: order[id] + quantity
     });
-  }
+  };
 
   const handleDecrease = id => {
     setOrder({
       ...order,
       [id]: order[id] - 1
     });
-  }
+  };
 
   const handleClear = id => {
     setOrder({
       ...order,
       [id]: 0
     });
-  }
+  };
   
   return (
     <div className="container">
@@ -73,5 +73,5 @@ export default function HW22Cart2() {
         </div>
       </div>
     </div>
-  )
+  );
 }
