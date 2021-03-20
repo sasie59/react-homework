@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 import "./HW22Cart.scss";
 import Fruit from "./HW22CartFruit";
@@ -11,7 +11,10 @@ const fruitObj = {
   cantaloupe: { name: "哈蜜瓜", price: 100 },
 };
 export default function HW22Cart() {
-  const [itemList, ] = useState([]);
+  const [state, setState] = useState({
+    value: 0,
+    sum: 0,
+  });
   const [count, setCount] = useState({
     apple: 0,
     orange: 0,
@@ -19,28 +22,23 @@ export default function HW22Cart() {
     grapeFruit: 0,
     cantaloupe: 0,
   });
-  
-  const [state, setState ] = useState({
-    value: 0,
-    sum: 0
-  });
 
-  const handleChange = ({target}) => {
+  const handleChange = ({ target }) => {
     setCount(target.value);
   };
 
-  const handleSubmit = (fruitName,value) => {
+  const handleSubmit = (fruitName, value) => {
     const money = fruitObj[fruitName].price * value;
-    console.warn(money);
-    setCount(count[fruitName]+ value);
+    // console.warn(money);
+    setCount(count[fruitName] + value);
     setState({
       sum: state.sum + money,
-      value: 0
+      value: 0,
     });
   };
 
   const handleLess = () => {
-    
+
   };
   const handleClear = () => {
     
@@ -48,7 +46,7 @@ export default function HW22Cart() {
 
   return (
     <div>
-      {Object.keys(fruitObj).map((fruitName) => 
+      {Object.keys(fruitObj).map((fruitName) => (
         <Fruit
           value={state.value}
           count={state.count}
@@ -59,24 +57,25 @@ export default function HW22Cart() {
           name={fruitObj[fruitName].name}
           price={fruitObj[fruitName].price}
         />
-      )}
-      {/* {itemList = Object.keys(fruitObj)
-        .filter(fruitName => {
-          return count[fruitName] > 0;
-        }).map(fruitName => 
-          <li key={fruitObj[fruitName].name}>
-            {fruitObj[fruitName].name} * {count[fruitName]} = {fruitObj[fruitName].price * count[fruitName]}
-            <button onClick={handleLess.bind(this,fruitName)}>-1</button>
-            <button onClick={handleClear.bind(this,fruitName)}>clear</button>
-          </li>
-        )} */}
+      ))}
       <ul>
-        {itemList}
-        {!!state.sum && <>
-          <li>========</li>
-          <li>${state.sum}</li>
-        </>
-        }
+        {/* .filter((fruitName) => {
+          return count[fruitName] > 0;
+        }) */}
+        {Object.keys(fruitObj).map((fruitName) => 
+          <li key={fruitObj[fruitName].name}>
+            {fruitObj[fruitName].name} * {count[fruitName]} =
+            {fruitObj[fruitName].price * count[fruitName]}
+            <button onClick={handleLess.bind(this, fruitName)}>-1</button>
+            <button onClick={handleClear.bind(this, fruitName)}>clear</button>
+          </li>
+        )}
+        {!!state.sum && (
+          <>
+            <li>========</li>
+            <li>${state.sum}</li>
+          </>
+        )}
       </ul>
     </div>
   );
