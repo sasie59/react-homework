@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW22CartFruit 1`] = `
+<div>
+  <div>
+    <span>
+      蘋果
+    </span>
+    <span>
+      $
+      20
+    </span>
+    <form>
+      <input
+        placeholder="數量"
+        type="number"
+        value="0"
+      />
+      <button>
+        加入購物車
+      </button>
+    </form>
+  </div>
+</div>
+`;
