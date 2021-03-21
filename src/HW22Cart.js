@@ -30,18 +30,26 @@ export default function HW22Cart() {
   const handleSubmit = (fruitName, value) => {
     const money = fruitObj[fruitName].price * value;
     // console.warn(money);
-    setCount(count[fruitName] + value);
+    count[fruitName] += value;
     setState({
       sum: state.sum + money,
       value: 0,
     });
   };
 
-  const handleLess = () => {
-
+  const handleLess = (fruitName) => {
+    count[fruitName] -= 1;
+    setState({
+      value: 0,
+      sum: state.sum - fruitObj[fruitName].price * 1
+    });
   };
-  const handleClear = () => {
-    
+  const handleClear = (fruitName) => {
+    setState({
+      value: 0,
+      sum: state.sum - fruitObj[fruitName].price * count[fruitName]
+    });
+    count[fruitName] = 0;
   };
 
   return (
@@ -62,7 +70,9 @@ export default function HW22Cart() {
         {/* .filter((fruitName) => {
           return count[fruitName] > 0;
         }) */}
-        {Object.keys(fruitObj).map((fruitName) => 
+        {Object.keys(fruitObj).filter(fruitName =>{
+          return count[fruitName] > 0;
+        }).map((fruitName) => 
           <li key={fruitObj[fruitName].name}>
             {fruitObj[fruitName].name} * {count[fruitName]} =
             {fruitObj[fruitName].price * count[fruitName]}
