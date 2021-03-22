@@ -73,7 +73,7 @@ export default function HW22Cart() {
         {Object.keys(fruitObj).filter(fruitName =>{
           return count[fruitName] > 0;
         }).map((fruitName) => 
-          <li key={fruitObj[fruitName].name}>
+          <li key={fruitObj[fruitName].name} data-testid={`${fruitObj[fruitName].name}`}>
             {fruitObj[fruitName].name} * {count[fruitName]} =
             {fruitObj[fruitName].price * count[fruitName]}
             <button data-testid={`less-${fruitObj[fruitName].name}`} onClick={handleLess.bind(this, fruitName)}>-1</button>
