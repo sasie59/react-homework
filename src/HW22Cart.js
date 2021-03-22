@@ -76,14 +76,14 @@ export default function HW22Cart() {
           <li key={fruitObj[fruitName].name}>
             {fruitObj[fruitName].name} * {count[fruitName]} =
             {fruitObj[fruitName].price * count[fruitName]}
-            <button onClick={handleLess.bind(this, fruitName)}>-1</button>
-            <button onClick={handleClear.bind(this, fruitName)}>clear</button>
+            <button data-testid={`less-${fruitObj[fruitName].name}`} onClick={handleLess.bind(this, fruitName)}>-1</button>
+            <button data-testid={`clear-${fruitObj[fruitName].name}`} onClick={handleClear.bind(this, fruitName)}>clear</button>
           </li>
         )}
         {!!state.sum && (
           <>
             <li>========</li>
-            <li>${state.sum}</li>
+            <li data-testid='total'>總金額$ {state.sum}</li>
           </>
         )}
       </ul>
