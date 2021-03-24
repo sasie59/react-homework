@@ -20,6 +20,7 @@ export default function HW22CartFruit(props) {
         <input
           type="number"
           value={quantity}
+          name={props.name}
           placeholder="數量"
           onChange={handleChange}
         />
