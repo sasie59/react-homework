@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 
 import "./HW22Cart.scss";
 import Fruit from "./HW22CartFruit";
@@ -11,6 +11,7 @@ const fruitObj = {
   cantaloupe: { name: "哈蜜瓜", price: 100 },
 };
 export default function HW22Cart() {
+  const dom = useRef();
   const [state, setState] = useState({
     value: 0,
     sum: 0,
@@ -23,9 +24,9 @@ export default function HW22Cart() {
     cantaloupe: 0,
   });
 
-  const handleChange = ({ target }) => {
-    setCount(target.value);
-  };
+  // const handleChange = ({ target }) => {
+  //   setCount(target.value);
+  // };
 
   const handleSubmit = (fruitName, value) => {
     const money = fruitObj[fruitName].price * value;
@@ -56,11 +57,11 @@ export default function HW22Cart() {
     <div>
       {Object.keys(fruitObj).map((fruitName) => (
         <Fruit
+          ref={dom}
           value={state.value}
           count={state.count}
           fruitName={fruitName}
           onSubmit={handleSubmit}
-          onChange={handleChange}
           key={fruitObj[fruitName].name}
           name={fruitObj[fruitName].name}
           price={fruitObj[fruitName].price}
@@ -74,8 +75,10 @@ export default function HW22Cart() {
           return count[fruitName] > 0;
         }).map((fruitName) => 
           <li key={fruitObj[fruitName].name} data-testid={`${fruitObj[fruitName].name}`}>
-            {fruitObj[fruitName].name} * {count[fruitName]} =
-            {fruitObj[fruitName].price * count[fruitName]}
+            <div>
+              {fruitObj[fruitName].name} * {count[fruitName]} =
+              {fruitObj[fruitName].price * count[fruitName]}
+            </div>
             <button data-testid={`less-${fruitObj[fruitName].name}`} onClick={handleLess.bind(this, fruitName)}>-1</button>
             <button data-testid={`clear-${fruitObj[fruitName].name}`} onClick={handleClear.bind(this, fruitName)}>clear</button>
           </li>
