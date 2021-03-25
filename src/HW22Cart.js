@@ -16,7 +16,7 @@ export default function HW22Cart() {
     value: 0,
     sum: 0,
   });
-  const [count, setCount] = useState({
+  const [count, ] = useState({
     apple: 0,
     orange: 0,
     waxApple: 0,
@@ -24,9 +24,6 @@ export default function HW22Cart() {
     cantaloupe: 0,
   });
 
-  // const handleChange = ({ target }) => {
-  //   setCount(target.value);
-  // };
 
   const handleSubmit = (fruitName, value) => {
     const money = fruitObj[fruitName].price * value;
@@ -68,9 +65,6 @@ export default function HW22Cart() {
         />
       ))}
       <ul>
-        {/* .filter((fruitName) => {
-          return count[fruitName] > 0;
-        }) */}
         {Object.keys(fruitObj).filter(fruitName =>{
           return count[fruitName] > 0;
         }).map((fruitName) => 
