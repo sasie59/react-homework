@@ -1,51 +1,81 @@
-import React from 'react';
-import  './HW25Modal.scss';
+import React, { useState } from "react";
+import "./HW25Modal.scss";
 
 export default function HW25ModalCpm(props) {
-
+  const [modalClass, setModalClass] = useState("modal-content");
+  
   const handleClick = (e) => {
-    if(
-      e.target === document.getElementById('modal-bg') ||
-      e.target === document.getElementById('button')
+    if (
+      e.target === document.getElementById("modal-bg") ||
+      e.target === document.getElementById("button")
     ) {
       props.onClick();
     }
-    
   };
-  
-  let modalClass = "modal-content";
-  if(props.isTop) modalClass += " top";
-  if(props.isAnimation) modalClass += " animation";
-
+    // if (props.isTop) setModalClass(`${modalClass} top`);
+    // if (props.isAnimation) setModalClass(`${modalClass} animation`);
+    
   return (
     <div className="modal-bg" onClick={handleClick} id="modal-bg">
-      <div className={modalClass}>
+      <div className={`${modalClass}`}>
         {props.header && <h2>{props.header}</h2>}
-        {props.children}<br/>
-        <button id="button" onClick={handleClick}>關閉</button>
+        {props.children}
+        <br />
+        <button id="button" onClick={handleClick}>
+          關閉
+        </button>
       </div>
     </div>
   );
 }
 
+// import React from 'react';
+// import  './HW25Modal.scss';
 
-// function AComp() {
-//   let value = 8;
+// export default function HW25ModalCpm(props) {
+
+//   const handleClick = (e) => {
+//     if(
+//       e.target === document.getElementById('modal-bg') ||
+//       e.target === document.getElementById('button')
+//     ) {
+//       props.onClick();
+//     }
+
+//   };
+
+//   let modalClass = "modal-content";
+//   if(props.isTop) modalClass += " top";
+//   if(props.isAnimation) modalClass += " animation";
+
 //   return (
-//     <div>
-//       <CComp value={value} />
+//     <div className="modal-bg" onClick={handleClick} id="modal-bg">
+//       <div className={modalClass}>
+//         {props.header && <h2>{props.header}</h2>}
+//         {props.children}<br/>
+//         <button id="button" onClick={handleClick}>關閉</button>
+//       </div>
 //     </div>
 //   );
 // }
 
-// function BComp(props) {
-//   return (
-//     <CComp value={props.value + 1} />
-//   );
-// }
+// // function AComp() {
+// //   let value = 8;
+// //   return (
+// //     <div>
+// //       <CComp value={value} />
+// //     </div>
+// //   );
+// // }
 
-// function CComp(props) {
-//   return (
-//     <div>{props.value + 3}</div>
-//   );
-// }
+// //  function BComp(props) {
+// //    return (
+// //      <CComp value={props.value + 1} />
+// //    );
+// //  }
+
+// //  function CComp(props) {
+// //    return (
+// //      <div>{props.value + 3}</div>
+// //    );
+// //  }
