@@ -3,8 +3,12 @@ import "./HW25Modal.scss";
 
 export default function HW25ModalCpm(props) {
   const [modalClass, setModalClass] = useState("modal-content");
+  const [result, setResult] = useState('');
   
   const handleClick = (e) => {
+  //   const result = (props.isTop) ? setResult('top') : (props.isAnimation) ? setResult('animation'): 
+  //     setModalClass(`${modalClass} ${result}`);
+    // 想到的寫法
     if (
       e.target === document.getElementById("modal-bg") ||
       e.target === document.getElementById("button")
@@ -12,12 +16,10 @@ export default function HW25ModalCpm(props) {
       props.onClick();
     }
   };
-    // if (props.isTop) setModalClass(`${modalClass} top`);
-    // if (props.isAnimation) setModalClass(`${modalClass} animation`);
     
   return (
     <div className="modal-bg" onClick={handleClick} id="modal-bg">
-      <div className={`${modalClass}`}>
+      <div className={`${modalClass} ${result}`}>
         {props.header && <h2>{props.header}</h2>}
         {props.children}
         <br />
