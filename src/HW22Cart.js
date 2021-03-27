@@ -13,7 +13,7 @@ const fruitObj = {
 export default function HW22Cart() {
   const dom = useRef();
   const [state, setState] = useState({
-    value: 0,
+    // value: 0,
     sum: 0,
   });
   const [count, ] = useState({
@@ -55,7 +55,7 @@ export default function HW22Cart() {
       {Object.keys(fruitObj).map((fruitName) => (
         <Fruit
           ref={dom}
-          value={state.value}
+          // value={state.value}
           count={state.count}
           fruitName={fruitName}
           onSubmit={handleSubmit}

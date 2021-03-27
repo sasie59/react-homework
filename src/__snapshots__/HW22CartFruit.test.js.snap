@@ -12,6 +12,7 @@ exports[`should HW22CartFruit 1`] = `
     </span>
     <form>
       <input
+        name="蘋果"
         placeholder="數量"
         type="number"
         value="0"

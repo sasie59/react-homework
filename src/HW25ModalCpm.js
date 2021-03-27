@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import "./HW25Modal.scss";
 
 export default function HW25ModalCpm(props) {
-  const [modalClass, setModalClass] = useState("modal-content");
-  const [result, setResult] = useState('');
+  const [result, setModalClass] = useState("");
   
   const handleClick = (e) => {
-  //   const result = (props.isTop) ? setResult('top') : (props.isAnimation) ? setResult('animation'): 
-  //     setModalClass(`${modalClass} ${result}`);
-    // 想到的寫法
+    const result = (props.isTop) ? 'top' :(props.header) ? 'My Header' : 
+      (props.isAnimation) ? 'animation':
+        // (props.isTop , props.isAnimation) ? 'top animation': 
+        'modal-content';
+    setModalClass(result);
+    console.warn(result);
     if (
       e.target === document.getElementById("modal-bg") ||
       e.target === document.getElementById("button")
@@ -19,7 +21,7 @@ export default function HW25ModalCpm(props) {
     
   return (
     <div className="modal-bg" onClick={handleClick} id="modal-bg">
-      <div className={`${modalClass} ${result}`}>
+      <div className={`modal-content ${result}`}>
         {props.header && <h2>{props.header}</h2>}
         {props.children}
         <br />

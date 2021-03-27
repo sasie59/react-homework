@@ -5,10 +5,10 @@ const modalProps = [
   {},
   {isTop: true},
   {header: "My Header"},
-  {isTop: true, isAnimation: true},
   {isAnimation: true},
+  {isTop: true, isAnimation: true},
 ];
-const btnArr = ['modal', 'top', 'header', 'top + animation', 'animation'];
+const btnArr = ['modal', 'top', 'header', 'animation', 'top + animation'];
 
 export default function HW25Modal() {
   const [isShow, setIsShow ] = useState(!1);
