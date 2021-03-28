@@ -10,7 +10,7 @@ export default function HW25ModalCpm(props) {
         // (props.isTop , props.isAnimation) ? 'top animation': 
         'modal-content';
     setModalClass(result);
-    console.warn(result);
+    // console.warn(result);
     if (
       e.target === document.getElementById("modal-bg") ||
       e.target === document.getElementById("button")
@@ -20,12 +20,21 @@ export default function HW25ModalCpm(props) {
   };
     
   return (
-    <div className="modal-bg" onClick={handleClick} id="modal-bg">
+    <div
+      id="modal-bg"
+      className="modal-bg"
+      data-testid='modal-bg'
+      onClick={handleClick}
+    >
       <div className={`modal-content ${result}`}>
         {props.header && <h2>{props.header}</h2>}
         {props.children}
         <br />
-        <button id="button" onClick={handleClick}>
+        <button
+          id="button"
+          name='button'
+          data-testid='close'
+          onClick={handleClick}>
           關閉
         </button>
       </div>

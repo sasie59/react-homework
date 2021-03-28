@@ -6,36 +6,42 @@ exports[`should HW25Modal 1`] = `
     <button
       class="button"
       data-testid="arr-0"
+      name="button"
     >
       modal
     </button>
     <button
       class="button"
       data-testid="arr-1"
+      name="button"
     >
       top
     </button>
     <button
       class="button"
       data-testid="arr-2"
+      name="button"
     >
       header
     </button>
     <button
       class="button"
       data-testid="arr-3"
+      name="button"
     >
       animation
     </button>
     <button
       class="button"
       data-testid="arr-4"
+      name="button"
     >
       top + animation
     </button>
     <div>
       <div
         class="modal-bg"
+        data-testid="modal-bg"
         id="modal-bg"
       >
         <div
@@ -44,7 +50,9 @@ exports[`should HW25Modal 1`] = `
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!
           <br />
           <button
+            data-testid="close"
             id="button"
+            name="button"
           >
             關閉
           </button>
@@ -61,30 +69,35 @@ exports[`should HW25Modal 2`] = `
     <button
       class="button"
       data-testid="arr-0"
+      name="button"
     >
       modal
     </button>
     <button
       class="button"
       data-testid="arr-1"
+      name="button"
     >
       top
     </button>
     <button
       class="button"
       data-testid="arr-2"
+      name="button"
     >
       header
     </button>
     <button
       class="button"
       data-testid="arr-3"
+      name="button"
     >
       animation
     </button>
     <button
       class="button"
       data-testid="arr-4"
+      name="button"
     >
       top + animation
     </button>
@@ -98,36 +111,42 @@ exports[`should HW25Modal 3`] = `
     <button
       class="button"
       data-testid="arr-0"
+      name="button"
     >
       modal
     </button>
     <button
       class="button"
       data-testid="arr-1"
+      name="button"
     >
       top
     </button>
     <button
       class="button"
       data-testid="arr-2"
+      name="button"
     >
       header
     </button>
     <button
       class="button"
       data-testid="arr-3"
+      name="button"
     >
       animation
     </button>
     <button
       class="button"
       data-testid="arr-4"
+      name="button"
     >
       top + animation
     </button>
     <div>
       <div
         class="modal-bg"
+        data-testid="modal-bg"
         id="modal-bg"
       >
         <div
@@ -139,7 +158,9 @@ exports[`should HW25Modal 3`] = `
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!
           <br />
           <button
+            data-testid="close"
             id="button"
+            name="button"
           >
             關閉
           </button>
@@ -156,30 +177,35 @@ exports[`should HW25Modal 4`] = `
     <button
       class="button"
       data-testid="arr-0"
+      name="button"
     >
       modal
     </button>
     <button
       class="button"
       data-testid="arr-1"
+      name="button"
     >
       top
     </button>
     <button
       class="button"
       data-testid="arr-2"
+      name="button"
     >
       header
     </button>
     <button
       class="button"
       data-testid="arr-3"
+      name="button"
     >
       animation
     </button>
     <button
       class="button"
       data-testid="arr-4"
+      name="button"
     >
       top + animation
     </button>
@@ -193,36 +219,42 @@ exports[`should HW25Modal 5`] = `
     <button
       class="button"
       data-testid="arr-0"
+      name="button"
     >
       modal
     </button>
     <button
       class="button"
       data-testid="arr-1"
+      name="button"
     >
       top
     </button>
     <button
       class="button"
       data-testid="arr-2"
+      name="button"
     >
       header
     </button>
     <button
       class="button"
       data-testid="arr-3"
+      name="button"
     >
       animation
     </button>
     <button
       class="button"
       data-testid="arr-4"
+      name="button"
     >
       top + animation
     </button>
     <div>
       <div
         class="modal-bg"
+        data-testid="modal-bg"
         id="modal-bg"
       >
         <div
@@ -231,7 +263,9 @@ exports[`should HW25Modal 5`] = `
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!
           <br />
           <button
+            data-testid="close"
             id="button"
+            name="button"
           >
             關閉
           </button>

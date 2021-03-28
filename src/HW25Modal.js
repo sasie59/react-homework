@@ -23,6 +23,7 @@ export default function HW25Modal() {
       {btnArr.map((item,index) => 
         <button 
           key={index}
+          name='button'
           className='button'
           data-testid={`arr-${index}`}
           onClick={handleClick.bind(this, index)}

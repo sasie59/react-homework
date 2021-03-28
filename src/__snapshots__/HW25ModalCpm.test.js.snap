@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW25ModalCpm 1`] = `
+<div>
+  <div
+    class="modal-bg"
+    data-testid="modal-bg"
+    id="modal-bg"
+  >
+    <div
+      class="modal-content modal-content"
+    >
+      <br />
+      <button
+        data-testid="close"
+        id="button"
+        name="button"
+      >
+        關閉
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should HW25ModalCpm 2`] = `
+<div>
+  <div
+    class="modal-bg"
+    data-testid="modal-bg"
+    id="modal-bg"
+  >
+    <div
+      class="modal-content modal-content"
+    >
+      <br />
+      <button
+        data-testid="close"
+        id="button"
+        name="button"
+      >
+        關閉
+      </button>
+    </div>
+  </div>
+</div>
+`;
