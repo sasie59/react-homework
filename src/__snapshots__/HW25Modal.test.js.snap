@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should HW25Modal 1`] = `
+<div>
+  <div>
+    <button
+      class="button"
+      data-testid="arr-0"
+    >
+      modal
+    </button>
+    <button
+      class="button"
+      data-testid="arr-1"
+    >
+      top
+    </button>
+    <button
+      class="button"
+      data-testid="arr-2"
+    >
+      header
+    </button>
+    <button
+      class="button"
+      data-testid="arr-3"
+    >
+      animation
+    </button>
+    <button
+      class="button"
+      data-testid="arr-4"
+    >
+      top + animation
+    </button>
+    <div>
+      <div
+        class="modal-bg"
+        id="modal-bg"
+      >
+        <div
+          class="modal-content "
+        >
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!
+          <br />
+          <button
+            id="button"
+          >
+            關閉
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should HW25Modal 2`] = `
+<div>
+  <div>
+    <button
+      class="button"
+      data-testid="arr-0"
+    >
+      modal
+    </button>
+    <button
+      class="button"
+      data-testid="arr-1"
+    >
+      top
+    </button>
+    <button
+      class="button"
+      data-testid="arr-2"
+    >
+      header
+    </button>
+    <button
+      class="button"
+      data-testid="arr-3"
+    >
+      animation
+    </button>
+    <button
+      class="button"
+      data-testid="arr-4"
+    >
+      top + animation
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should HW25Modal 3`] = `
+<div>
+  <div>
+    <button
+      class="button"
+      data-testid="arr-0"
+    >
+      modal
+    </button>
+    <button
+      class="button"
+      data-testid="arr-1"
+    >
+      top
+    </button>
+    <button
+      class="button"
+      data-testid="arr-2"
+    >
+      header
+    </button>
+    <button
+      class="button"
+      data-testid="arr-3"
+    >
+      animation
+    </button>
+    <button
+      class="button"
+      data-testid="arr-4"
+    >
+      top + animation
+    </button>
+    <div>
+      <div
+        class="modal-bg"
+        id="modal-bg"
+      >
+        <div
+          class="modal-content "
+        >
+          <h2>
+            My Header
+          </h2>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!
+          <br />
+          <button
+            id="button"
+          >
+            關閉
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should HW25Modal 4`] = `
+<div>
+  <div>
+    <button
+      class="button"
+      data-testid="arr-0"
+    >
+      modal
+    </button>
+    <button
+      class="button"
+      data-testid="arr-1"
+    >
+      top
+    </button>
+    <button
+      class="button"
+      data-testid="arr-2"
+    >
+      header
+    </button>
+    <button
+      class="button"
+      data-testid="arr-3"
+    >
+      animation
+    </button>
+    <button
+      class="button"
+      data-testid="arr-4"
+    >
+      top + animation
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should HW25Modal 5`] = `
+<div>
+  <div>
+    <button
+      class="button"
+      data-testid="arr-0"
+    >
+      modal
+    </button>
+    <button
+      class="button"
+      data-testid="arr-1"
+    >
+      top
+    </button>
+    <button
+      class="button"
+      data-testid="arr-2"
+    >
+      header
+    </button>
+    <button
+      class="button"
+      data-testid="arr-3"
+    >
+      animation
+    </button>
+    <button
+      class="button"
+      data-testid="arr-4"
+    >
+      top + animation
+    </button>
+    <div>
+      <div
+        class="modal-bg"
+        id="modal-bg"
+      >
+        <div
+          class="modal-content "
+        >
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex vel in nam sint dolorum, eligendi delectus, dolor quos eum magni facere nemo fuga distinctio. Magni possimus aspernatur corrupti impedit laborum!
+          <br />
+          <button
+            id="button"
+          >
+            關閉
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -24,6 +24,7 @@ export default function HW25Modal() {
         <button 
           key={index}
           className='button'
+          data-testid={`arr-${index}`}
           onClick={handleClick.bind(this, index)}
         >
           {item}
