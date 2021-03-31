@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should todoList 1`] = `
+<div>
+  <div>
+    <select>
+      <option
+        value="ALL"
+      >
+        ALL
+      </option>
+      <option
+        value="FINISH"
+      >
+        FINISH
+      </option>
+      <option
+        value="UNFINISH"
+      >
+        UNFINISH
+      </option>
+    </select>
+    <form>
+      <input
+        type="text"
+        value=""
+      />
+      <button>
+        add
+      </button>
+    </form>
+    <div
+      class="line"
+      data-testid="todo-0"
+    >
+      abc
+      <button
+        data-testid="toggle-0"
+      >
+        toggle
+      </button>
+      <button
+        data-testid="remove-0"
+      >
+        remove
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should todoList 2`] = `
+<div>
+  <div>
+    <select>
+      <option
+        value="ALL"
+      >
+        ALL
+      </option>
+      <option
+        value="FINISH"
+      >
+        FINISH
+      </option>
+      <option
+        value="UNFINISH"
+      >
+        UNFINISH
+      </option>
+    </select>
+    <form>
+      <input
+        type="text"
+        value=""
+      />
+      <button>
+        add
+      </button>
+    </form>
+  </div>
+</div>
+`;

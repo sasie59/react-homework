@@ -50,11 +50,11 @@ function App(props) {
           filter === FINISH ? todo.isFin:
             filter === UNFINISH ? !todo.isFin: true
         )
-        .map(todo =>
-          <div key={todo.id} className={todo.isFin ? 'line': ''}>
+        .map((todo,index) =>
+          <div data-testid={`todo-${index}`} key={todo.id} className={todo.isFin ? 'line': ''}>
             {todo.text}
-            <button onClick={handleToggle.bind(this, todo.id)}>toggle</button>
-            <button onClick={handleRemove.bind(this, todo.id)}>remove</button>
+            <button data-testid={`toggle-${index}`} onClick={handleToggle.bind(this, todo.id)}>toggle</button>
+            <button data-testid={`remove-${index}`} onClick={handleRemove.bind(this, todo.id)}>remove</button>
           </div>
         )
       }
