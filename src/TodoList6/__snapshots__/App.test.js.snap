@@ -1,20 +1,171 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should todoList 1`] = `
+exports[`should selectOptions 1`] = `
 <div>
   <div>
-    <select>
+    <select
+      data-testid="select"
+    >
       <option
+        data-testid="all"
         value="ALL"
       >
         ALL
       </option>
       <option
+        data-testid="finish"
         value="FINISH"
       >
         FINISH
       </option>
       <option
+        data-testid="unFinish"
+        value="UNFINISH"
+      >
+        UNFINISH
+      </option>
+    </select>
+    <form>
+      <input
+        type="text"
+        value=""
+      />
+      <button>
+        add
+      </button>
+    </form>
+    <div
+      class=""
+      data-testid="todo-0"
+    >
+      123
+      <button
+        data-testid="toggle-0"
+      >
+        toggle
+      </button>
+      <button
+        data-testid="remove-0"
+      >
+        remove
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should selectOptions 2`] = `
+<div>
+  <div>
+    <select
+      data-testid="select"
+    >
+      <option
+        data-testid="all"
+        value="ALL"
+      >
+        ALL
+      </option>
+      <option
+        data-testid="finish"
+        value="FINISH"
+      >
+        FINISH
+      </option>
+      <option
+        data-testid="unFinish"
+        value="UNFINISH"
+      >
+        UNFINISH
+      </option>
+    </select>
+    <form>
+      <input
+        type="text"
+        value=""
+      />
+      <button>
+        add
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`should selectOptions 3`] = `
+<div>
+  <div>
+    <select
+      data-testid="select"
+    >
+      <option
+        data-testid="all"
+        value="ALL"
+      >
+        ALL
+      </option>
+      <option
+        data-testid="finish"
+        value="FINISH"
+      >
+        FINISH
+      </option>
+      <option
+        data-testid="unFinish"
+        value="UNFINISH"
+      >
+        UNFINISH
+      </option>
+    </select>
+    <form>
+      <input
+        type="text"
+        value=""
+      />
+      <button>
+        add
+      </button>
+    </form>
+    <div
+      class=""
+      data-testid="todo-0"
+    >
+      123
+      <button
+        data-testid="toggle-0"
+      >
+        toggle
+      </button>
+      <button
+        data-testid="remove-0"
+      >
+        remove
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should todoList 1`] = `
+<div>
+  <div>
+    <select
+      data-testid="select"
+    >
+      <option
+        data-testid="all"
+        value="ALL"
+      >
+        ALL
+      </option>
+      <option
+        data-testid="finish"
+        value="FINISH"
+      >
+        FINISH
+      </option>
+      <option
+        data-testid="unFinish"
         value="UNFINISH"
       >
         UNFINISH
@@ -45,6 +196,22 @@ exports[`should todoList 1`] = `
         remove
       </button>
     </div>
+    <div
+      class=""
+      data-testid="todo-1"
+    >
+      123
+      <button
+        data-testid="toggle-1"
+      >
+        toggle
+      </button>
+      <button
+        data-testid="remove-1"
+      >
+        remove
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -52,18 +219,23 @@ exports[`should todoList 1`] = `
 exports[`should todoList 2`] = `
 <div>
   <div>
-    <select>
+    <select
+      data-testid="select"
+    >
       <option
+        data-testid="all"
         value="ALL"
       >
         ALL
       </option>
       <option
+        data-testid="finish"
         value="FINISH"
       >
         FINISH
       </option>
       <option
+        data-testid="unFinish"
         value="UNFINISH"
       >
         UNFINISH
@@ -78,6 +250,22 @@ exports[`should todoList 2`] = `
         add
       </button>
     </form>
+    <div
+      class=""
+      data-testid="todo-0"
+    >
+      123
+      <button
+        data-testid="toggle-0"
+      >
+        toggle
+      </button>
+      <button
+        data-testid="remove-0"
+      >
+        remove
+      </button>
+    </div>
   </div>
 </div>
 `;

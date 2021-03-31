@@ -32,14 +32,14 @@ exports[`should HW27CarouselCpm 2`] = `
       class="carousel"
     >
       <div
-        class="item hide "
+        class="item "
       >
         <div>
           2
         </div>
       </div>
       <div
-        class="item show "
+        class="item "
       >
         <div>
           3
@@ -57,17 +57,17 @@ exports[`should HW27CarouselCpm 3`] = `
       class="carousel"
     >
       <div
-        class="item hide "
-      >
-        <div>
-          2
-        </div>
-      </div>
-      <div
-        class="item show "
+        class="item "
       >
         <div>
           3
+        </div>
+      </div>
+      <div
+        class="item "
+      >
+        <div>
+          1
         </div>
       </div>
     </div>

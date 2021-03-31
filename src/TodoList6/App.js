@@ -36,10 +36,10 @@ function App(props) {
   
   return (
     <div>
-      <select value={filter} onChange={handleFilterChange}>
-        <option value={ALL}>ALL</option>
-        <option value={FINISH}>FINISH</option>
-        <option value={UNFINISH}>UNFINISH</option>
+      <select data-testid='select' value={filter} onChange={handleFilterChange}>
+        <option data-testid='all' value={ALL}>ALL</option>
+        <option data-testid='finish' value={FINISH}>FINISH</option>
+        <option data-testid='unFinish' value={UNFINISH}>UNFINISH</option>
       </select>
       <form onSubmit={handleSubmit}>
         <input onChange={handleChange} type="text" value={value} />

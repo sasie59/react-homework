@@ -7,7 +7,7 @@ exports[`should bingo number 1`] = `
       data-testid="random"
     >
       隨機數字
-      6
+      0
     </div>
     <input
       type="text"
