@@ -13,7 +13,7 @@ export default function HW27CarouselCpm(props) {
       },time / 3);
       setIsMoving(!isMoving);
     },time);
-  },[]);
+  }, [isMoving, itemList, props] ); 
 
 
   return (
