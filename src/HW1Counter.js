@@ -1,41 +1,42 @@
+// import React, { useState } from 'react';
 
-import React, { useState } from 'react';
+// export default function Counter() {
+//   const [ count, setCount] = useState(0);
 
-export default function Counter() {
-  // const [ count, setCount] = useState(0);
-  const [ count2, setCount2] = useState(0);
+//   const handleClick = () => {
+//     setCount(count + 1);
+//   };
 
-  const handleClick = () => {
-    setCount2(count2 + 1);
-  };
-
-  return (
-    <div>
-      <h1>HW1Counter</h1>
-      <button onClick={handleClick}>click me : {count2}</button>
-    </div>
-  );
-}
-
-
-// export default class Counter extends React.Component {
-//   constructor(){
-//     super();
-//     this.state = ({
-//       counter: 0 
-//     });
-//   }
-//   handleChangeCounter = () => {
-//     this.setState({
-//       counter: this.state.counter + 1
-//     });
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <h1>HW1Counter</h1>
-//         <button onClick={this.handleChangeCounter}>counter : {this.state.counter}</button>
-//       </div>
-//     );
-//   }
+//   return (
+//     <div>
+//       <h1>HW1Counter</h1>
+//       <button onClick={handleClick}>click me : {count}</button>
+//     </div>
+//   );
 // }
+
+import React, { Component } from "react";
+
+export default class HW1Counter extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+    };
+  }
+  handleClick = () => [
+    this.setState({
+      count: this.state.count + 1
+    })
+  ]
+
+  render() {
+    const { count } = this.state;
+    return (
+      <div>
+        <h1>複習React & hooks</h1>
+        <button onClick={this.handleClick}>請按我 : {count}</button>
+      </div>
+    );
+  }
+}
