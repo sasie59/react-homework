@@ -35,7 +35,7 @@ export default function HW1Counter() {
   };
   return (
     <div>
-      <h1>複習React & hooks</h1>
+      <h1>複習React & Hooks & Jest</h1>
       <button onClick={handleClick}>Click Me : {count} </button>
     </div>
   );
