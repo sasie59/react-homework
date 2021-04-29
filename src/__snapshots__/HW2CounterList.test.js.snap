@@ -4,7 +4,7 @@ exports[`should HW2CounterList 1`] = `
 <div>
   <div>
     <h1>
-      HW2CounterList
+      複習React & Hooks & Jest
     </h1>
     <button>
       click me
@@ -18,7 +18,7 @@ exports[`should add 1 item 1`] = `
 <div>
   <div>
     <h1>
-      HW2CounterList
+      複習React & Hooks & Jest
     </h1>
     <button>
       click me
@@ -36,7 +36,7 @@ exports[`should add 3 item 1`] = `
 <div>
   <div>
     <h1>
-      HW2CounterList
+      複習React & Hooks & Jest
     </h1>
     <button>
       click me
@@ -60,7 +60,7 @@ exports[`should add 5 item 1`] = `
 <div>
   <div>
     <h1>
-      HW2CounterList
+      複習React & Hooks & Jest
     </h1>
     <button>
       click me
