@@ -1,67 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should 160cm/60kg get 23 1`] = `
+exports[`should 90kg / 170cm get 31 1`] = `
 <div>
   <div>
     <h1>
-      HW4Bmi
+      複習React & Hooks & Jest
     </h1>
-    <span>
-      身高
-    </span>
-    <input
-      name="cm"
-      type="text"
-    />
-    <br />
-    <span>
-      體重
-    </span>
-    <input
-      name="kg"
-      type="text"
-    />
-    <br />
+    <form
+      action=""
+    >
+      體 重
+      <input
+        name="kg"
+        type="text"
+      />
+      <br />
+      身 高
+      <input
+        name="cm"
+        type="text"
+      />
+    </form>
     <button>
-      計算
+      計算!
     </button>
-    BMI : 
-    <span
-      data-testid="bmi"
-    />
-  </div>
-</div>
-`;
-
-exports[`should 185cm / 90kg get 26 1`] = `
-<div>
-  <div>
     <h1>
-      HW4Bmi
+      BMI : 
+      <span
+        data-testid="bmi"
+      />
     </h1>
-    <span>
-      身高
-    </span>
-    <input
-      name="cm"
-      type="text"
-    />
-    <br />
-    <span>
-      體重
-    </span>
-    <input
-      name="kg"
-      type="text"
-    />
-    <br />
-    <button>
-      計算
-    </button>
-    BMI : 
-    <span
-      data-testid="bmi"
-    />
   </div>
 </div>
 `;
@@ -70,31 +38,32 @@ exports[`should HW4Bmi 1`] = `
 <div>
   <div>
     <h1>
-      HW4Bmi
+      複習React & Hooks & Jest
     </h1>
-    <span>
-      身高
-    </span>
-    <input
-      name="cm"
-      type="text"
-    />
-    <br />
-    <span>
-      體重
-    </span>
-    <input
-      name="kg"
-      type="text"
-    />
-    <br />
+    <form
+      action=""
+    >
+      體 重
+      <input
+        name="kg"
+        type="text"
+      />
+      <br />
+      身 高
+      <input
+        name="cm"
+        type="text"
+      />
+    </form>
     <button>
-      計算
+      計算!
     </button>
-    BMI : 
-    <span
-      data-testid="bmi"
-    />
+    <h1>
+      BMI : 
+      <span
+        data-testid="bmi"
+      />
+    </h1>
   </div>
 </div>
 `;
