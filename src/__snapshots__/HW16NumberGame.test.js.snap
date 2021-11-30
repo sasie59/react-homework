@@ -36,7 +36,7 @@ exports[`should fail number 1`] = `
       data-testid="random"
     >
       隨機數字
-      1
+      4
     </div>
     <input
       type="text"

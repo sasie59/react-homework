@@ -6,9 +6,10 @@ exports[`should HW5ItemList 1`] = `
     <h1>
       HW5ItemList
     </h1>
-    <form>
+    <form
+      action=""
+    >
       <input
-        placeholder="do something..."
         type="text"
       />
     </form>
@@ -23,9 +24,10 @@ exports[`should add something to list 1`] = `
     <h1>
       HW5ItemList
     </h1>
-    <form>
+    <form
+      action=""
+    >
       <input
-        placeholder="do something..."
         type="text"
       />
     </form>
@@ -44,9 +46,10 @@ exports[`should add something to list 2`] = `
     <h1>
       HW5ItemList
     </h1>
-    <form>
+    <form
+      action=""
+    >
       <input
-        placeholder="do something..."
         type="text"
       />
     </form>

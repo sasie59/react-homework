@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import HW from './HW2CounterList';
 test('should HW2CounterList', () => {
   const { container } = render(<HW />);
-  expect (container).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('should add 1 item', () => {

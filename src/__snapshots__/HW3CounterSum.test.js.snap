@@ -10,7 +10,26 @@ exports[`從1開始累加至按的次數  1`] = `
       add
     </button>
     <br />
+    1
+    <br />
+    <button>
+      subtract
+    </button>
+    <br />
     0
+    <br />
+    <button>
+      multiply
+    </button>
+    <br />
+    1
+    <br />
+    <button>
+      divide
+    </button>
+    <br />
+    100000000000
+    <br />
   </div>
 </div>
 `;
@@ -25,7 +44,26 @@ exports[`從1開始累加至按的次數  2`] = `
       add
     </button>
     <br />
-    3
+    6
+    <br />
+    <button>
+      subtract
+    </button>
+    <br />
+    0
+    <br />
+    <button>
+      multiply
+    </button>
+    <br />
+    1
+    <br />
+    <button>
+      divide
+    </button>
+    <br />
+    100000000000
+    <br />
   </div>
 </div>
 `;
@@ -40,7 +78,26 @@ exports[`從1開始累加至按的次數  3`] = `
       add
     </button>
     <br />
-    10
+    15
+    <br />
+    <button>
+      subtract
+    </button>
+    <br />
+    0
+    <br />
+    <button>
+      multiply
+    </button>
+    <br />
+    1
+    <br />
+    <button>
+      divide
+    </button>
+    <br />
+    100000000000
+    <br />
   </div>
 </div>
 `;

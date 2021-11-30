@@ -38,32 +38,30 @@ exports[`should HW4Bmi 1`] = `
 <div>
   <div>
     <h1>
-      複習React & Hooks & Jest
+      HW4Bmi
     </h1>
     <form
       action=""
     >
-      體 重
+      體重
       <input
         name="kg"
         type="text"
       />
       <br />
-      身 高
+      身高
       <input
         name="cm"
         type="text"
       />
     </form>
     <button>
-      計算!
+      點擊
     </button>
-    <h1>
-      BMI : 
-      <span
-        data-testid="bmi"
-      />
-    </h1>
+    <h2>
+      BMI :
+      <span />
+    </h2>
   </div>
 </div>
 `;

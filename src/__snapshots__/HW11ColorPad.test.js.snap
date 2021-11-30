@@ -53,7 +53,7 @@ exports[`should change rgb range 1`] = `
       調色盤
     </h1>
     <div
-      style="width: 200px; height: 200px; margin: 0px auto; background-color: rgb(255, 255, 255);"
+      style="width: 200px; height: 200px; margin: 0px auto; background-color: rgb(200, 10, 173);"
     />
     R
     <input
@@ -62,7 +62,7 @@ exports[`should change rgb range 1`] = `
       min="0"
       type="range"
     />
-    255
+    200
     <br />
     G
     <input
@@ -71,7 +71,7 @@ exports[`should change rgb range 1`] = `
       min="0"
       type="range"
     />
-    255
+    10
     <br />
     B
     <input
@@ -80,7 +80,7 @@ exports[`should change rgb range 1`] = `
       min="0"
       type="range"
     />
-    255
+    173
     <br />
   </div>
 </div>
