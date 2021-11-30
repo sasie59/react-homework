@@ -1,5 +1,5 @@
 import React from 'react';
-import {getByTestId, render } from '@testing-library/react';
+import { getByTestId, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import HW from './HW8SumForButton';
 

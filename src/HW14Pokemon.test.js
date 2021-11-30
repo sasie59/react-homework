@@ -10,7 +10,7 @@ global.fetch = jest.fn(
       resolve({
         json: () =>
           new Promise((resolve) => {
-            resolve(                {
+            resolve({
               count: 1118,
               next: "https://pokeapi.co/api/v2/pokemon/?offset=100&limit=3",
               previous: null,
@@ -36,14 +36,14 @@ global.fetch = jest.fn(
 
 test("should HW14Pokemon", async () => {
   const { container } = render(<HW />);
-  await waitFor(() => expect(container).toMatchSnapshot());
+  expect(container).toMatchSnapshot();
 });
 
-test('should enter keyword to filter',async () => {
+test('should enter keyword to filter', async () => {
   const { container } = render(<HW />);
   const input = container.querySelector('input');
   userEvent.type(input, "bul{enter}");
-  await waitFor(() => expect(container).toMatchSnapshot());
+  expect(container).toMatchSnapshot();
 });
 
 

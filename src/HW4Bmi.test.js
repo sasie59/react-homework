@@ -8,7 +8,7 @@ test('should HW4Bmi', () => {
 });
 
 test('should 90kg / 170cm get 31', () => {
-  const {container , getByTestId } = render(<HW />);
+  const { container, getByTestId } = render(<HW />);
   const bmi = getByTestId('bmi');
 
   userEvent.type(container.querySelector('input[name="cm"]'), '170');
@@ -26,7 +26,7 @@ test('should 90kg / 170cm get 31', () => {
 //   const kgInput = container.querySelector('input[name="kg"]');
 //   const button = container.querySelector('button');
 //   const bmiSpan = getByTestId('bmi');
-  
+
 //   userEvent.type(cmInput, '160');
 //   userEvent.type(kgInput, '60');
 //   userEvent.click(button);
@@ -41,7 +41,7 @@ test('should 90kg / 170cm get 31', () => {
 //   const kgInput = container.querySelector('input[name="kg"]');
 //   const button = container.querySelector('button');
 //   const bmiSpan = getByTestId('bmi');
-  
+
 //   userEvent.type(cmInput, '185');
 //   userEvent.type(kgInput, '90');
 //   userEvent.click(button);

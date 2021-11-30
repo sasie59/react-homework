@@ -89,7 +89,7 @@ global.fetch = jest.fn(
 
 test("should HW7PersonTable", async () => {
   const { container } = render(<HW />);
-  await waitFor(() => expect(container).toMatchSnapshot());
+  expect(container).toMatchSnapshot();
 });
 
 test("should upData personList", async () => {
@@ -97,5 +97,5 @@ test("should upData personList", async () => {
   const button = container.querySelector("button");
 
   userEvent.click(button);
-  await waitFor(() => expect(container).toMatchSnapshot());
+  expect(container).toMatchSnapshot();
 });

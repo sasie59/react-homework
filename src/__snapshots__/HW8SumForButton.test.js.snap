@@ -6,37 +6,57 @@ exports[`should HW6RemovableList 1`] = `
     <h1>
       HW8SumForButton
     </h1>
-    <button>
+    <button
+      data-testid="0"
+    >
       1
     </button>
-    <button>
+    <button
+      data-testid="1"
+    >
       2
     </button>
-    <button>
+    <button
+      data-testid="2"
+    >
       3
     </button>
-    <button>
+    <button
+      data-testid="3"
+    >
       4
     </button>
-    <button>
+    <button
+      data-testid="4"
+    >
       5
     </button>
-    <button>
+    <button
+      data-testid="5"
+    >
       6
     </button>
-    <button>
+    <button
+      data-testid="6"
+    >
       7
     </button>
-    <button>
+    <button
+      data-testid="7"
+    >
       8
     </button>
-    <button>
+    <button
+      data-testid="8"
+    >
       9
     </button>
-    <h2>
+    <div
+      name="sum"
+    >
       加總值 : 
       0
-    </h2>
+    </div>
   </div>
 </div>
 `;

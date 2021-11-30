@@ -52,7 +52,7 @@
 //   }
 // }
 // hooks
-import React,{useRef} from 'react';
+import React, { useRef } from 'react';
 
 export default function HW4Bmi() {
   const kgDom = useRef();
@@ -69,19 +69,21 @@ export default function HW4Bmi() {
     <div>
       <h1>HW4Bmi</h1>
       <form action="">
-        體重<input 
+        體重<input
           ref={kgDom}
           type="text"
-          name='kg'/><br/>
+          name='kg' /><br />
         身高<input
           ref={cmDom}
           type="text"
-          name='cm'/>                
+          name='cm' />
       </form>
-      <button onClick={handleClick}>點擊</button>
+      <button
+        onClick={handleClick}
+      >點擊</button>
       <h2>
         BMI :
-        <span ref={bmiDom} />
+        <span data-testid='bmi' ref={bmiDom} />
       </h2>
     </div>
   );

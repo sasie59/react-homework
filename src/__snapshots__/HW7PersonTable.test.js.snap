@@ -4,10 +4,10 @@ exports[`should HW7PersonTable 1`] = `
 <div>
   <div>
     <h1>
-      複習React & Hooks & Jest
+      HW7PersonTable
     </h1>
     <button>
-      抓取資料
+      抓資料
     </button>
     <table>
       <thead>
@@ -16,22 +16,22 @@ exports[`should HW7PersonTable 1`] = `
             照片
           </th>
           <th>
-            姓名
+            姓氏
           </th>
           <th>
             性別
           </th>
           <th>
-            電子郵件
+            email
           </th>
           <th>
-            年齡
+            年紀
           </th>
           <th>
             手機
           </th>
           <th>
-            城市
+            國家
           </th>
         </tr>
       </thead>
@@ -45,10 +45,10 @@ exports[`should upData personList 1`] = `
 <div>
   <div>
     <h1>
-      複習React & Hooks & Jest
+      HW7PersonTable
     </h1>
     <button>
-      抓取資料
+      抓資料
     </button>
     <table>
       <thead>
@@ -57,22 +57,22 @@ exports[`should upData personList 1`] = `
             照片
           </th>
           <th>
-            姓名
+            姓氏
           </th>
           <th>
             性別
           </th>
           <th>
-            電子郵件
+            email
           </th>
           <th>
-            年齡
+            年紀
           </th>
           <th>
             手機
           </th>
           <th>
-            城市
+            國家
           </th>
         </tr>
       </thead>
