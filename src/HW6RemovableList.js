@@ -91,7 +91,10 @@ export default class HW6RemovableList extends Component {
           {this.state.list.map((item, index) =>
             <li key={item}>
               {item}
-              <button onClick={this.handleRemove.bind(this, index)}>移除</button>
+              <button
+                onClick={this.handleRemove.bind(this, index)}
+                data-testid={index}
+              >移除</button>
             </li>
           )}
         </ul>
