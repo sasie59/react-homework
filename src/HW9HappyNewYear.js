@@ -67,7 +67,7 @@ export default class HW9HappyNewYear extends Component {
     const day =  ~~(countDown / 60 / 60 / 24);
     return (
       <div>
-        <h1>離2022跨年還有{day}天{hour}時{min}分{sec}秒: </h1>
+        <h1 data-testid='countDown'>離2022跨年還有{day}天{hour}時{min}分{sec}秒: </h1>
       </div>
     );
   }
