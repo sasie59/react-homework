@@ -48,13 +48,13 @@ export default function HW3CounterSum() {
   return (
     <div>
       <h1>HW3CounterSum</h1>
-      <button onClick={handleAdd}>add</button><br/>
+      <button data-testid="add" onClick={handleAdd}>add</button><br/>
       {sum}<br/>
-      <button onClick={handleSubtract}>subtract</button><br/>
+      <button data-testid="subtract" onClick={handleSubtract}>subtract</button><br/>
       {sum1}<br/>
-      <button onClick={handleMultiply}>multiply</button><br/>
+      <button data-testid="multiply" onClick={handleMultiply}>multiply</button><br/>
       {sum2}<br/>
-      <button onClick={handleDivide}>divide</button><br/>
+      <button data-testid="divide" onClick={handleDivide}>divide</button><br/>
       {sum3}<br/>
     </div>
   );
