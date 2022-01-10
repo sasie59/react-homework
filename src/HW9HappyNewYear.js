@@ -38,23 +38,27 @@
 //   );
 // }
 import React,{useState, useEffect} from 'react';
-const date20220101 = +new Date('2022/01/01 00:00:00');
+const date20230101 = +new Date('2023/01/01 00:00:00');
+export const countDownTime = date20230101 - (+new Date());
+
 export default function HW9HappyNewYear() {
 
   const [time, setTime] = useState({
     date : +new Date(),
-    conutDown : ~~(date20220101 - (+new Date()) / 1000),
+    conutDown : ~~(date20230101 - (+new Date()) / 1000),
   });
 
   const tick = () => {
     setTime({
-      countDown : Math.floor((date20220101 - (+new Date())) / 1000),
+      countDown : Math.floor((date20230101 - (+new Date())) / 1000),
     });
   };
 
   useEffect(() => {
-    setInterval(tick(), 1000);
-  },[]);
+    setInterval(() => {
+      tick();
+    }, 1000);
+  }, []);
 
   const sec =  time.countDown % 60;
   const min =  ~~(time.countDown / 60) % 60;
@@ -65,8 +69,8 @@ export default function HW9HappyNewYear() {
   return (
     <div>
       <h1>HW9HappyNewYear</h1>
-      <h1>
-      距離2022跨年還有 : {day}天 {hour}時 {min}分 {sec}秒
+      <h1 data-testid='countDown'>
+      距離2023跨年還有 : {day}天 {hour}時 {min}分 {sec}秒
       </h1>
     </div>
   );
