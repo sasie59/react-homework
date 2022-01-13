@@ -1,35 +1,4 @@
-// import React, { useState, useRef } from 'react';
-
-// export default function HW5ItemList() {
-
-//   const [list, setList] = useState([]);
-//   const itemDom = useRef();
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     setList([itemDom.current.value, ...list]);
-//     itemDom.current.value = '';
-//   };
-
-//   return (
-//     <div>
-//       <h1>HW5ItemList</h1>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           ref={itemDom}
-//           placeholder='do something...'
-//         />
-//       </form>
-//       <ul>
-//         {list.map((item) =>
-//           <li key={item}>{item}</li>
-//         )}
-//       </ul>
-//     </div>
-//   );
-// }
-import React,{useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 
 export default function HW5ItemList() {
   const [list, setList] = useState([]);
@@ -52,7 +21,7 @@ export default function HW5ItemList() {
         />
       </form>
       <ul>
-        {list.map(item => 
+        {list.map(item =>
           <li key={item}>
             {item}
           </li>

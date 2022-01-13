@@ -6,31 +6,31 @@ const turnCurrency = (value, currencyType, returnType) => {
     twd: 30,
     usd: 1 / 30,
   };
-  return currencyType === returnType ? value: value * base[returnType];
+  return currencyType === returnType ? value : value * base[returnType];
 };
 
 export default class HW10Currency2 extends Component {
   constructor() {
     super();
     this.state = {
-      value : 0,
-      currencyType : ''
+      value: 0,
+      currencyType: ''
     };
   }
 
-  handleChange = ({target}) => {
-    
+  handleChange = ({ target }) => {
+
     this.setState({
-      value : target.value,
-      currencyType : target.name
+      value: target.value,
+      currencyType: target.name
     });
   }
   render() {
-    const {currencyType, value} = this.state;
+    const { currencyType, value } = this.state;
 
     let twd = turnCurrency(value, currencyType, 'twd');
     let usd = turnCurrency(value, currencyType, 'usd');
-    
+
     // let twd = currencyType === 'twd' ? value: value * 30;
     // let usd = currencyType === 'usd' ? value: value / 30;
 
@@ -39,12 +39,12 @@ export default class HW10Currency2 extends Component {
         <CurrencyInput
           value={twd}
           currencyType="twd"
-          onChange={this.handleChange} 
+          onChange={this.handleChange}
         />
         <CurrencyInput
           value={usd}
           currencyType="usd"
-          onChange={this.handleChange} 
+          onChange={this.handleChange}
         />
       </div>
     );
