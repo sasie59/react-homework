@@ -1,64 +1,121 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-export default class HW11ColorPad extends Component {
-  constructor() {
-    super();
-    this.state = {
-      r: 150,
-      g: 100,
-      b: 200
-    };
-  }
+// export default class HW11ColorPad extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       r: 150,
+//       g: 100,
+//       b: 200
+//     };
+//   }
 
-  handleChange = ({ target }) => {
-    this.setState({
+//   handleChange = ({ target }) => {
+//     this.setState({
+//       [target.name]: target.value
+//     });
+//   }
+
+//   render() {
+//     const { r, g, b } = this.state;
+//     return (
+//       <div>
+//         <h1>HW11ColorPad</h1>
+//         <h1>調色盤</h1>
+//         <div style={{
+//           width: "200px",
+//           height: "200px",
+//           margin: "0 auto",
+//           backgroundColor: `rgb(${r},${g},${b})`
+//         }} />
+//         <input
+//           type="range"
+//           min="0"
+//           max="255"
+//           name='r'
+//           value={r}
+//           data-testid='red'
+//           onChange={this.handleChange}
+//         />R<br />
+//         <input
+//           type="range"
+//           min="0"
+//           max="255"
+//           name='g'
+//           value={g}
+//           data-testid='green'
+//           onChange={this.handleChange}
+//         />G<br />
+//         <input
+//           type="range"
+//           min="0"
+//           max="255"
+//           name='b'
+//           value={b}
+//           data-testid='blue'
+//           onChange={this.handleChange}
+//         />B
+//       </div>
+//     );
+//   }
+// }
+import React,{useState} from 'react';
+
+export default function HW11ColorPad() {
+  const [pad, setPad ] = useState({
+    r: 255,
+    g: 100,
+    b: 150
+  });
+
+  const handleChange = ({target}) => {
+    setPad({
+      ...pad,
       [target.name]: target.value
     });
-  }
-
-  render() {
-    const { r, g, b } = this.state;
-    return (
-      <div>
-        <h1>HW11ColorPad</h1>
-        <h1>調色盤</h1>
-        <div style={{
-          width: "200px",
-          height: "200px",
-          margin: "0 auto",
-          backgroundColor: `rgb(${r},${g},${b})`
-        }} />
-        <input
-          type="range"
-          min="0"
-          max="255"
-          name='r'
-          value={r}
-          data-testid='red'
-          onChange={this.handleChange}
-        />R<br />
-        <input
-          type="range"
-          min="0"
-          max="255"
-          name='g'
-          value={g}
-          data-testid='green'
-          onChange={this.handleChange}
-        />G<br />
-        <input
-          type="range"
-          min="0"
-          max="255"
-          name='b'
-          value={b}
-          data-testid='blue'
-          onChange={this.handleChange}
-        />B
-      </div>
-    );
-  }
+  };
+  return (
+    <div>
+      <h1>HW11ColorPad</h1>
+      <h1>調色盤</h1>
+      <div 
+        style={{
+          width: '200px',
+          height: '200px',
+          margin: '0 auto',
+          backgroundColor: `rgb(${pad.r},${pad.g},${pad.b})`,
+        }}/>
+      <input
+        data-testid='red'
+        type="range"
+        min="0"
+        max="255"
+        name="r"
+        value={pad.r}
+        onChange={handleChange}
+      />R<br/>
+      <input
+        data-testid='green'
+        type="range" 
+        min="0"
+        max="255"
+        name="g"
+        value={pad.g}
+        onChange={handleChange}
+      />G<br/>
+      <input 
+        data-testid='blue'
+        type="range" 
+        min="0"
+        max="255"
+        name="b"
+        value={pad.b}
+        onChange={handleChange}
+      />B<br/>
+    </div>
+  );
 }
+
 
 // import React, { useState } from "react";
 
@@ -118,40 +175,4 @@ export default class HW11ColorPad extends Component {
 //       <br />
 //     </div>
 //   );
-// }
-
-// import React, { Component } from 'react';
-
-// export default class HW11ColorPad extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       r : 0,
-//       g : 0,
-//       b : 0
-//     };
-//   }
-//   handleChangle = ({target}) => {
-//     this.setState ({
-//       [target.name] : target.value
-//     });
-//   }
-
-//   render() {
-//     const {r, g, b} = this.state;
-//     return (
-//       <div>
-//         <h1>調色盤</h1>
-//         <input name="r" value={r} type="range" min="0" max="255" onChange={this.handleChangle} />
-//         <input name="g" value={g} type="range" min="0" max="255" onChange={this.handleChangle} />
-//         <input name="b" value={b} type="range" min="0" max="255" onChange={this.handleChangle} />
-//         <div style={{
-//           width : '200px',
-//           height : '200px',
-//           backgroundColor : `rgb(${r},${g},${b})`
-//         }}>
-//         </div>
-//       </div>
-//     );
-//   }
 // }
