@@ -43,138 +43,122 @@
 //     </div>
 //   );
 // }
-import React, { Component } from 'react';
+import React,{useState, useRef} from 'react';
 import './HW13TodoList.scss';
 
-export default class HW13TodoList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      value: '',
-      toDoList: []
-    };
-  }
-  handleChange = ({ target }) => {
-    this.setState({
-      value: target.value
-    });
-  }
-
-  handleSubmit = (e) => {
-    const { value, toDoList } = this.state;
+export default function HW13TodoList() {
+  const toDoDom = useRef(); 
+  const [list, setList] = useState([]);
+  
+  const handleSubmit = (e) => {
+    const value = toDoDom.current.value;
     e.preventDefault();
     if (value !== "" || value.trim() !== '')
-      this.setState({
-        toDoList: [{ content: value, done: false }, ...toDoList],
-        value: ''
-      });
-  }
+      setList([{ content: value, done: false }, ...list]);
+    toDoDom.current.value = '';
+  };
 
-  handleTaggle = (index) => {
-    const { toDoList } = this.state;
-    toDoList[index].done = !toDoList[index].done;
-    this.setState({
-      toDoList: toDoList
-    });
+  const handleTaggle = (index) => {
+    const newList = [...list];
+    list[index].done = !list[index].done;
+    setList(newList);
+  };
 
-  }
-
-  render() {
-    const { toDoList, value } = this.state;
-    return <div>
-      <h1>HW13TodoList</h1>
-      <h1>待辦事項</h1>
-      <form
-        action=""
-        onSubmit={this.handleSubmit}
-      >
-        <input
-          type="text"
-          value={value}
-          placeholder='do something ?'
-          onChange={this.handleChange}
-        />
-        <button
-
-        >記錄</button>
-      </form>
-      <ul>
-        {toDoList.map((item, index) =>
-          <li className={item.done ? "done" : ""}
-            key={index}
-            data-testid={index}
-            onClick={this.handleTaggle.bind(this, index)}
-          >
-            {item.content}
-          </li>
-        )}
-      </ul>
-    </div>;
-  }
+  return <div>
+    <h1>HW13TodoList</h1>
+    <h1>待辦事項</h1>
+    <form 
+      action=""
+      onSubmit={handleSubmit}
+    >
+      <input 
+        type="text"
+        ref={toDoDom}
+        placeholder='do something ?'
+      />
+      <button>記錄</button>
+    </form>
+    <ul>
+      {list.map((item, index) => 
+        <li 
+          className={item.done ? "done" : ""}
+          data-testid={index}
+          key={index}
+          onClick={handleTaggle.bind(this, index)}
+        >
+          {item.content}
+        </li>
+      )}
+    </ul>
+  </div>;
 }
+
 // import React, { Component } from 'react';
 // import './HW13TodoList.scss';
 
 // export default class HW13TodoList extends Component {
-//   constructor(){
+//   constructor() {
 //     super();
 //     this.state = {
-//       toDoList :[],
-//       value : ''
+//       value: '',
+//       toDoList: []
 //     };
 //   }
-//   handleChange = ({target}) => {
+//   handleChange = ({ target }) => {
 //     this.setState({
-//       value :target.value
+//       value: target.value
 //     });
 //   }
 
-//   handlSubmit = (event) => {
-//     const {value,toDoList} = this.state;
-//     event.preventDefault();
-
-//     if(value.trim() !== '')
+//   handleSubmit = (e) => {
+//     const { value, toDoList } = this.state;
+//     e.preventDefault();
+//     if (value !== "" || value.trim() !== '')
 //       this.setState({
-//         toDoList : [{content :value, done :false}, ...toDoList],
-//         value : ''
+//         toDoList: [{ content: value, done: false }, ...toDoList],
+//         value: ''
 //       });
 //   }
 
-//   handleDelete = (index) => {
+//   handleTaggle = (index) => {
 //     const { toDoList } = this.state;
 //     toDoList[index].done = !toDoList[index].done;
-
 //     this.setState({
-//       toDoList
+//       toDoList: toDoList
 //     });
+
 //   }
+
 //   render() {
-//     const { value,toDoList } = this.state;
-//     const ToDoList = toDoList.map((item,index) =>
-//       <tr key={index}>
-//         <td className={item.done ? "done" : ""}>
-//           <label onClick={this.handleDelete.bind(this, index)}>
+//     const { toDoList, value } = this.state;
+//     return <div>
+//       <h1>HW13TodoList</h1>
+//       <h1>待辦事項</h1>
+//       <form
+//         action=""
+//         onSubmit={this.handleSubmit}
+//       >
+//         <input
+//           type="text"
+//           value={value}
+//           placeholder='do something ?'
+//           onChange={this.handleChange}
+//         />
+//         <button
+
+//         >記錄</button>
+//       </form>
+//       <ul>
+//         {toDoList.map((item, index) =>
+//           <li className={item.done ? "done" : ""}
+//             key={index}
+//             data-testid={index}
+//             onClick={this.handleTaggle.bind(this, index)}
+//           >
 //             {item.content}
-//           </label>
-//         </td>
-//       </tr>
-//     );
-//     return (
-//       <div>
-//         <form onSubmit={this.handlSubmit}>
-//           <input
-//             type="text"
-//             value={value}
-//             placeholder="todo..."
-//             onChange={this.handleChange}/>
-//           <button>Create!</button>
-//         </form>
-//         <table>
-//           <tbody>
-//             {ToDoList}
-//           </tbody>
-//         </table>
-//       </div>
-//     );
+//           </li>
+//         )}
+//       </ul>
+//     </div>;
 //   }
 // }
